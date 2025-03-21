@@ -1,75 +1,97 @@
-<!-- Add a futuristic header with gradient and emojis -->
+<!-- 👽 Futuristic Welcome Banner -->
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&duration=4000&pause=1000&color=20C997&center=true&vCenter=true&width=800&lines=Heyo!+I'm+Ishaan+Ray+%F0%9F%91%8B;Full-Stack+Developer+%7C+Open-Source+Enthusiast+%7C+Musical+Maestro+%F0%9F%8E%B9;Building+the+Future+with+Code+%26+Creativity+%E2%9C%A8" alt="Dynamic Header" />
+  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=28&duration=4000&pause=1000&color=00F9FF&center=true&vCenter=true&width=1000&lines=Hey+Traveler+🚀;This+is+ISHAAN+RAY+🛸;Pushing+Limits+Beyond+the+Universe+🌌;Full-Stack+Architect+%7C+Compiler+Alchemist+🧪;Coding+the+Future+Today+⚡" alt="Typing Banner" />
 </div>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=cipher-shadow-ir&label=🛰️+Scans+Detected&color=00F9FF&style=flat-square" alt="Profile Views" />
+</p>
 
 ---
 
-<!-- Interactive Grid Layout -->
+<!-- 🧬 Cosmic Identity -->
+<h1 align="center">✨ Who is Ishaan Ray?</h1>
+<p align="center"><i>“A fusion of digital logic and musical soul; architecting dimensions one compiler at a time.”</i></p>
+
+- 🛠️ Building **Infinity Compiler Hub** – One platform. *300+ Languages.*
+- 🌐 Full-Stack Mastery | React ⚛️ | Rust ⚙️ | Python 🐍 | SQL 📊
+- 🎶 Composer | Pianist | Drummer | Certified *Sangeet Visharad*
+- 📡 Contact Frequency: cipher.shadow.1972k6@gmail.com
+- 🌟 Motto: **Push your limits beyond universe.**
+
+---
+
+<!-- 🛸 GitHub Trophy Wall -->
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=cipher-shadow-ir&theme=matrix&no-bg=true&margin-w=15&margin-h=15" alt="Trophies" />
+</p>
+
+---
+
+<!-- ⚙️ Tech Arsenal -->
+<h2 align="center">🧰 Galactic Tech Stack</h2>
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=python,react,cpp,java,html,css,js,nodejs,rust,mongodb,postgres,git,github,linux,docker,aws&theme=dark" />
+</p>
+
+---
+
+<!-- 🎵 Music Meets Machine -->
 <table align="center">
   <tr>
-    <td width="50%">
-      <h2 align="center">🚀 Technical Wizardry</h2>
-      <!-- Dynamic Skill Cloud -->
-      <div align="center">
-        <img src="https://skillicons.dev/icons?i=python,js,react,nodejs,html,css,android,java,rust,postgres,mongodb,linux,git,github,aws&theme=dark&perline=5" alt="Skill Cloud" />
-      </div>
-      <br/>
-      <!-- Real-time GitHub Stats -->
-      <a href="https://github.com/cipher-shadow-ir">
-        <img height="180em" src="https://github-readme-stats-git-master-cipher-shadow-ir.vercel.app/api?username=cipher-shadow-ir&show_icons=true&theme=aura&include_all_commits=true&count_private=true&hide_border=true"/>
-        <img height="180em" src="https://github-readme-stats-git-master-cipher-shadow-ir.vercel.app/api/top-langs/?username=cipher-shadow-ir&layout=compact&langs_count=8&theme=aura&hide_border=true"/>
-      </a>
+    <td align="center" width="50%">
+      <h3>🎼 Music Alchemy</h3>
+      <p>🎹 10+ Instruments | 🥁 Certified Drummer | 🎻 Sangeet Visharad</p>
+      <img src="https://github.com/Cipher-Shadow-IR/Cipher-Shadow-IR/assets/93732295/5c7e5a8a-9e0d-4bae-8e95-2c4c9e6e1d1f" width="200"/>
     </td>
-    <td width="50%">
-      <h2 align="center">🎹 Creative Symphony</h2>
-      <!-- Music Section with Animation -->
-      <div align="center">
-        <img src="https://github.com/Cipher-Shadow-IR/Cipher-Shadow-IR/assets/93732295/5c7e5a8a-9e0d-4bae-8e95-2c4c9e6e1d1f" width="200" alt="Music Icon"/>
-        <p>🎻 Sangeet Visharad | 🥁 Internationally Certified Drummer<br>🎹 10+ Instruments Mastery | 🎼 Orchestral Composer</p>
-      </div>
-      <!-- Streak Stats with Glow Effect -->
-      <div align="center">
-        <img src="https://streak-stats.demolab.com?user=cipher-shadow-ir&theme=aura&hide_border=true&date_format=j%20M%5B%20Y%5D&background=00000000&ring=20C997&fire=20C997&currStreakLabel=20C997" alt="Streak Stats"/>
-      </div>
+    <td align="center" width="50%">
+      <h3>🧠 Git Stats</h3>
+      <img src="https://github-readme-stats.vercel.app/api?username=cipher-shadow-ir&show_icons=true&theme=radical&hide_border=true" />
+      <br />
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=cipher-shadow-ir&layout=compact&theme=radical&hide_border=true" />
     </td>
   </tr>
 </table>
 
 ---
 
-<!-- Dynamic Project Showcase -->
-<h2 align="center">✨ Featured Innovations</h2>
+<!-- 🔥 Git Streaks -->
+<p align="center">
+  <img src="https://streak-stats.demolab.com?user=cipher-shadow-ir&theme=radical&hide_border=true&ring=00F9FF&fire=00F9FF" alt="GitHub Streak" />
+</p>
+
+---
+
+<!-- 🌌 Galactic Projects -->
+<h2 align="center">🚀 Featured Mission Logs</h2>
 <div align="center">
   <a href="https://github.com/Cipher-Shadow-IR/infinite-compiler-hub">
-    <img src="https://github-readme-medium-recent-article.vercel.app/medium/@username/0?theme=aura" alt="Project 1" width="400"/>
-  </a>
-  <a href="[portfolio link]">
-    <img src="https://github-readme-medium-recent-article.vercel.app/medium/@username/1?theme=dark" alt="Project 2" width="400"/>
+    <img src="https://github-readme-medium-recent-article.vercel.app/medium/@your_medium_username/0?theme=dark" width="400" />
   </a>
 </div>
 
 ---
 
-<!-- Glowing Contact Section -->
-<h2 align="center">📡 Connect With Me</h2>
-<div align="center">
-  <!-- Animated Social Badges -->
+<!-- 🔗 Contact Transmission -->
+<h2 align="center">📡 Connect with Me Across the Multiverse</h2>
+<p align="center">
   <a href="https://linkedin.com/in/ishaanray">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=000&color=20C997"/>
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&color=00F9FF" />
   </a>
   <a href="mailto:cipher.shadow.1972k6@gmail.com">
-    <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white&labelColor=000&color=20C997"/>
+    <img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white&color=00F9FF" />
   </a>
-  <!-- Discord Badge with Status API -->
-  <a href="https://discord.com/users/yourid">
-    <img src="https://dcbadge.vercel.app/api/shield/yourid?style=for-the-badge&theme=aura"/>
+  <a href="https://instagram.com/ir.1972k6">
+    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white&color=00F9FF" />
   </a>
-</div>
+  <a href="https://discord.com/users/your_discord_id">
+    <img src="https://dcbadge.vercel.app/api/shield/your_discord_id?style=for-the-badge&theme=aura" />
+  </a>
+</p>
 
 ---
 
-<!-- Futuristic Footer -->
+<!-- 🌠 Cosmic Footer -->
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=20C997&height=100&section=footer&text=Code%20Meets%20Creativity&fontSize=30&fontColor=000&animation=fadeIn"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&height=100&color=gradient&customColorList=0,2,4,5&section=footer&text=Keep%20Pushing%20Beyond%20Stars%20💫&fontSize=24&animation=fadeIn" />
 </div>
