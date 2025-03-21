@@ -1,31 +1,75 @@
-<h1 align="center">Heyo!!! This is ISHAAN RAY</h1>
-<h3 align="center">A passionate Coder from India</h3>
+<!-- Add a futuristic header with gradient and emojis -->
+<div align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&duration=4000&pause=1000&color=20C997&center=true&vCenter=true&width=800&lines=Heyo!+I'm+Ishaan+Ray+%F0%9F%91%8B;Full-Stack+Developer+%7C+Open-Source+Enthusiast+%7C+Musical+Maestro+%F0%9F%8E%B9;Building+the+Future+with+Code+%26+Creativity+%E2%9C%A8" alt="Dynamic Header" />
+</div>
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=cipher-shadow-ir&label=Profile%20views&color=0e75b6&style=flat" alt="cipher-shadow-ir" /> </p>
+---
 
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=cipher-shadow-ir" alt="cipher-shadow-ir" /></a> </p>
+<!-- Interactive Grid Layout -->
+<table align="center">
+  <tr>
+    <td width="50%">
+      <h2 align="center">🚀 Technical Wizardry</h2>
+      <!-- Dynamic Skill Cloud -->
+      <div align="center">
+        <img src="https://skillicons.dev/icons?i=python,js,react,nodejs,html,css,android,java,rust,postgres,mongodb,linux,git,github,aws&theme=dark&perline=5" alt="Skill Cloud" />
+      </div>
+      <br/>
+      <!-- Real-time GitHub Stats -->
+      <a href="https://github.com/cipher-shadow-ir">
+        <img height="180em" src="https://github-readme-stats-git-master-cipher-shadow-ir.vercel.app/api?username=cipher-shadow-ir&show_icons=true&theme=aura&include_all_commits=true&count_private=true&hide_border=true"/>
+        <img height="180em" src="https://github-readme-stats-git-master-cipher-shadow-ir.vercel.app/api/top-langs/?username=cipher-shadow-ir&layout=compact&langs_count=8&theme=aura&hide_border=true"/>
+      </a>
+    </td>
+    <td width="50%">
+      <h2 align="center">🎹 Creative Symphony</h2>
+      <!-- Music Section with Animation -->
+      <div align="center">
+        <img src="https://github.com/Cipher-Shadow-IR/Cipher-Shadow-IR/assets/93732295/5c7e5a8a-9e0d-4bae-8e95-2c4c9e6e1d1f" width="200" alt="Music Icon"/>
+        <p>🎻 Sangeet Visharad | 🥁 Internationally Certified Drummer<br>🎹 10+ Instruments Mastery | 🎼 Orchestral Composer</p>
+      </div>
+      <!-- Streak Stats with Glow Effect -->
+      <div align="center">
+        <img src="https://streak-stats.demolab.com?user=cipher-shadow-ir&theme=aura&hide_border=true&date_format=j%20M%5B%20Y%5D&background=00000000&ring=20C997&fire=20C997&currStreakLabel=20C997" alt="Streak Stats"/>
+      </div>
+    </td>
+  </tr>
+</table>
 
-- 🔭 I’m currently working on [Infinity compiler Hub](https://github.com/Cipher-Shadow-IR/infinite-compiler-hub.git)
+---
 
-- 👨‍💻 All of my projects are available at [[portfolio link]]([portfolio link])
+<!-- Dynamic Project Showcase -->
+<h2 align="center">✨ Featured Innovations</h2>
+<div align="center">
+  <a href="https://github.com/Cipher-Shadow-IR/infinite-compiler-hub">
+    <img src="https://github-readme-medium-recent-article.vercel.app/medium/@username/0?theme=aura" alt="Project 1" width="400"/>
+  </a>
+  <a href="[portfolio link]">
+    <img src="https://github-readme-medium-recent-article.vercel.app/medium/@username/1?theme=dark" alt="Project 2" width="400"/>
+  </a>
+</div>
 
-- 💬 Ask me about **Python, CSS, JS, React, SQL**
+---
 
-- 📫 How to reach me **cipher.shadow.1972k6@gmail.com**
+<!-- Glowing Contact Section -->
+<h2 align="center">📡 Connect With Me</h2>
+<div align="center">
+  <!-- Animated Social Badges -->
+  <a href="https://linkedin.com/in/ishaanray">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=000&color=20C997"/>
+  </a>
+  <a href="mailto:cipher.shadow.1972k6@gmail.com">
+    <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white&labelColor=000&color=20C997"/>
+  </a>
+  <!-- Discord Badge with Status API -->
+  <a href="https://discord.com/users/yourid">
+    <img src="https://dcbadge.vercel.app/api/shield/yourid?style=for-the-badge&theme=aura"/>
+  </a>
+</div>
 
-- ⚡ Non-Technical Field Hobbies **I am a Orchestral Musician with deep knowledge of 10 Musical Instruments, Internationally Certified Drummer and Sangeet Visharad in Classical Vocals.**
+---
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-<a href="https://linkedin.com/in/ishaanray" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="ishaanray" height="30" width="40" /></a>
-<a href="https://instagram.com/ir.1972k6" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="ir.1972k6" height="30" width="40" /></a>
-</p>
-
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://developer.android.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original-wordmark.svg" alt="android" width="40" height="40"/> </a> <a href="https://angular.io" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/angularjs/angularjs-original-wordmark.svg" alt="angularjs" width="40" height="40"/> </a> <a href="https://getbootstrap.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/> </a> <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/> </a> <a href="https://canvasjs.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/Hardik0307/Hardik0307/master/assets/canvasjs-charts.svg" alt="canvasjs" width="40" height="40"/> </a> <a href="https://offeescript.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/coffeescript/coffeescript-original-wordmark.svg" alt="coffeescript" width="40" height="40"/> </a> <a href="https://www.w3schools.com/cpp/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" width="40" height="40"/> </a> <a href="https://www.w3schools.com/cs/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="csharp" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.djangoproject.com/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/django.svg" alt="django" width="40" height="40"/> </a> <a href="https://dotnet.microsoft.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/dot-net/dot-net-original-wordmark.svg" alt="dotnet" width="40" height="40"/> </a> <a href="https://www.erlang.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/erlang/erlang-official.svg" alt="erlang" width="40" height="40"/> </a> <a href="https://golang.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg" alt="go" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://kotlinlang.org" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/kotlinlang/kotlinlang-icon.svg" alt="kotlin" width="40" height="40"/> </a> <a href="https://www.linux.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a> <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://www.perl.org/" target="_blank" rel="noreferrer"> <img src="https://api.iconify.design/logos-perl.svg" alt="perl" width="40" height="40"/> </a> <a href="https://www.photoshop.com/en" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/photoshop/photoshop-line.svg" alt="photoshop" width="40" height="40"/> </a> <a href="https://www.php.net" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="php" width="40" height="40"/> </a> <a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a> <a href="https://pugjs.org" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/pug.svg" alt="pug" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://www.qt.io/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Qt_logo_2016.svg" alt="qt" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> <a href="https://www.ruby-lang.org/en/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/ruby/ruby-original.svg" alt="ruby" width="40" height="40"/> </a> <a href="https://www.rust-lang.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/rust/rust-plain.svg" alt="rust" width="40" height="40"/> </a> <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit_learn" width="40" height="40"/> </a> <a href="https://www.sketch.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/sketchapp/sketchapp-icon.svg" alt="sketch" width="40" height="40"/> </a> <a href="https://symfony.com" target="_blank" rel="noreferrer"> <img src="https://symfony.com/logos/symfony_black_03.svg" alt="symfony" width="40" height="40"/> </a> <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> </a> <a href="https://vuejs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original-wordmark.svg" alt="vuejs" width="40" height="40"/> </a> </p>
-
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=cipher-shadow-ir&show_icons=true&locale=en&layout=compact" alt="cipher-shadow-ir" /></p>
-
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=cipher-shadow-ir&show_icons=true&locale=en" alt="cipher-shadow-ir" /></p>
-
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=cipher-shadow-ir&" alt="cipher-shadow-ir" /></p>
+<!-- Futuristic Footer -->
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=20C997&height=100&section=footer&text=Code%20Meets%20Creativity&fontSize=30&fontColor=000&animation=fadeIn"/>
+</div>
