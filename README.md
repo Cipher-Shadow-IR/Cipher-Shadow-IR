@@ -15,7 +15,7 @@
 
 - 🛠️ Building **Infinity Compiler Hub** – One platform. *300+ Languages.*
 - 🌐 Full-Stack Mastery | React ⚛️ | Rust ⚙️ | Python 🐍 | SQL 📊
-- 🎶 Composer | Pianist | Drummer | Certified *Sangeet Visharad*
+- 🎶 Composer | Saxophonist | Violinist | Drummer | Certified *Sangeet Visharad*
 - 📡 Contact Frequency: cipher.shadow.1972k6@gmail.com
 - 🌟 Motto: **Push your limits beyond universe.**
 
