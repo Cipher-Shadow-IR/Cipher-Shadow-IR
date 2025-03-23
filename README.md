@@ -13,7 +13,7 @@
 <h1 align="center">✨ Who is Ishaan Ray?</h1>
 <p align="center"><i>“A fusion of digital logic and musical soul; architecting dimensions one compiler at a time.”</i></p>
 
-- 🛠️ Building **Infinity Compiler Hub** – One platform. *300+ Languages.*
+- 🛠️ Building Programs To ease the tasks ✨
 - 🌐 Full-Stack Mastery | React ⚛️ | Rust ⚙️ | Python 🐍 | SQL 📊
 - 🎶 Composer | Saxophonist | Violinist | Drummer | Certified *Sangeet Visharad*
 - 📡 Contact Frequency: cipher.shadow.1972k6@gmail.com
