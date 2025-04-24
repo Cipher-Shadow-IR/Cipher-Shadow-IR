@@ -4,7 +4,7 @@
 </div>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=cipher-shadow-ir&label=🛰️+Scans+Detected&color=00F9FF&style=flat-square" alt="Profile Views" />
+  <img src="https://komarev.com/ghpvc/?username=cipher-shadow-ir&label=Scans+Detected&color=00F9FF&style=flat-square" alt="Profile Views" />
 </p>
 
 ---
@@ -13,11 +13,11 @@
 <h1 align="center">✨ Who is Ishaan Ray?</h1>
 <p align="center"><i>“A fusion of digital logic and musical soul; architecting dimensions one compiler at a time.”</i></p>
 
-- 🛠️ Building Programs To ease the tasks ✨
-- 🌐 Full-Stack Mastery | React ⚛️ | Rust ⚙️ | Python 🐍 | SQL 📊
-- 🎶 Composer | Saxophonist | Violinist | Drummer | Certified *Sangeet Visharad*
-- 📡 Contact Frequency: cipher.shadow.1972k6@gmail.com
-- 🌟 Motto: **Push your limits beyond universe.**
+- 🛠️ Building Programs To ease the tasks ✨  
+- 🌐 Full-Stack Mastery | React ⚛️ | Rust ⚙️ | Python 🐍 | SQL 📊  
+- 🎶 Composer | Saxophonist | Violinist | Drummer | Certified <i>Sangeet Visharad</i>  
+- 📡 Contact Frequency: <code>cipher.shadow.1972k6@gmail.com</code>  
+- 🌟 Motto: <strong>Push your limits beyond universe.</strong>
 
 ---
 
@@ -42,7 +42,7 @@
     <td align="center" width="50%">
       <h3>🎼 Music Alchemy</h3>
       <p>🎹 10+ Instruments | 🥁 Certified Drummer | 🎻 Sangeet Visharad</p>
-      <img src="https://github.com/Cipher-Shadow-IR/Cipher-Shadow-IR/assets/93732295/5c7e5a8a-9e0d-4bae-8e95-2c4c9e6e1d1f" width="200"/>
+      <img src="https://github.com/Cipher-Shadow-IR/Cipher-Shadow-IR/assets/93732295/5c7e5a8a-9e0d-4bae-8e95-2c4c9e6e1d1f" width="200" />
     </td>
     <td align="center" width="50%">
       <h3>🧠 Git Stats</h3>
@@ -66,7 +66,7 @@
 <h2 align="center">🚀 Featured Mission Logs</h2>
 <div align="center">
   <a href="https://github.com/Cipher-Shadow-IR/infinite-compiler-hub">
-    <img src="https://github-readme-medium-recent-article.vercel.app/medium/@your_medium_username/0?theme=dark" width="400" />
+    <img src="https://github-readme-medium-recent-article.vercel.app/medium/@your_medium_username/0?theme=dark" width="400" alt="Medium Article Preview" />
   </a>
 </div>
 
@@ -76,16 +76,16 @@
 <h2 align="center">📡 Connect with Me Across the Multiverse</h2>
 <p align="center">
   <a href="https://linkedin.com/in/ishaanray">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&color=00F9FF" />
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&color=00F9FF" alt="LinkedIn Badge" />
   </a>
   <a href="mailto:cipher.shadow.1972k6@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white&color=00F9FF" />
+    <img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white&color=00F9FF" alt="Gmail Badge" />
   </a>
   <a href="https://instagram.com/ir.1972k6">
-    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white&color=00F9FF" />
+    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white&color=00F9FF" alt="Instagram Badge" />
   </a>
   <a href="https://discord.com/users/your_discord_id">
-    <img src="https://dcbadge.vercel.app/api/shield/your_discord_id?style=for-the-badge&theme=aura" />
+    <img src="https://dcbadge.vercel.app/api/shield/your_discord_id?style=for-the-badge&theme=aura" alt="Discord Badge" />
   </a>
 </p>
 
@@ -93,5 +93,5 @@
 
 <!-- 🌠 Cosmic Footer -->
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&height=100&color=gradient&customColorList=0,2,4,5&section=footer&text=Keep%20Pushing%20Beyond%20Stars%20💫&fontSize=24&animation=fadeIn" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&height=100&color=gradient&customColorList=0,2,4,5&section=footer&text=Keep%20Pushing%20Beyond%20Stars%20%F0%9F%92%AB&fontSize=24&animation=fadeIn" alt="Footer Wave" />
 </div>
