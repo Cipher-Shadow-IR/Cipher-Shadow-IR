@@ -1,6 +1,6 @@
 <!-- 👽 Futuristic Welcome Banner -->
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=28&duration=4000&pause=1000&color=00F9FF&center=true&vCenter=true&width=1000&lines=Hey+Traveler+🚀;This+is+ISHAAN+RAY+🛸;Pushing+Limits+Beyond+the+Universe+🌌;Full-Stack+Architect+%7C+Compiler+Alchemist+🧪;Coding+the+Future+Today+⚡" alt="Typing Banner" />
+  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=28&duration=4000&pause=1000&color=00F9FF&center=true&vCenter=true&width=1000&lines=Hey+there!;Welcome+to+my+GitHub!" alt="Typing Banner" />
 </div>
 
 <p align="center">
