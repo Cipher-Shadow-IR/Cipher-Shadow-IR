@@ -1,6 +1,6 @@
 <!-- 👽 Futuristic Welcome Banner -->
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=28&duration=4000&pause=1000&color=00F9FF&center=true&vCenter=true&width=1000&lines=Hey+Traveler+%F0%9F%9A%80;This+is+Ishaan+Ray+%F0%9F%9B%B8;Full-Stack+Architect+%7C+Compiler+Alchemist+%F0%9F%A7%AA;Coding+the+Future+Today+%E2%9A%A1" alt="Typing Banner" />
+  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=28&duration=4000&pause=1000&color=00F9FF&center=true&vCenter=true&width=1000&lines=Hey+Traveler+%F0%9F%9A%80;This+is+Ishaan+Ray+%F0%9F%9B%B8;'Cipher+Shadow';Full-Stack+Architect+%7C+Compiler+Alchemist+%F0%9F%A7%AA;Coding+the+Future+Today+%E2%9A%A1" alt="Typing Banner" />
 </div>
 
 <p align="center">
@@ -15,7 +15,7 @@
 
 - 🛠️ Building Programs To ease the tasks ✨  
 - 🌐 Full-Stack Mastery | React ⚛️ | Rust ⚙️ | Python 🐍 | SQL 📊  
-- 🎶 Composer | Saxophonist | Violinist | Drummer | Certified <i>Sangeet Visharad</i>  
+- 🎶 Composer | Saxophonist | Violinist | Drummer | Certified <i>Sangeet Visharad</i>
 - 📡 Contact Frequency: <code>cipher.shadow.1972k6@gmail.com</code>  
 - 🌟 Motto: <strong>Push your limits beyond universe.</strong>
 
@@ -65,8 +65,8 @@
 <!-- 🌌 Galactic Projects -->
 <h2 align="center">🚀 Featured Mission Logs</h2>
 <div align="center">
-  <a href="https://github.com/Cipher-Shadow-IR/infinite-compiler-hub">
-    <img src="https://github-readme-medium-recent-article.vercel.app/medium/@your_medium_username/0?theme=dark" width="400" alt="Medium Article Preview" />
+  <a href="[https://github.com/Cipher-Shadow-IR/infinite-compiler-hub](https://infinitycompilerhub.netlify.app/)">
+    <img src="/Infinity Compiler Hub Banner" width="400" alt="Medium Article Preview" />
   </a>
 </div>
 
@@ -83,9 +83,6 @@
   </a>
   <a href="https://instagram.com/ir.1972k6">
     <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white&color=00F9FF" alt="Instagram Badge" />
-  </a>
-  <a href="https://discord.com/users/your_discord_id">
-    <img src="https://dcbadge.vercel.app/api/shield/your_discord_id?style=for-the-badge&theme=aura" alt="Discord Badge" />
   </a>
 </p>
 
