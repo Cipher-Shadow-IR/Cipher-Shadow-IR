@@ -65,7 +65,7 @@
 <!-- 🌌 Galactic Projects -->
 <h2 align="center">🚀 Featured Mission Logs</h2>
 <div align="center">
-  <a href="[https://github.com/Cipher-Shadow-IR/infinite-compiler-hub](https://infinitycompilerhub.netlify.app/)">
+  <a href="https://infinitycompilerhub.netlify.app/">
     <img src="/Infinity Compiler Hub Banner" width="400" alt="Medium Article Preview" />
   </a>
 </div>
