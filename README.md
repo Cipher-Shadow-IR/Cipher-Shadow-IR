@@ -13,6 +13,18 @@
 <h1 align="center">✨ Who is Ishaan Ray?</h1>
 <p align="center"><i>“A fusion of digital logic and musical soul; architecting dimensions one compiler at a time.”</i></p>
 
+<!-- 🚀 Personal Branding -->
+<p align="center">
+  <img src="assets/Profile IR.jpeg" width="200" height="200"
+       style="border-radius: 20px; border: 5px solid #00F9FF; box-shadow: 0 0 20px #00F9FF, 0 0 40px #00F9FF;"
+       alt="Ishaan Ray" />
+  &nbsp;&nbsp;
+  <img src="assets/CS-IR Banner.jpg" width="250" height="200"
+       style="border-radius: 20px; border: 5px solid #00F9FF; box-shadow: 0 0 20px #00F9FF, 0 0 40px #00F9FF;"
+       alt="IR Logo" />
+</p>
+
+
 - 🛠️ Building Programs To ease the tasks ✨  
 - 🌐 Full-Stack Mastery | React ⚛️ | Rust ⚙️ | Python 🐍 | SQL 📊  
 - 🎶 Composer | Saxophonist | Violinist | Drummer | Certified <i>Sangeet Visharad</i>
