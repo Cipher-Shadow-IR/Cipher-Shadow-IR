@@ -75,12 +75,39 @@
 ---
 
 <!-- 🌌 Galactic Projects -->
-<h2 align="center">🚀 Featured Mission Logs</h2>
+<h2 align="center" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #00F9FF;">
+  🚀 Featured Mission Logs
+</h2>
+
 <div align="center">
-  <a href="https://infinitycompilerhub.netlify.app/">
-    <img src="/Infinity Compiler Hub Banner" width="400" alt="Medium Article Preview" />
-  </a>
+  <table>
+    <tr>
+      <td align="center">
+        <a href="https://infinitycompilerhub.netlify.app/" target="_blank">
+          <img src="https://github.com/Cipher-Shadow-IR/infinite-compiler-hub/blob/c0b6b0f4a9d4f8f2a6a1dd18700d582937cd091c/assets/backgrounds/ICH%20SS.jpg?raw=true"
+               alt="ICH Preview" width="220" style="border-radius: 12px;" />
+        </a>
+        <p style="margin-top: 10px; font-weight: bold; color: #00F9FF;">Infinity Compiler Hub</p>
+      </td>
+      <td align="center">
+        <a href="https://github.com/Cipher-Shadow-IR/Windows-IR-GUI" target="_blank">
+          <img src="https://github.com/Cipher-Shadow-IR/Windows-IR-GUI/blob/8a05a7516c10a5b9e376f7a3570c675089dce6ac/IMAGES/Window%20GUI%20SS.png?raw=true"
+               alt="IR Window GUI Preview" width="180" style="border-radius: 12px;" />
+        </a>
+        <p style="margin-top: 10px; font-weight: bold; color: #00F9FF;">Windows IR GUI</p>
+      </td>
+      <td align="center">
+        <a href="https://github.com/Cipher-Shadow-IR/Project---IRIS" target="_blank">
+          <img src="https://github.com/Cipher-Shadow-IR/Project---IRIS/blob/c3f55240ec128de7fb90586b34493cfa9663f349/assets/IRIS%20SS.jpg?raw=true"
+               alt="IRIS Preview" width="220" style="border-radius: 12px;" />
+        </a>
+        <p style="margin-top: 10px; font-weight: bold; color: #00F9FF;">Project IRIS</p>
+      </td>
+    </tr>
+  </table>
 </div>
+
+
 
 ---
 
@@ -88,13 +115,13 @@
 <h2 align="center">📡 Connect with Me Across the Multiverse</h2>
 <p align="center">
   <a href="https://linkedin.com/in/ishaanray">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&color=00F9FF" alt="LinkedIn Badge" />
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=blue&color=038891&Font=Cambria" alt="LinkedIn Badge" />
   </a>
   <a href="mailto:cipher.shadow.1972k6@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white&color=00F9FF" alt="Gmail Badge" />
+    <img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=03910e&color=06d09e&Font=Cambria" alt="Gmail Badge" />
   </a>
   <a href="https://instagram.com/ir.1972k6">
-    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white&color=00F9FF" alt="Instagram Badge" />
+    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&Font=Cambria&logo=instagram&logoColor=ff4903&color=pink" alt="Instagram Badge" />
   </a>
 </p>
 
