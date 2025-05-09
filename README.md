@@ -114,13 +114,13 @@
 <!-- 🔗 Contact Transmission -->
 <h2 align="center">📡 Connect with Me Across the Multiverse</h2>
 <p align="center">
-  <a href="https://linkedin.com/in/ishaanray">
+  <a href="https://www.linkedin.com/in/ishaan-ray-cs/">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=blue&color=038891&Font=Cambria" alt="LinkedIn Badge" />
   </a>
-  <a href="mailto:cipher.shadow.1972k6@gmail.com">
+  <a href="mailto:ishaanray.cs.19@gmail.com">
     <img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=03910e&color=06d09e&Font=Cambria" alt="Gmail Badge" />
   </a>
-  <a href="https://instagram.com/ir.1972k6">
+  <a href="https://instagram.com/i.r.1972k6">
     <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&Font=Cambria&logo=instagram&logoColor=ff4903&color=pink" alt="Instagram Badge" />
   </a>
 </p>
