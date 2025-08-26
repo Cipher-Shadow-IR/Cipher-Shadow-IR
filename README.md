@@ -1,6 +1,6 @@
 <!-- 👽 Futuristic Welcome Banner -->
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=28&duration=4000&pause=1000&color=00F9FF&center=true&vCenter=true&width=1000&lines=Hey+Traveler+%F0%9F%9A%80;This+is+Ishaan+Ray+%F0%9F%9B%B8;'Cipher+Shadow';Full-Stack+Architect+%7C+Compiler+Alchemist+%F0%9F%A7%AA;Coding+the+Future+Today+%E2%9A%A1" alt="Typing Banner" />
+  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=28&duration=2000&pause=500&color=00F9FF&center=true&vCenter=true&width=1000&lines=Hey+Traveler+%F0%9F%9A%80;This+is+Ishaan+Ray+%F0%9F%9B%B8;'Cipher+Shadow';Full-Stack+Architect+%7C+Compiler+Alchemist+%F0%9F%A7%AA;Coding+the+Future+Today+%E2%9A%A1" alt="Typing Banner" />
 </div>
 
 <p align="center">
@@ -28,7 +28,7 @@
 - 🛠️ Building Programs To ease the tasks ✨  
 - 🌐 Full-Stack Mastery | React ⚛️ | Rust ⚙️ | Python 🐍 | SQL 📊  
 - 🎶 Composer | Saxophonist | Violinist | Drummer | Certified <i>Sangeet Visharad</i>
-- 📡 Contact Frequency: <code>cipher.shadow.1972k6@gmail.com</code>  
+- 📡 Contact Frequency: <code>ishaanray.cs.19gmail.com</code>  
 - 🌟 Motto: <strong>Push your limits beyond universe.</strong>
 
 ---
