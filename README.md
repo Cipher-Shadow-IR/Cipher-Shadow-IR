@@ -43,7 +43,7 @@
 <!-- ⚙️ Tech Arsenal -->
 <h2 align="center">🧰 Galactic Tech Stack</h2>
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=python,react,cpp,java,html,css,js,nodejs,rust,mongodb,postgres,git,github,linux,docker,aws&theme=dark" />
+  <img src="https://skillicons.dev/icons?i=python,react,cpp,java,html,css,js,nodejs,rust,r,mongodb,postgres,mysql,git,github,linux,docker,aws&theme=dark" />
 </p>
 
 ---
@@ -54,7 +54,6 @@
     <td align="center" width="50%">
       <h3>🎼 Music Alchemy</h3>
       <p>🎹 10+ Instruments | 🥁 Certified Drummer | 🎻 Sangeet Visharad</p>
-      <img src="https://github.com/Cipher-Shadow-IR/Cipher-Shadow-IR/assets/93732295/5c7e5a8a-9e0d-4bae-8e95-2c4c9e6e1d1f" width="200" />
     </td>
     <td align="center" width="50%">
       <h3>🧠 Git Stats</h3>
