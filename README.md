@@ -18,16 +18,11 @@
   <img src="assets/Profile IR.jpeg" width="200" height="200"
        style="border-radius: 20px; border: 5px solid #00F9FF; box-shadow: 0 0 20px #00F9FF, 0 0 40px #00F9FF;"
        alt="Ishaan Ray" />
-  &nbsp;&nbsp;
-  <img src="assets/CS-IR Banner.jpg" width="250" height="200"
-       style="border-radius: 20px; border: 5px solid #00F9FF; box-shadow: 0 0 20px #00F9FF, 0 0 40px #00F9FF;"
-       alt="IR Logo" />
 </p>
 
 
 - 🛠️ Building Programs To ease the tasks ✨  
-- 🌐 Full-Stack Mastery | React ⚛️ | Rust ⚙️ | Python 🐍 | SQL 📊  
-- 🎶 Composer | Saxophonist | Violinist | Drummer | Certified <i>Sangeet Visharad</i>
+- 🎶 Musician
 - 📡 Contact Frequency: <code>ishaanray.cs.19gmail.com</code>  
 - 🌟 Motto: <strong>Push your limits beyond universe.</strong>
 
@@ -40,10 +35,127 @@
 
 ---
 
-<!-- ⚙️ Tech Arsenal -->
-<h2 align="center">🧰 Galactic Tech Stack</h2>
+<!-- ⚔️ Galactic Tech Stack -->
+<h2 align="center" style="color:#00F9FF; font-family:'Orbitron', sans-serif;">
+  🧰 Galactic Tech Arsenal
+</h2>
+
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=python,react,cpp,java,html,css,js,nodejs,rust,r,mongodb,postgres,mysql,git,github,linux,docker,aws&theme=dark" />
+  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=24&duration=2000&pause=500&color=00F9FF&center=true&vCenter=true&width=600&lines=Full+Stack+Developer+%E2%9A%A1;Cyber+Security+Expert+%F0%9F%94%92;AI+Programmer+%F0%9F%A4%96;Cloud+Practitioner+%E2%98%81%EF%B8%8F" alt="Typing Role Banner" />
+</p>
+
+---
+
+<h2 align="center" style="color:#00F9FF; font-family:'Orbitron', sans-serif;">
+  🖥️ Programming Languages 
+</h2> 
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=asm,c,cpp,python,java,js,ruby,bash,go,php,haskell,r,julia,elixir&theme=dark" />
+</p>
+
+---
+
+<h2 align="center" style="color:#00F9FF; font-family:'Orbitron', sans-serif;">
+  🎨 Frontend Development 
+</h2>  
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=html,css,react,next,vue,angular,tailwind,bootstrap&theme=dark" />
+</p>
+
+---
+
+<h2 align="center" style="color:#00F9FF; font-family:'Orbitron', sans-serif;">
+  ⚙️ Backend Development   
+</h2> 
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=nodejs,express,flask,fastapi,django,dotnet,nestjs,php&theme=dark" />
+</p>
+
+---
+
+<h2 align="center" style="color:#00F9FF; font-family:'Orbitron', sans-serif;">
+  🗄️ Databases  
+</h2> 
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=mongodb,mysql,postgres,redis,sqlite&theme=dark" />
+</p>
+
+---
+
+<h2 align="center" style="color:#00F9FF; font-family:'Orbitron', sans-serif;">
+  🤖 Artificial Intelligence / Machine Learning
+</h2>   
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=tensorflow,pytorch,sklearn,opencv&theme=dark" />
+</p>
+
+---
+
+<h2 align="center" style="color:#00F9FF; font-family:'Orbitron', sans-serif;">
+  🛡️ Cybersecurity & Ethical Hacking
+</h2>   
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=linux,bash,python,powershell,raspberrypi&theme=dark" />
+  <br>
+  <b>Other Tools:</b> Metasploit · Burp Suite · Nmap · Wireshark · Nessus · OSINT Frameworks
+</p>
+
+---
+
+<h2 align="center" style="color:#00F9FF; font-family:'Orbitron', sans-serif;">
+  ☁️ Cloud & DevOps  
+</h2> 
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=aws,azure,googlecloud,docker,kubernetes,terraform,jenkins,nginx&theme=dark" />
+</p>
+
+---
+
+<h2 align="center" style="color:#00F9FF; font-family:'Orbitron', sans-serif;">
+  🚀 Backend as a Service (BaaS) & Hosting  
+</h2> 
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=firebase,vercel,netlify,heroku,supabase&theme=dark" />
+</p>
+
+---
+
+<h2 align="center" style="color:#00F9FF; font-family:'Orbitron', sans-serif;">
+  🧪 Testing & API 
+</h2>  
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=postman,jest&theme=dark" />
+  <img src="https://img.shields.io/badge/Pytest-3776AB?style=for-the-badge&logo=pytest&logoColor=white" alt="Pytest Badge" />
+  <img src="https://img.shields.io/badge/Insomnia-4000BF?style=for-the-badge&logo=insomnia&logoColor=white" alt="Insomnia Badge" />
+</p>
+
+---
+
+<h2 align="center" style="color:#00F9FF; font-family:'Orbitron', sans-serif;">
+  🧰 Tools & Software  
+</h2> 
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=vscode,visualstudio,github,git,figma,linux&theme=dark" />
+</p>
+
+---
+
+<h2 align="center" style="color:#00F9FF; font-family:'Orbitron', sans-serif;">
+  🪐 OS / Environments   
+</h2> 
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=linux,ubuntu,kali,windows&theme=dark" />
+  <img src="https://img.icons8.com/?size=100&id=sA3Bx9WPvcNg&format=png&color=000000" width="40" />
+</p>
+
+
+---
+
+<h2 align="center" style="color:#00F9FF; font-family:'Orbitron', sans-serif;">
+  🌌 Ultimate Tech Fusion
+</h2>   
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=asm,c,cpp,python,java,js,ruby,bash,go,php,haskell,r,julia,elixir,nodejs,react,flask,fastapi,mongodb,postgres,mysql,git,github,linux,docker,aws,googlecloud,azure&theme=dark" />
 </p>
 
 ---
