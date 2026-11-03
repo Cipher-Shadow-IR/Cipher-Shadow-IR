@@ -20,10 +20,6 @@
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=11&duration=2500&pause=800&color=555555&center=true&vCenter=true&width=500&lines=initializing+neural+link...;decrypting+coordinates...;signal+acquired." alt="boot" />
-
-<br>
-
 <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=34&duration=1500&pause=99999&color=00F9FF&center=true&vCenter=true&width=900&lines=%E2%96%88+DIMENSION+UNLOCKED+%E2%96%88" alt="Unlocked" />
 
 <br>
@@ -41,14 +37,7 @@
 
 <br>
 
-<!-- MEGA CTA BUTTON -->
-<a href="https://galaxir.vercel.app/" target="_blank">
-  <img src="https://img.shields.io/badge/%E2%96%B6%E2%80%82STEP%20INTO%20MY%20UNIVERSE%E2%80%82%E2%97%80-00F9FF?style=for-the-badge&labelColor=0d1117&color=00F9FF" height="52" alt="Enter Portfolio" />
-</a>
-
-<br>
-
-<sub><code>what you build defines you — Ishaan Ray</code></sub>
+<sub><code><i>what you build defines you — Ishaan Ray</i></code></sub>
 
 </div>
 
@@ -57,27 +46,14 @@
 <!-- 🧬 Cosmic Identity -->
 <h1 align="center">✨ Who is Ishaan Ray?</h1>
 
-<!-- 🚀 Personal Branding -->
-<p align="center">
-  <img src="assets/Ishaan-Ray.png" width="120" height="200"
-       style="border-radius: 50px; border: 5px solid #00F9FF; box-shadow: 0 0 20px #00F9FF, 0 0 40px #00F9FF;"
-       alt="Ishaan Ray" />
-</p>
+| 🚀 Cosmic Identity | ✨ System Log & Arsenal |
+| :---: | :---: |
+| <img src="assets/IR-Image-Reveal.svg" width="500" alt="Ishaan Ray" /> | 🚀 **Full Stack Engineer:** Architecting zero-to-one MVPs, backend infrastructure, and AI workflow orchestration.<br><br>⚡ **Core Stack:** Next.js, Node.js, Python, PostgreSQL, Redis, and WebSockets.<br><br>🎶 **Musician:** 10+ Instruments, Certified Drummer, Sangeet Visharad.<br><br>🌌 **Portfolio:** [galaxir.vercel.app](https://galaxir.vercel.app/)<br><br>📡 **Comm-Link:** `ishaanray.cs.19@gmail.com`<br><br>🌟 **Motto:** *Push your limits beyond universe.* |
 
-- 🛠️ Building Programs to ease the tasks ✨  
-- 🎶 Musician — 10+ Instruments, Certified Drummer, Sangeet Visharad
-- 🌌 Portfolio: **[galaxir.vercel.app](https://galaxir.vercel.app/)**
-- 📡 Contact Frequency: <code>ishaanray.cs.19@gmail.com</code>  
-- 🌟 Motto: <strong>Push your limits beyond universe.</strong>
-
----
-
-<br>
+</br>
 
 <!-- ⚔️ Galactic Tech Stack -->
 <h1 align="center"><i>🧰 Galactic Tech Arsenal</i></h1>
-
-<div align="center">
 
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=24&duration=2000&pause=500&color=00F9FF&center=true&vCenter=true&width=600&lines=Full+Stack+Developer+%E2%9A%A1;Cyber+Security+Expert+%F0%9F%94%92;AI+Programmer+%F0%9F%A4%96;Cloud+Practitioner+%E2%98%81%EF%B8%8F" alt="Typing Role Banner" />
@@ -111,14 +87,19 @@
 <img src="https://skillicons.dev/icons?i=css" title="CSS" />&nbsp;
 <img src="https://skillicons.dev/icons?i=react" title="React" />&nbsp;
 <img src="https://skillicons.dev/icons?i=nextjs" title="Next.js" />&nbsp;
+<img src="https://skillicons.dev/icons?i=vite" title="Vite" />&nbsp;
 <img src="https://skillicons.dev/icons?i=vue" title="Vue" />&nbsp;
 <img src="https://skillicons.dev/icons?i=angular" title="Angular" />&nbsp;
 <img src="https://skillicons.dev/icons?i=tailwind" title="Tailwind CSS" />&nbsp;
 <img src="https://skillicons.dev/icons?i=bootstrap" title="Bootstrap" />&nbsp;
 <img src="https://skillicons.dev/icons?i=threejs" title="Three.js" />&nbsp;
+<img src="https://cdn.simpleicons.org/framer/0055FF" height="40" title="Framer Motion" />&nbsp;
+<img src="https://cdn.simpleicons.org/greensock/88CE02" height="40" title="GSAP" />&nbsp;
+<img src="https://cdn.simpleicons.org/reactrouter/CA4245" height="40" title="React Router" />&nbsp;
+<img src="https://cdn.simpleicons.org/swiper/6332F6" height="40" title="Swiper.js" />&nbsp;
+<img src="https://cdn.simpleicons.org/lucide/F56565" height="40" title="Lucide Icons" />&nbsp;
 <img src="https://skillicons.dev/icons?i=flutter" title="Flutter" />&nbsp;
-<img src="https://skillicons.dev/icons?i=react" title="React Native" />&nbsp;
-<img src="https://cdn.simpleicons.org/framer/0055FF" height="40" title="Framer Motion" />
+<img src="https://skillicons.dev/icons?i=react" title="React Native" />
 
 </div>
 
@@ -132,6 +113,8 @@
 <img src="https://skillicons.dev/icons?i=flask" title="Flask" />&nbsp;
 <img src="https://skillicons.dev/icons?i=django" title="Django" />&nbsp;
 <img src="https://skillicons.dev/icons?i=dotnet" title=".NET" />&nbsp;
+<img src="https://cdn.simpleicons.org/googlecloud/4285F4" height="40" title="Google Cloud APIs / Drive Sync" />&nbsp;
+<img src="https://cdn.simpleicons.org/minutemailer/FF6C37" height="40" title="EmailJS" />&nbsp;
 <img src="https://cdn.simpleicons.org/jsonwebtokens/0055FF" height="40" title="JWT" />&nbsp;
 <img src="https://cdn.simpleicons.org/nginx/009639" height="40" title="RBAC / Auth Systems" />&nbsp;
 <img src="https://cdn.simpleicons.org/openapiinitiative/6BA539" height="40" title="REST APIs" />
@@ -218,6 +201,9 @@
 <img src="https://skillicons.dev/icons?i=figma" title="Figma" />&nbsp;
 <img src="https://skillicons.dev/icons?i=postman" title="Postman" />&nbsp;
 <img src="https://skillicons.dev/icons?i=jest" title="Jest" />&nbsp;
+<img src="https://skillicons.dev/icons?i=eslint" title="ESLint" />&nbsp;
+<img src="https://cdn.simpleicons.org/prettier/F7B93E" height="48" title="Prettier" />&nbsp;
+<img src="https://skillicons.dev/icons?i=postcss" title="PostCSS" />&nbsp;
 <img src="https://cdn.simpleicons.org/pytest" height="48" title="Pytest" />&nbsp;
 <img src="https://cdn.simpleicons.org/insomnia" height="48" title="Insomnia" />
 
@@ -240,131 +226,217 @@
 ---
 
 <!-- 🌌 Galactic Projects -->
-## 🚀 Featured Mission Logs
+<h1 align="center"><i>🚀 Featured Mission Logs</i></h1>
 
 <table width="100%">
 <tr>
 <td width="50%" align="center" valign="top">
 
-### CLARIRY
+### Leadspiray
+<sub><b>Concurrency-Safe Lead Engine</b></sub>
 
-*Offline AI Learning Engine*
-
-<a href="https://clariry.vercel.app/" target="_blank">
-<img src="https://api.microlink.io/?url=https%3A%2F%2Fclariry.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="CLARIRY" width="100%" height="280" style="border-radius:8px;border:2px solid #00F5FF;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=0,5,18&height=280&text=CLARIRY&fontSize=40&fontColor=00F5FF&desc=Offline+AI+Learning&descColor=C084FC'" />
+<a href="https://leadspiray.vercel.app/" target="_blank">
+<img src="https://api.microlink.io/?url=https%3A%2F%2Fleadspiray.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="Leadspiray" width="100%" height="260" style="border-radius:10px;border:2px solid #00F5FF;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=0,5,18&height=260&text=LEADSPIRAY&fontSize=36&fontColor=00F5FF&desc=Concurrency-Safe+Lead+Engine&descColor=C084FC'" />
 </a>
 
-[![Open Project](https://img.shields.io/badge/→%20OPEN-00F5FF?style=flat-square&labelColor=0d1117)](https://clariry.vercel.app/)
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white" alt="Next.js" />&nbsp;<img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL" />&nbsp;<img src="https://img.shields.io/badge/Advisory_Locks-10B981?style=flat-square&logo=databricks&logoColor=white" alt="Advisory Locks" />&nbsp;<img src="https://img.shields.io/badge/SSE_Realtime-00F5FF?style=flat-square&logo=fastapi&logoColor=black" alt="SSE Streams" />
+</p>
+
+[![Access Mission](https://img.shields.io/badge/→%20ACCESS%20MISSION-00F5FF?style=flat-square&labelColor=0d1117)](https://leadspiray.vercel.app/)
 
 </td>
 <td width="50%" align="center" valign="top">
 
-### Infinity Compiler Hub
+### HRMS-GU
+<sub><b>University Microservices Core</b></sub>
 
-*300+ Language Compilers*
-
-<a href="https://infinity-compiler-hub.vercel.app" target="_blank">
-<img src="https://api.microlink.io/?url=https%3A%2F%2Finfinity-compiler-hub.vercel.app&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="ICH" width="100%" height="280" style="border-radius:8px;border:2px solid #C084FC;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=6,0,18&height=280&text=INFINITY%20HUB&fontSize=36&fontColor=C084FC&desc=300%2B+Languages&descColor=00F5FF'" />
+<a href="https://github.com/Cipher-Shadow-IR/HR-Management-System" target="_blank">
+<img src="https://api.microlink.io/?url=https%3A%2F%2Fgithub.com%2FCipher-Shadow-IR%2FHR-Management-System&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="HRMS-GU" width="100%" height="260" style="border-radius:10px;border:2px solid #8B5CF6;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=0,5,18&height=260&text=HRMS-GU&fontSize=36&fontColor=8B5CF6&desc=University+Microservices+Core&descColor=C084FC'" />
 </a>
 
-[![Open Project](https://img.shields.io/badge/→%20OPEN-C084FC?style=flat-square&labelColor=0d1117)](https://infinity-compiler-hub.vercel.app)
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white" alt="Next.js" />&nbsp;<img src="https://img.shields.io/badge/Microservices-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Microservices" />&nbsp;<img src="https://img.shields.io/badge/AES--256_Crypto-8B5CF6?style=flat-square&logo=security&logoColor=white" alt="AES-256" />&nbsp;<img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+</p>
+
+[![Access Mission](https://img.shields.io/badge/→%20ACCESS%20MISSION-8B5CF6?style=flat-square&labelColor=0d1117)](https://github.com/Cipher-Shadow-IR/HR-Management-System)
 
 </td>
 </tr>
-</table>
-
-<table width="100%">
 <tr>
 <td width="50%" align="center" valign="top">
 
-### Project — IRIS
+### ProCMMS360
+<sub><b>Industrial Lifecycle Engine</b></sub>
 
-*Personal Voice Assistant*
-
-<a href="https://iris-pa.vercel.app/" target="_blank">
-<img src="https://api.microlink.io/?url=https%3A%2F%2Firis-pa.vercel.app&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="IRIS" width="100%" height="280" style="border-radius:8px;border:2px solid #00F5FF;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=0,9,14&height=280&text=IRIS&fontSize=36&fontColor=00F5FF&desc=Voice+Assistant&descColor=C084FC'" />
+<a href="https://procmms360.vercel.app/" target="_blank">
+<img src="https://api.microlink.io/?url=https%3A%2F%2Fprocmms360.vercel.app&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="ProCMMS360" width="100%" height="260" style="border-radius:10px;border:2px solid #00F5FF;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=0,5,18&height=260&text=ProCMMS360&fontSize=36&fontColor=00F5FF&desc=Industrial+Lifecycle+Engine&descColor=C084FC'" />
 </a>
 
-[![Open Project](https://img.shields.io/badge/→%20OPEN-00F5FF?style=flat-square&labelColor=0d1117)](https://iris-pa.vercel.app/)
+<p align="center">
+  <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" alt="React" />&nbsp;<img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI" />&nbsp;<img src="https://img.shields.io/badge/SQL_Database-CC292B?style=flat-square&logo=sqlite&logoColor=white" alt="SQL Database" />&nbsp;<img src="https://img.shields.io/badge/JWT_Auth-000000?style=flat-square&logo=jsonwebtokens&logoColor=white" alt="JWT Auth" />
+</p>
+
+[![Access Mission](https://img.shields.io/badge/→%20ACCESS%20MISSION-00F5FF?style=flat-square&labelColor=0d1117)](https://procmms360.vercel.app/)
 
 </td>
 <td width="50%" align="center" valign="top">
 
-### 404: Bad Design Found
+### Aspiron
+<sub><b>Predictive Admission Engine</b></sub>
 
-*Gamified UI/UX Competition*
-
-<a href="https://404bdf.vercel.app/" target="_blank">
-<img src="https://api.microlink.io/?url=https%3A%2F%2F404bdf.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="404BDF" width="100%" height="280" style="border-radius:8px;border:2px solid #FF0080;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=14,0,7&height=280&text=404+BDF&fontSize=40&fontColor=FF0080&desc=Design+Competition&descColor=FFD700'" />
+<a href="https://aspiron.vercel.app/" target="_blank">
+<img src="https://api.microlink.io/?url=https%3A%2F%2Faspiron.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="Aspiron" width="100%" height="260" style="border-radius:10px;border:2px solid #C084FC;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=0,5,18&height=260&text=ASPIRON&fontSize=36&fontColor=C084FC&desc=Predictive+Admission+Engine&descColor=C084FC'" />
 </a>
 
-[![Open Project](https://img.shields.io/badge/→%20OPEN-FF0080?style=flat-square&labelColor=0d1117)](https://404bdf.vercel.app/)
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white" alt="Next.js" />&nbsp;<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />&nbsp;<img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL" />&nbsp;<img src="https://img.shields.io/badge/Prisma_ORM-2D3748?style=flat-square&logo=prisma&logoColor=white" alt="Prisma ORM" />
+</p>
+
+[![Access Mission](https://img.shields.io/badge/→%20ACCESS%20MISSION-C084FC?style=flat-square&labelColor=0d1117)](https://aspiron.vercel.app/)
 
 </td>
 </tr>
-</table>
-
-<table width="100%">
 <tr>
 <td width="50%" align="center" valign="top">
 
-### Redis Engine Laboratory
+### AEGENTRIX
+<sub><b>Zero-Trust PEP for Multi-Agent AI</b></sub><br><sub><span style="color:#FFD700;"><b>🏆 1st Place Winner • MLH Hacktoberfest Hack Day Ahmedabad 2026</b></span></sub>
 
-*Backend Infrastructure Lab*
-
-<a href="https://redis-engine-laboratory.vercel.app/" target="_blank">
-<img src="https://api.microlink.io/?url=https%3A%2F%2Fredis-engine-laboratory.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="REDIS LAB" width="100%" height="280" style="border-radius:8px;border:2px solid #DC382D;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=14,0,0&height=280&text=REDIS+LAB&fontSize=40&fontColor=DC382D&desc=Infrastructure&descColor=00F5FF'" />
+<a href="https://aegentrix-cs.vercel.app" target="_blank">
+<img src="https://api.microlink.io/?url=https%3A%2F%2Faegentrix-cs.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="AEGENTRIX" width="100%" height="260" style="border-radius:10px;border:2px solid #10B981;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=0,5,18&height=260&text=AEGENTRIX&fontSize=36&fontColor=10B981&desc=Zero-Trust+PEP+for+Multi-Agent+AI&descColor=C084FC'" />
 </a>
 
-[![Open Project](https://img.shields.io/badge/→%20OPEN-DC382D?style=flat-square&labelColor=0d1117)](https://redis-engine-laboratory.vercel.app/)
+<p align="center">
+  <img src="https://img.shields.io/badge/Multi--Agent_AI-8B5CF6?style=flat-square&logo=openai&logoColor=white" alt="Multi-Agent AI" />&nbsp;<img src="https://img.shields.io/badge/Zero--Trust_PEP-10B981?style=flat-square&logo=shield&logoColor=white" alt="Zero-Trust PEP" />&nbsp;<img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI" />&nbsp;<img src="https://img.shields.io/badge/Gemma_LLM-4285F4?style=flat-square&logo=google&logoColor=white" alt="Gemma LLM" />
+</p>
+
+[![Access Mission](https://img.shields.io/badge/→%20ACCESS%20MISSION-10B981?style=flat-square&labelColor=0d1117)](https://aegentrix-cs.vercel.app)
 
 </td>
 <td width="50%" align="center" valign="top">
 
 ### Automated RFP
-
-*AI Procurement System*
+<sub><b>AI Procurement & Semantic Matcher</b></sub><br><sub><span style="color:#FFD700;"><b>⚡ Built for EY Techathon 6.0</b></span></sub>
 
 <a href="https://rfp-optibots.netlify.app/" target="_blank">
-<img src="https://api.microlink.io/?url=https%3A%2F%2Frfp-optibots.netlify.app%2F&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="Automated RFP" width="100%" height="280" style="border-radius:8px;border:2px solid #C084FC;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=7,0,18&height=280&text=AUTOMATED+RFP&fontSize=36&fontColor=C084FC&desc=AI+Procurement&descColor=00F5FF'" />
+<img src="https://api.microlink.io/?url=https%3A%2F%2Frfp-optibots.netlify.app%2F&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="Automated RFP" width="100%" height="260" style="border-radius:10px;border:2px solid #C084FC;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=0,5,18&height=260&text=AUTOMATED+RFP&fontSize=36&fontColor=C084FC&desc=AI+Procurement+&+Semantic+Matcher&descColor=C084FC'" />
 </a>
 
-[![Open Project](https://img.shields.io/badge/→%20OPEN-C084FC?style=flat-square&labelColor=0d1117)](https://rfp-optibots.netlify.app/)
+<p align="center">
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI" />&nbsp;<img src="https://img.shields.io/badge/FAISS_Vector-0055FF?style=flat-square&logo=meta&logoColor=white" alt="FAISS Vector" />&nbsp;<img src="https://img.shields.io/badge/SKU_Matching-F59E0B?style=flat-square&logo=target&logoColor=white" alt="Semantic Matching" />&nbsp;<img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
+</p>
+
+[![Access Mission](https://img.shields.io/badge/→%20ACCESS%20MISSION-C084FC?style=flat-square&labelColor=0d1117)](https://rfp-optibots.netlify.app/)
 
 </td>
 </tr>
-</table>
-
-<table width="100%">
 <tr>
 <td width="50%" align="center" valign="top">
 
-### ProCMMS360
+### CLARIRY
+<sub><b>100% Offline AI Audio Mentor</b></sub>
 
-*Maintenance Lifecycle System*
-
-<a href="https://procmms360.vercel.app/" target="_blank">
-<img src="https://api.microlink.io/?url=https%3A%2F%2Fprocmms360.vercel.app&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="ProCMMS360" width="100%" height="280" style="border-radius:8px;border:2px solid #00F5FF;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=0,9,14&height=280&text=ProCMMS360&fontSize=36&fontColor=00F5FF&desc=CMMS+Platform&descColor=C084FC'" />
+<a href="https://clariry.vercel.app/" target="_blank">
+<img src="https://api.microlink.io/?url=https%3A%2F%2Fclariry.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="CLARIRY" width="100%" height="260" style="border-radius:10px;border:2px solid #00F5FF;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=0,5,18&height=260&text=CLARIRY&fontSize=36&fontColor=00F5FF&desc=100%+Offline+AI+Audio+Mentor&descColor=C084FC'" />
 </a>
 
-[![Open Project](https://img.shields.io/badge/→%20OPEN-00F5FF?style=flat-square&labelColor=0d1117)](https://procmms360.vercel.app/)
+<p align="center">
+  <img src="https://img.shields.io/badge/Offline_LLM-00F5FF?style=flat-square&logo=huggingface&logoColor=black" alt="Local LLMs" />&nbsp;<img src="https://img.shields.io/badge/Python_ML-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python ML" />&nbsp;<img src="https://img.shields.io/badge/PySide6_GUI-41CD52?style=flat-square&logo=qt&logoColor=white" alt="PySide / PyQt" />&nbsp;<img src="https://img.shields.io/badge/TTS_Audio-EC4899?style=flat-square&logo=soundcharts&logoColor=white" alt="Audio Mentor" />
+</p>
+
+[![Access Mission](https://img.shields.io/badge/→%20ACCESS%20MISSION-00F5FF?style=flat-square&labelColor=0d1117)](https://clariry.vercel.app/)
 
 </td>
 <td width="50%" align="center" valign="top">
 
-### CODIVIR
+### BrandSphere AI
+<sub><b>Enterprise Brand Governance & CI/CD</b></sub><br><sub><span style="color:#FFD700;"><b>🎖️ Round 2 Finalist • Inkloom AI Hackathon (CODESTAR 30)</b></span></sub>
 
-*Real-Time Collaborative Editor*
-
-<a href="https://codivir.vercel.app/" target="_blank">
-<img src="https://api.microlink.io/?url=https%3A%2F%2Fcodivir.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="CODIVIR" width="100%" height="280" style="border-radius:8px;border:2px solid #00F5FF;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=0,10,16&height=280&text=CODIVIR&fontSize=40&fontColor=00F5FF&desc=Collaborative+Code&descColor=C084FC'" />
+<a href="https://brandsphere-ai-cs.vercel.app" target="_blank">
+<img src="https://api.microlink.io/?url=https%3A%2F%2Fbrandsphere-ai-cs.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="BrandSphere AI" width="100%" height="260" style="border-radius:10px;border:2px solid #F59E0B;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=0,5,18&height=260&text=BRANDSPHERE&fontSize=36&fontColor=F59E0B&desc=Enterprise+Brand+Governance+&+CI/CD&descColor=C084FC'" />
 </a>
 
-[![Open Project](https://img.shields.io/badge/→%20OPEN-00F5FF?style=flat-square&labelColor=0d1117)](https://codivir.vercel.app/)
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white" alt="Next.js" />&nbsp;<img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI" />&nbsp;<img src="https://img.shields.io/badge/AI_Governance-6366F1?style=flat-square&logo=probot&logoColor=white" alt="AI Governance" />&nbsp;<img src="https://img.shields.io/badge/CI%2FCD_Gates-10B981?style=flat-square&logo=githubactions&logoColor=white" alt="Automated CI/CD" />
+</p>
+
+[![Access Mission](https://img.shields.io/badge/→%20ACCESS%20MISSION-F59E0B?style=flat-square&labelColor=0d1117)](https://brandsphere-ai-cs.vercel.app)
+
+</td>
+</tr>
+
+<tr>
+<td width="50%" align="center" valign="top">
+
+### CODIVIR
+<sub><b>Real-Time Collaborative Cloud IDE</b></sub>
+
+<a href="https://codivir.vercel.app/" target="_blank">
+<img src="https://api.microlink.io/?url=https%3A%2F%2Fcodivir.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="CODIVIR" width="100%" height="260" style="border-radius:10px;border:2px solid #00F5FF;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=0,5,18&height=260&text=CODIVIR&fontSize=36&fontColor=00F5FF&desc=Real-Time+Collaborative+Cloud+IDE&descColor=C084FC'" />
+</a>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white" alt="Next.js" />&nbsp;<img src="https://img.shields.io/badge/Redis_Pub%2FSub-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis Pub/Sub" />&nbsp;<img src="https://img.shields.io/badge/Liveblocks_Sync-FF3366?style=flat-square&logo=lightning&logoColor=white" alt="Liveblocks" />&nbsp;<img src="https://img.shields.io/badge/Judge0_300+_Langs-007ACC?style=flat-square&logo=code&logoColor=white" alt="Judge0 Sandbox" />
+</p>
+
+[![Access Mission](https://img.shields.io/badge/→%20ACCESS%20MISSION-00F5FF?style=flat-square&labelColor=0d1117)](https://codivir.vercel.app/)
+
+</td>
+<td width="50%" align="center" valign="top">
+
+### Vectirix
+<sub><b>Visual DAG AI Pipeline Orchestrator</b></sub>
+
+<a href="https://vectirix.vercel.app/" target="_blank">
+<img src="https://api.microlink.io/?url=https%3A%2F%2Fvectirix.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="Vectirix" width="100%" height="260" style="border-radius:10px;border:2px solid #FF0072;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=0,5,18&height=260&text=VECTIRIX&fontSize=36&fontColor=FF0072&desc=Visual+DAG+AI+Pipeline+Orchestrator&descColor=C084FC'" />
+</a>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/ReactFlow_DAG-FF0072?style=flat-square&logo=diagram&logoColor=white" alt="ReactFlow" />&nbsp;<img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI" />&nbsp;<img src="https://img.shields.io/badge/Zustand_State-443E3B?style=flat-square&logo=react&logoColor=white" alt="Zustand" />&nbsp;<img src="https://img.shields.io/badge/Pipeline_Engine-00F5FF?style=flat-square&logo=airplayaudio&logoColor=black" alt="Pipeline Engine" />
+</p>
+
+[![Access Mission](https://img.shields.io/badge/→%20ACCESS%20MISSION-FF0072?style=flat-square&labelColor=0d1117)](https://vectirix.vercel.app/)
+
+</td>
+</tr>
+<tr>
+<td width="50%" align="center" valign="top">
+
+### Redis Engine Laboratory
+<sub><b>Distributed Locking & Telemetry Lab</b></sub>
+
+<a href="https://redis-engine-laboratory.vercel.app/" target="_blank">
+<img src="https://api.microlink.io/?url=https%3A%2F%2Fredis-engine-laboratory.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="Redis Engine Laboratory" width="100%" height="260" style="border-radius:10px;border:2px solid #DC382D;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=0,5,18&height=260&text=REDIS+LAB&fontSize=36&fontColor=DC382D&desc=Distributed+Locking+&+Telemetry+Lab&descColor=C084FC'" />
+</a>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Redis_Core-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis Core" />&nbsp;<img src="https://img.shields.io/badge/Redlock_Algorithm-F59E0B?style=flat-square&logo=auth0&logoColor=white" alt="Distributed Locks" />&nbsp;<img src="https://img.shields.io/badge/Token_Bucket_Limiter-10B981?style=flat-square&logo=speedtest&logoColor=white" alt="Token Bucket" />&nbsp;<img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
+</p>
+
+[![Access Mission](https://img.shields.io/badge/→%20ACCESS%20MISSION-DC382D?style=flat-square&labelColor=0d1117)](https://redis-engine-laboratory.vercel.app/)
+
+</td>
+<td width="50%" align="center" valign="top">
+
+### Kafka Mastery Laboratory
+<sub><b>Event-Driven High-Throughput Streams</b></sub>
+
+<a href="https://kafka-mastery-lab.vercel.app/" target="_blank">
+<img src="https://api.microlink.io/?url=https%3A%2F%2Fkafka-mastery-lab.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="Kafka Mastery Laboratory" width="100%" height="260" style="border-radius:10px;border:2px solid #8B5CF6;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=0,5,18&height=260&text=KAFKA+LAB&fontSize=36&fontColor=8B5CF6&desc=Event-Driven+High-Throughput+Streams&descColor=C084FC'" />
+</a>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Apache_Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white" alt="Apache Kafka" />&nbsp;<img src="https://img.shields.io/badge/Partition_Sharding-8B5CF6?style=flat-square&logo=apache&logoColor=white" alt="Partition Shards" />&nbsp;<img src="https://img.shields.io/badge/DLQ_Recovery-EF4444?style=flat-square&logo=fire&logoColor=white" alt="Dead Letter Queue" />&nbsp;<img src="https://img.shields.io/badge/Node.js_Events-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node.js Events" />
+</p>
+
+[![Access Mission](https://img.shields.io/badge/→%20ACCESS%20MISSION-8B5CF6?style=flat-square&labelColor=0d1117)](https://kafka-mastery-lab.vercel.app/)
 
 </td>
 </tr>
 </table>
+
+<br>
 
 ---
 
@@ -372,7 +444,7 @@
 <div align="center">
   <h2>🎼 Music Alchemy</h2>
   <p>
-    🎹 10+ Instruments &nbsp;|&nbsp; 🥁 Certified Drummer &nbsp;|&nbsp; 🎻 Sangeet Visharad<br>
+    🎹 10+ Instruments &nbsp;|&nbsp; 🥁 Certified Drummer &nbsp;|&nbsp; 🎻 Sangeet Visharad <br>
     🎻 Violinist &nbsp;|&nbsp; 🎸 Guitarist &nbsp;|&nbsp; 🪘 Sitarist &nbsp;|&nbsp; and many more...
   </p>
 </div>
@@ -380,17 +452,19 @@
 ---
 
 <!-- 📊 Git Stats -->
-<div align="center">
-  <h2>🧠 Git Stats</h2>
+<h1 align="center">Git Stats</h1>
 
-  <img src="https://github-readme-stats-fast.vercel.app/api?username=Cipher-Shadow-IR&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=00F9FF&icon_color=C084FC&text_color=FFFFFF" height="165"/>
-  &nbsp;
-  <img src="https://github-readme-stats-fast.vercel.app/api/streak?username=Cipher-Shadow-IR&theme=tokyonight&hide_border=true&background=0d1117&stroke=00F9FF&ring=C084FC&fire=FF6B6B&currStreakLabel=00F9FF" height="165"/>
+<p align="center">
+  <img src="./assets/cursed-aura.svg" alt="Cursed Aura Telemetry" width="100%" />
+</p>
 
-  <br><br>
-
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Cipher-Shadow-IR&bg_color=0d1117&color=00F9FF&line=C084FC&point=FFFFFF&area=true&hide_border=true" width="100%" alt="Activity Graph"/>
-</div>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/acoustic-spectrogram.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/neon-cityscape-horizon.svg">
+    <img src="./assets/acoustic-spectrogram.svg" alt="GitHub Activity Graph" width="100%" />
+  </picture>
+</p>
 
 ---
 

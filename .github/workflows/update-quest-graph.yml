@@ -1,0 +1,52 @@
+name: Update GitHub Stats & Telemetry Visuals
+
+on:
+  schedule:
+    # Runs every 12 hours automatically (00:00 & 12:00 UTC)
+    - cron: '0 */12 * * *'
+  workflow_dispatch: # Allows manual 1-click trigger from GitHub Actions tab
+  push:
+    branches:
+      - main
+    paths:
+      - generate_rpg_graph.py
+      - generate_visuals.py
+      - .github/workflows/update-quest-graph.yml
+
+permissions:
+  contents: write
+
+jobs:
+  update-visuals:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: 🛡️ Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: ⚔️ Generate Activity Visuals & Telemetry
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python generate_rpg_graph.py --username Cipher-Shadow-IR --output assets/rpg-quest-activity-graph.svg
+          python generate_visuals.py
+
+      - name: 🚀 Commit and Push Updated Visuals
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git add assets/*.svg
+          
+          if git diff --staged --quiet; then
+            echo "No telemetry changes detected. Visuals are already up to date!"
+          else
+            git commit -m "🌌 Telemetry Update: Cursed Aura, Skyline & Spectrogram [skip ci]"
+            git push
+          fi

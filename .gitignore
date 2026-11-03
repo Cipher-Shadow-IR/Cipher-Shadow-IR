@@ -1,0 +1,9 @@
+# Dependencies & Build artifacts
+node_modules/
+skyline-api/node_modules/
+skyline-api/.next/
+skyline-api/out/
+*.log
+__pycache__/
+*.pyc
+.env*.local

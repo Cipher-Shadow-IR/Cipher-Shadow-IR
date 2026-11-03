@@ -1,0 +1,1835 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400" style="background:#07090e; font-family:'Segoe UI', system-ui, -apple-system, sans-serif;">
+  <defs>
+    <!-- Background Gradients -->
+
+    <radialGradient id="bossAura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffaa00" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#ff4400" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ff0000" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="heroGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00f9ff" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#0088ff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#00f9ff" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="goldBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#eab308"/>
+      <stop offset="50%" stop-color="#facc15"/>
+      <stop offset="100%" stop-color="#fef08a"/>
+    </linearGradient>
+
+    <linearGradient id="cyanBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f9ff"/>
+      <stop offset="50%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur1"/>
+      <feGaussianBlur stdDeviation="6" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="crystalGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="boxShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.7"/>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.85; filter: drop-shadow(0 0 4px #00f9ff); }
+      50% { opacity: 0.4; filter: drop-shadow(0 0 1px #00f9ff); }
+    }
+    @keyframes fireFlicker {
+      0%, 100% { opacity: 0.85; filter: drop-shadow(0 0 4px #00f9ff); }
+      50% { opacity: 0.4; filter: drop-shadow(0 0 1px #00f9ff); }
+    }
+    @keyframes heroFloat {
+      0%, 100% { opacity: 0.85; filter: drop-shadow(0 0 4px #00f9ff); }
+      50% { opacity: 0.4; filter: drop-shadow(0 0 1px #00f9ff); }
+    }
+    @keyframes sparkDrift {
+      0%, 100% { opacity: 0.85; filter: drop-shadow(0 0 4px #00f9ff); }
+      50% { opacity: 0.4; filter: drop-shadow(0 0 1px #00f9ff); }
+    }
+    
+    .quest-pulse { animation: pulseGlow 2.5s infinite ease-in-out; }
+    .fire-icon { transform-origin: center; animation: fireFlicker 1.2s infinite ease-in-out; }
+    .hero-sprite { animation: heroFloat 2s infinite ease-in-out; }
+    .spark { animation: sparkDrift 1.8s infinite ease-out; }
+    .mono { font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace; }
+  </style>
+
+  <!-- Ambient Grid Background -->
+  <rect width="1200" height="400" fill="url(#bgGlow)" rx="16"/>
+  <rect x="1" y="1" width="1198" height="398" fill="none" stroke="#1e293b" stroke-width="1.5" rx="15"/>
+
+  <!-- Subtle Cyber Grid Lines -->
+  <g opacity="0.07" stroke="#00f9ff" stroke-width="1">
+    <line x1="0" y1="75" x2="1200" y2="75"/>
+    <line x1="0" y1="260" x2="1200" y2="260"/>
+    <line x1="935" y1="0" x2="935" y2="400"/>
+    <line x1="60" y1="0" x2="60" y2="400"/>
+  </g>
+
+  <!-- Cybernetic Corner Accents -->
+  <path d="M 8 28 L 8 8 L 28 8" fill="none" stroke="#00f9ff" stroke-width="2.5"/>
+  <circle cx="8" cy="8" r="2" fill="#00f9ff"/>
+  <path d="M 1192 28 L 1192 8 L 1172 8" fill="none" stroke="#00f9ff" stroke-width="2.5"/>
+  <circle cx="1192" cy="8" r="2" fill="#00f9ff"/>
+  <path d="M 8 372 L 8 392 L 28 392" fill="none" stroke="#a855f7" stroke-width="2.5"/>
+  <path d="M 1192 372 L 1192 392 L 1172 392" fill="none" stroke="#a855f7" stroke-width="2.5"/>
+
+  <!-- ==================== HEADER SECTION ==================== -->
+  <g id="header">
+    <g transform="translate(30, 22)">
+      <polygon points="14,0 28,14 14,28 0,14" fill="#0f172a" stroke="#00f9ff" stroke-width="1.5"/>
+      <polygon points="14,4 24,14 14,24 4,14" fill="#00f9ff" opacity="0.2"/>
+      <path d="M 10 14 L 18 14 M 14 10 L 14 18" stroke="#00f9ff" stroke-width="2"/>
+    </g>
+
+    <text x="68" y="34" fill="#f8fafc" font-size="16" font-weight="900" letter-spacing="2">GITHUB ACTIVITY: <tspan fill="#00f9ff">LEVELING QUEST</tspan></text>
+    <text x="68" y="49" class="mono" fill="#64748b" font-size="10" letter-spacing="1">USER: CIPHER-SHADOW-IR // YEAR-ROUND ADVENTURE // 52 WEEKS &#215; 7 DAYS</text>
+
+    <g transform="translate(680, 23)">
+      <rect width="230" height="24" rx="4" fill="#0a1322" stroke="#00f9ff" stroke-width="1" stroke-opacity="0.6"/>
+      <circle cx="14" cy="12" r="4" fill="#10b981" filter="url(#crystalGlow)"/>
+      <text x="26" y="16" class="mono" fill="#38bdf8" font-size="10.5" font-weight="700">API: quest_coder</text>
+      <text x="122" y="16" class="mono" fill="#94a3b8" font-size="10.5">// ACTIVE QUEST</text>
+    </g>
+  </g>
+  <!-- Month Labels -->
+  <g id="months" class="mono" font-size="10" fill="#94a3b8">    <text x="85" y="92">Nov</text>    <text x="149" y="92">Dec</text>    <text x="213" y="92">Jan</text>    <text x="277" y="92">Feb</text>    <text x="341" y="92">Mar</text>    <text x="421" y="92">Apr</text>    <text x="485" y="92">May</text>    <text x="565" y="92">Jun</text>    <text x="629" y="92">Jul</text>    <text x="693" y="92">Aug</text>    <text x="773" y="92">Sep</text>    <text x="837" y="92">Oct</text>  </g>
+  <!-- Day Labels -->
+  <g id="days" class="mono" font-size="9" fill="#64748b" text-anchor="end">    <text x="73" y="141">Mon</text>    <text x="73" y="175">Wed</text>    <text x="73" y="209">Fri</text>  </g>
+  <!-- Quest Connecting Trail (Pulsing Energy Circuit) -->
+  <g class="quest-pulse" fill="none" stroke-linecap="round">    <path d="M 187 222 L 219 222 L 235 137 L 251 120 L 299 205 L 315 188 L 331 205 L 347 137 L 363 137 L 379 154 L 395 120 L 411 120 L 427 222 L 475 171 L 491 120 L 523 222 L 539 120 L 555 222 L 571 171 L 603 188 L 619 222 L 635 120 L 651 188 L 667 188 L 683 188 L 763 154 L 779 222 L 843 222 L 859 137 L 891 222 L 907 205" stroke="#00f9ff" stroke-width="1.2" stroke-opacity="0.35" stroke-dasharray="3,3"/>  </g>
+  <!-- Terrain Grid Blocks (52 x 7) -->
+  <g id="grid">    <g transform="translate(85,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(85,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(85,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(85,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(85,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(85,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(85,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(101,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(101,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(101,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(101,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(101,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(101,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(101,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(117,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(117,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(117,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(117,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(117,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(117,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(117,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(133,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(133,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(133,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(133,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(133,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(133,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(133,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(149,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(149,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(149,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(149,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(149,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(149,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(149,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(165,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(165,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(165,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(165,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(165,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(165,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(165,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(181,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(181,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(181,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(181,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(181,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(181,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(181,217)">
+      <circle cx="6" cy="5" r="9" fill="url(#bossAura)"/>
+      <rect y="10" width="13" height="4" fill="#78350f" rx="1"/>
+      <rect width="13" height="10" fill="#b45309" stroke="#facc15" stroke-width="1.2" rx="2" filter="url(#crystalGlow)"/>
+      <rect x="2" y="2" width="9" height="6" fill="#fef08a" rx="1"/>
+      <circle cx="6.5" cy="5" r="1" fill="#ffffff"/>
+      <circle cx="1" cy="0" r="1" fill="#facc15" class="spark"/>
+    </g>    <g transform="translate(197,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(197,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(197,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(197,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(197,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(197,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(197,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(213,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(213,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(213,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(213,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(213,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(213,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(213,217)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(229,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(229,132)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(229,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(229,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(229,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(229,200)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(229,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(245,115)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(245,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(245,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(245,166)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(245,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(245,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(245,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(261,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(261,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(261,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(261,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(261,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(261,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(261,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(277,115)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(277,132)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(277,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(277,166)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(277,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(277,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(277,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(293,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(293,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(293,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(293,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(293,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(293,200)">
+      <rect y="10" width="13" height="4" fill="#134e4a" rx="1"/>
+      <rect width="13" height="10" fill="#0f766e" stroke="#2dd4bf" stroke-width="0.8" rx="2"/>
+      <polygon points="6,1 9,5 6,8 3,5" fill="#00f9ff" filter="url(#crystalGlow)"/>
+    </g>    <g transform="translate(293,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(309,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(309,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(309,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(309,166)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(309,183)">
+      <rect y="10" width="13" height="4" fill="#134e4a" rx="1"/>
+      <rect width="13" height="10" fill="#0f766e" stroke="#2dd4bf" stroke-width="0.8" rx="2"/>
+      <polygon points="6,1 9,5 6,8 3,5" fill="#00f9ff" filter="url(#crystalGlow)"/>
+    </g>    <g transform="translate(309,200)">
+      <rect y="10" width="13" height="4" fill="#134e4a" rx="1"/>
+      <rect width="13" height="10" fill="#0f766e" stroke="#2dd4bf" stroke-width="0.8" rx="2"/>
+      <polygon points="6,1 9,5 6,8 3,5" fill="#00f9ff" filter="url(#crystalGlow)"/>
+    </g>    <g transform="translate(309,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(325,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(325,132)">
+      <rect y="10" width="13" height="4" fill="#134e4a" rx="1"/>
+      <rect width="13" height="10" fill="#0f766e" stroke="#2dd4bf" stroke-width="0.8" rx="2"/>
+      <polygon points="6,1 9,5 6,8 3,5" fill="#00f9ff" filter="url(#crystalGlow)"/>
+    </g>    <g transform="translate(325,149)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(325,166)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(325,183)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(325,200)">
+      <rect y="10" width="13" height="4" fill="#134e4a" rx="1"/>
+      <rect width="13" height="10" fill="#0f766e" stroke="#2dd4bf" stroke-width="0.8" rx="2"/>
+      <polygon points="6,1 9,5 6,8 3,5" fill="#00f9ff" filter="url(#crystalGlow)"/>
+    </g>    <g transform="translate(325,217)">
+      <rect y="10" width="13" height="4" fill="#134e4a" rx="1"/>
+      <rect width="13" height="10" fill="#0f766e" stroke="#2dd4bf" stroke-width="0.8" rx="2"/>
+      <polygon points="6,1 9,5 6,8 3,5" fill="#00f9ff" filter="url(#crystalGlow)"/>
+    </g>    <g transform="translate(341,115)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(341,132)">
+      <rect y="10" width="13" height="4" fill="#134e4a" rx="1"/>
+      <rect width="13" height="10" fill="#0f766e" stroke="#2dd4bf" stroke-width="0.8" rx="2"/>
+      <polygon points="6,1 9,5 6,8 3,5" fill="#00f9ff" filter="url(#crystalGlow)"/>
+    </g>    <g transform="translate(341,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(341,166)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(341,183)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(341,200)">
+      <rect y="10" width="13" height="4" fill="#134e4a" rx="1"/>
+      <rect width="13" height="10" fill="#0f766e" stroke="#2dd4bf" stroke-width="0.8" rx="2"/>
+      <polygon points="6,1 9,5 6,8 3,5" fill="#00f9ff" filter="url(#crystalGlow)"/>
+    </g>    <g transform="translate(341,217)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(357,115)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(357,132)">
+      <rect y="10" width="13" height="4" fill="#134e4a" rx="1"/>
+      <rect width="13" height="10" fill="#0f766e" stroke="#2dd4bf" stroke-width="0.8" rx="2"/>
+      <polygon points="6,1 9,5 6,8 3,5" fill="#00f9ff" filter="url(#crystalGlow)"/>
+    </g>    <g transform="translate(357,149)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(357,166)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(357,183)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(357,200)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(357,217)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(373,115)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(373,132)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(373,149)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(373,166)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(373,183)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(373,200)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(373,217)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(389,115)">
+      <circle cx="6" cy="5" r="9" fill="url(#bossAura)"/>
+      <rect y="10" width="13" height="4" fill="#78350f" rx="1"/>
+      <rect width="13" height="10" fill="#b45309" stroke="#facc15" stroke-width="1.2" rx="2" filter="url(#crystalGlow)"/>
+      <rect x="2" y="2" width="9" height="6" fill="#fef08a" rx="1"/>
+      <circle cx="6.5" cy="5" r="1" fill="#ffffff"/>
+      <circle cx="1" cy="0" r="1" fill="#facc15" class="spark"/>
+    </g>    <g transform="translate(389,132)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(389,149)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(389,166)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(389,183)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(389,200)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(389,217)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(405,115)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(405,132)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(405,149)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(405,166)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(405,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(405,200)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(405,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(421,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(421,132)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(421,149)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(421,166)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(421,183)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(421,200)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(421,217)">
+      <rect y="10" width="13" height="4" fill="#134e4a" rx="1"/>
+      <rect width="13" height="10" fill="#0f766e" stroke="#2dd4bf" stroke-width="0.8" rx="2"/>
+      <polygon points="6,1 9,5 6,8 3,5" fill="#00f9ff" filter="url(#crystalGlow)"/>
+    </g>    <g transform="translate(437,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(437,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(437,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(437,166)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(437,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(437,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(437,217)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(453,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(453,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(453,149)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(453,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(453,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(453,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(453,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(469,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(469,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(469,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(469,166)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(469,183)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(469,200)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(469,217)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(485,115)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(485,132)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(485,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(485,166)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(485,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(485,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(485,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(501,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(501,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(501,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(501,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(501,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(501,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(501,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(517,115)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(517,132)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(517,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(517,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(517,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(517,200)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(517,217)">
+      <rect y="10" width="13" height="4" fill="#134e4a" rx="1"/>
+      <rect width="13" height="10" fill="#0f766e" stroke="#2dd4bf" stroke-width="0.8" rx="2"/>
+      <polygon points="6,1 9,5 6,8 3,5" fill="#00f9ff" filter="url(#crystalGlow)"/>
+    </g>    <g transform="translate(533,115)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(533,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(533,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(533,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(533,183)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(533,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(533,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(549,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(549,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(549,149)">
+      <circle cx="6" cy="5" r="9" fill="url(#bossAura)"/>
+      <rect y="10" width="13" height="4" fill="#78350f" rx="1"/>
+      <rect width="13" height="10" fill="#b45309" stroke="#facc15" stroke-width="1.2" rx="2" filter="url(#crystalGlow)"/>
+      <rect x="2" y="2" width="9" height="6" fill="#fef08a" rx="1"/>
+      <circle cx="6.5" cy="5" r="1" fill="#ffffff"/>
+      <circle cx="1" cy="0" r="1" fill="#facc15" class="spark"/>
+    </g>    <g transform="translate(549,166)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(549,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(549,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(549,217)">
+      <circle cx="6" cy="5" r="9" fill="url(#bossAura)"/>
+      <rect y="10" width="13" height="4" fill="#78350f" rx="1"/>
+      <rect width="13" height="10" fill="#b45309" stroke="#facc15" stroke-width="1.2" rx="2" filter="url(#crystalGlow)"/>
+      <rect x="2" y="2" width="9" height="6" fill="#fef08a" rx="1"/>
+      <circle cx="6.5" cy="5" r="1" fill="#ffffff"/>
+      <circle cx="1" cy="0" r="1" fill="#facc15" class="spark"/>
+    </g>    <g transform="translate(565,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(565,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(565,149)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(565,166)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(565,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(565,200)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(565,217)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(581,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(581,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(581,149)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(581,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(581,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(581,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(581,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(597,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(597,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(597,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(597,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(597,183)">
+      <rect y="10" width="13" height="4" fill="#134e4a" rx="1"/>
+      <rect width="13" height="10" fill="#0f766e" stroke="#2dd4bf" stroke-width="0.8" rx="2"/>
+      <polygon points="6,1 9,5 6,8 3,5" fill="#00f9ff" filter="url(#crystalGlow)"/>
+    </g>    <g transform="translate(597,200)">
+      <rect y="10" width="13" height="4" fill="#134e4a" rx="1"/>
+      <rect width="13" height="10" fill="#0f766e" stroke="#2dd4bf" stroke-width="0.8" rx="2"/>
+      <polygon points="6,1 9,5 6,8 3,5" fill="#00f9ff" filter="url(#crystalGlow)"/>
+    </g>    <g transform="translate(597,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(613,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(613,132)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(613,149)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(613,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(613,183)">
+      <circle cx="6" cy="5" r="9" fill="url(#bossAura)"/>
+      <rect y="10" width="13" height="4" fill="#78350f" rx="1"/>
+      <rect width="13" height="10" fill="#b45309" stroke="#facc15" stroke-width="1.2" rx="2" filter="url(#crystalGlow)"/>
+      <rect x="2" y="2" width="9" height="6" fill="#fef08a" rx="1"/>
+      <circle cx="6.5" cy="5" r="1" fill="#ffffff"/>
+      <circle cx="1" cy="0" r="1" fill="#facc15" class="spark"/>
+    </g>    <g transform="translate(613,200)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(613,217)">
+      <circle cx="6" cy="5" r="9" fill="url(#bossAura)"/>
+      <rect y="10" width="13" height="4" fill="#78350f" rx="1"/>
+      <rect width="13" height="10" fill="#b45309" stroke="#facc15" stroke-width="1.2" rx="2" filter="url(#crystalGlow)"/>
+      <rect x="2" y="2" width="9" height="6" fill="#fef08a" rx="1"/>
+      <circle cx="6.5" cy="5" r="1" fill="#ffffff"/>
+      <circle cx="1" cy="0" r="1" fill="#facc15" class="spark"/>
+    </g>    <g transform="translate(629,115)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(629,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(629,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(629,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(629,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(629,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(629,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(645,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(645,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(645,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(645,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(645,183)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(645,200)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(645,217)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(661,115)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(661,132)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(661,149)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(661,166)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(661,183)">
+      <rect y="10" width="13" height="4" fill="#134e4a" rx="1"/>
+      <rect width="13" height="10" fill="#0f766e" stroke="#2dd4bf" stroke-width="0.8" rx="2"/>
+      <polygon points="6,1 9,5 6,8 3,5" fill="#00f9ff" filter="url(#crystalGlow)"/>
+    </g>    <g transform="translate(661,200)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(661,217)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(677,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(677,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(677,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(677,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(677,183)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(677,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(677,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(693,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(693,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(693,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(693,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(693,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(693,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(693,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(709,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(709,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(709,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(709,166)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(709,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(709,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(709,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(725,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(725,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(725,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(725,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(725,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(725,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(725,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(741,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(741,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(741,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(741,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(741,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(741,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(741,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(757,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(757,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(757,149)">
+      <rect y="10" width="13" height="4" fill="#134e4a" rx="1"/>
+      <rect width="13" height="10" fill="#0f766e" stroke="#2dd4bf" stroke-width="0.8" rx="2"/>
+      <polygon points="6,1 9,5 6,8 3,5" fill="#00f9ff" filter="url(#crystalGlow)"/>
+    </g>    <g transform="translate(757,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(757,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(757,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(757,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(773,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(773,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(773,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(773,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(773,183)">
+      <circle cx="6" cy="5" r="9" fill="url(#bossAura)"/>
+      <rect y="10" width="13" height="4" fill="#78350f" rx="1"/>
+      <rect width="13" height="10" fill="#b45309" stroke="#facc15" stroke-width="1.2" rx="2" filter="url(#crystalGlow)"/>
+      <rect x="2" y="2" width="9" height="6" fill="#fef08a" rx="1"/>
+      <circle cx="6.5" cy="5" r="1" fill="#ffffff"/>
+      <circle cx="1" cy="0" r="1" fill="#facc15" class="spark"/>
+    </g>    <g transform="translate(773,200)">
+      <rect y="10" width="13" height="4" fill="#134e4a" rx="1"/>
+      <rect width="13" height="10" fill="#0f766e" stroke="#2dd4bf" stroke-width="0.8" rx="2"/>
+      <polygon points="6,1 9,5 6,8 3,5" fill="#00f9ff" filter="url(#crystalGlow)"/>
+    </g>    <g transform="translate(773,217)">
+      <circle cx="6" cy="5" r="9" fill="url(#bossAura)"/>
+      <rect y="10" width="13" height="4" fill="#78350f" rx="1"/>
+      <rect width="13" height="10" fill="#b45309" stroke="#facc15" stroke-width="1.2" rx="2" filter="url(#crystalGlow)"/>
+      <rect x="2" y="2" width="9" height="6" fill="#fef08a" rx="1"/>
+      <circle cx="6.5" cy="5" r="1" fill="#ffffff"/>
+      <circle cx="1" cy="0" r="1" fill="#facc15" class="spark"/>
+    </g>    <g transform="translate(789,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(789,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(789,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(789,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(789,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(789,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(789,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(805,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(805,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(805,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(805,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(805,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(805,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(805,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(821,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(821,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(821,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(821,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(821,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(821,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(821,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(837,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(837,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(837,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(837,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(837,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(837,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(837,217)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(853,115)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(853,132)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(853,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(853,166)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(853,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(853,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(853,217)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(869,115)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(869,132)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(869,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(869,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(869,183)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(869,200)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(869,217)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(885,115)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(885,132)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(885,149)">
+      <circle cx="6" cy="5" r="9" fill="url(#bossAura)"/>
+      <rect y="10" width="13" height="4" fill="#78350f" rx="1"/>
+      <rect width="13" height="10" fill="#b45309" stroke="#facc15" stroke-width="1.2" rx="2" filter="url(#crystalGlow)"/>
+      <rect x="2" y="2" width="9" height="6" fill="#fef08a" rx="1"/>
+      <circle cx="6.5" cy="5" r="1" fill="#ffffff"/>
+      <circle cx="1" cy="0" r="1" fill="#facc15" class="spark"/>
+    </g>    <g transform="translate(885,166)">
+      <circle cx="6" cy="5" r="9" fill="url(#bossAura)"/>
+      <rect y="10" width="13" height="4" fill="#78350f" rx="1"/>
+      <rect width="13" height="10" fill="#b45309" stroke="#facc15" stroke-width="1.2" rx="2" filter="url(#crystalGlow)"/>
+      <rect x="2" y="2" width="9" height="6" fill="#fef08a" rx="1"/>
+      <circle cx="6.5" cy="5" r="1" fill="#ffffff"/>
+      <circle cx="1" cy="0" r="1" fill="#facc15" class="spark"/>
+    </g>    <g transform="translate(885,183)">
+      <rect y="10" width="13" height="4" fill="#134e4a" rx="1"/>
+      <rect width="13" height="10" fill="#0f766e" stroke="#2dd4bf" stroke-width="0.8" rx="2"/>
+      <polygon points="6,1 9,5 6,8 3,5" fill="#00f9ff" filter="url(#crystalGlow)"/>
+    </g>    <g transform="translate(885,200)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(885,217)">
+      <circle cx="6" cy="5" r="9" fill="url(#bossAura)"/>
+      <rect y="10" width="13" height="4" fill="#78350f" rx="1"/>
+      <rect width="13" height="10" fill="#b45309" stroke="#facc15" stroke-width="1.2" rx="2" filter="url(#crystalGlow)"/>
+      <rect x="2" y="2" width="9" height="6" fill="#fef08a" rx="1"/>
+      <circle cx="6.5" cy="5" r="1" fill="#ffffff"/>
+      <circle cx="1" cy="0" r="1" fill="#facc15" class="spark"/>
+    </g>    <g transform="translate(901,115)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+      <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
+    </g>    <g transform="translate(901,132)">
+      <rect y="10" width="13" height="4" fill="#134e4a" rx="1"/>
+      <rect width="13" height="10" fill="#0f766e" stroke="#2dd4bf" stroke-width="0.8" rx="2"/>
+      <polygon points="6,1 9,5 6,8 3,5" fill="#00f9ff" filter="url(#crystalGlow)"/>
+    </g>    <g transform="translate(901,149)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(901,166)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+      <rect x="3" y="3" width="2" height="2" fill="#2d4237" opacity="0.7"/>
+    </g>    <g transform="translate(901,183)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+      <circle cx="6" cy="4" r="1.2" fill="#86efac"/>
+    </g>    <g transform="translate(901,200)">
+      <circle cx="6" cy="5" r="9" fill="url(#bossAura)"/>
+      <rect y="10" width="13" height="4" fill="#78350f" rx="1"/>
+      <rect width="13" height="10" fill="#b45309" stroke="#facc15" stroke-width="1.2" rx="2" filter="url(#crystalGlow)"/>
+      <rect x="2" y="2" width="9" height="6" fill="#fef08a" rx="1"/>
+      <circle cx="6.5" cy="5" r="1" fill="#ffffff"/>
+      <circle cx="1" cy="0" r="1" fill="#facc15" class="spark"/>
+    </g>    <g transform="translate(901,217)">
+      <circle cx="6" cy="5" r="9" fill="url(#bossAura)"/>
+      <rect y="10" width="13" height="4" fill="#78350f" rx="1"/>
+      <rect width="13" height="10" fill="#b45309" stroke="#facc15" stroke-width="1.2" rx="2" filter="url(#crystalGlow)"/>
+      <rect x="2" y="2" width="9" height="6" fill="#fef08a" rx="1"/>
+      <circle cx="6.5" cy="5" r="1" fill="#ffffff"/>
+      <circle cx="1" cy="0" r="1" fill="#facc15" class="spark"/>
+    </g>  </g>
+  <!-- ==================== CODER HERO SPRITE & TRAIL ==================== -->
+  <g class="hero-sprite" transform="translate(887, 189)">
+    <ellipse cx="20" cy="22" rx="16" ry="12" fill="url(#heroGlow)"/>
+    <g class="spark" opacity="0.9">
+      <circle cx="6" cy="24" r="1.5" fill="#00f9ff"/>
+      <circle cx="2" cy="18" r="1.2" fill="#facc15"/>
+      <circle cx="8" cy="12" r="1" fill="#a855f7"/>
+      <path d="M 4 22 L 14 26" stroke="#00f9ff" stroke-width="1.5" stroke-dasharray="2,2"/>
+    </g>
+    <ellipse cx="20" cy="30" rx="8" ry="3" fill="#000000" opacity="0.6"/>
+    <rect x="16" y="25" width="3" height="4" fill="#1e293b"/>
+    <rect x="21" y="25" width="3" height="4" fill="#1e293b"/>
+    <rect x="16" y="21" width="8" height="5" fill="#3b82f6"/>
+    <rect x="15" y="14" width="10" height="8" fill="#1e1b4b" stroke="#00f9ff" stroke-width="0.8"/>
+    <rect x="18" y="16" width="4" height="4" fill="#00f9ff" opacity="0.9"/>
+    <polygon points="15,15 11,23 15,22" fill="#7c3aed"/>
+    <rect x="16" y="7" width="8" height="8" fill="#f8fafc" rx="1"/>
+    <rect x="17" y="10" width="7" height="2.5" fill="#00f9ff" filter="url(#crystalGlow)"/>
+    <g transform="translate(24, 4)">
+      <line x1="2" y1="14" x2="10" y2="2" stroke="#00f9ff" stroke-width="2.5" filter="url(#neonGlow)"/>
+      <line x1="2" y1="14" x2="10" y2="2" stroke="#ffffff" stroke-width="1.2"/>
+      <line x1="0" y1="12" x2="4" y2="16" stroke="#facc15" stroke-width="2"/>
+      <circle cx="10" cy="2" r="2" fill="#ffffff" filter="url(#crystalGlow)"/>
+    </g>
+  </g>
+  <!-- ==================== RPG BOTTOM LEGEND ==================== -->
+  <g id="legend" transform="translate(85, 265)">
+    <text x="0" y="16" class="mono" fill="#64748b" font-size="10" font-weight="600">QUEST PROGRESSION:</text>
+    <text x="140" y="16" class="mono" fill="#94a3b8" font-size="10">LESS (Dormant)</text>
+    
+    <g transform="translate(230, 4)">
+      <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
+      <rect width="13" height="10" fill="#1c2436" stroke="#2e3a54" stroke-width="0.8" rx="2"/>
+    </g>
+    
+    <g transform="translate(254, 4)">
+      <rect y="10" width="13" height="4" fill="#0f3e21" rx="1"/>
+      <rect width="13" height="10" fill="#166534" stroke="#22c55e" stroke-width="0.8" rx="2"/>
+      <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
+    </g>
+
+    <g transform="translate(278, 4)">
+      <rect y="10" width="13" height="4" fill="#14532d" rx="1"/>
+      <rect width="13" height="10" fill="#15803d" stroke="#4ade80" stroke-width="0.8" rx="2"/>
+      <polygon points="6,2 9,6 3,6" fill="#22c55e"/>
+    </g>
+
+    <g transform="translate(302, 4)">
+      <rect y="10" width="13" height="4" fill="#134e4a" rx="1"/>
+      <rect width="13" height="10" fill="#0f766e" stroke="#2dd4bf" stroke-width="0.8" rx="2"/>
+      <polygon points="6,1 9,5 6,8 3,5" fill="#00f9ff"/>
+    </g>
+
+    <g transform="translate(326, 4)">
+      <circle cx="6" cy="5" r="7" fill="url(#bossAura)"/>
+      <rect y="10" width="13" height="4" fill="#78350f" rx="1"/>
+      <rect width="13" height="10" fill="#b45309" stroke="#facc15" stroke-width="1.2" rx="2"/>
+      <rect x="2" y="2" width="9" height="6" fill="#fef08a" rx="1"/>
+    </g>
+
+    <text x="350" y="16" class="mono" fill="#facc15" font-size="10" font-weight="700">MORE (Overloaded)</text>
+
+    <g transform="translate(500, 2)">
+      <rect width="280" height="20" rx="3" fill="#0b111e" stroke="#1e293b" stroke-width="1"/>
+      <text x="10" y="14" class="mono" fill="#38bdf8" font-size="9.5">✦ TILES LEVEL UP DYNAMICALLY WITH XP ✦</text>
+    </g>
+  </g>
+  <!-- ==================== RPG QUEST STATUS SIDEBAR ==================== -->
+  <g id="sidebar" transform="translate(930, 65)">
+    <rect width="120" height="100" rx="8" fill="#0b1120" stroke="#1e293b" stroke-width="1.5"/>
+    <path d="M 0 16 L 16 0 L 230 0 L 230 310 L 0 310 Z" fill="#0b1120" stroke="url(#cyanBorder)" stroke-width="1.2" opacity="0.8"/>
+    <line x1="20" y1="36" x2="210" y2="36" stroke="#1e293b" stroke-width="1"/>
+
+    <text x="20" y="26" class="mono" fill="#00f9ff" font-size="12" font-weight="900" letter-spacing="1.5">⚔ QUEST STATUS</text>
+    <circle cx="208" cy="22" r="4" fill="#00f9ff" filter="url(#crystalGlow)"/>
+
+    <!-- STAT 1: LEVEL & RANK GAUGE -->
+    <g transform="translate(18, 52)">
+      <rect width="194" height="54" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+      <polygon points="12,14 26,4 40,14 40,38 26,48 12,38" fill="#1e1b4b" stroke="#00f9ff" stroke-width="1.5"/>
+      <text x="26" y="24" class="mono" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">LVL</text>
+      <text x="26" y="38" class="mono" fill="#f8fafc" font-size="15" font-weight="900" text-anchor="middle">20</text>
+      
+      <text x="48" y="22" class="mono" fill="#f8fafc" font-size="11" font-weight="800">CODER LEVEL 20</text>
+      <text x="48" y="34" class="mono" fill="#38bdf8" font-size="9">RANK: CYBER ARCHMAGE</text>
+      
+      <rect x="48" y="39" width="130" height="4" rx="2" fill="#1e293b"/>
+      <rect x="48" y="39" width="75" height="4" rx="2" fill="#00f9ff"/>
+    </g>
+
+    <!-- STAT 2: TOTAL COMMITS & GOLDEN XP BAR -->
+    <g transform="translate(18, 120)">
+      <rect width="194" height="64" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+      
+      <text x="14" y="22" class="mono" fill="#facc15" font-size="14" font-weight="900">584 TOTAL COMMITS</text>
+      <text x="14" y="36" class="mono" fill="#94a3b8" font-size="9.5">EXP: 584 XP <tspan fill="#facc15">(58%)</tspan></text>
+      
+      <rect x="14" y="44" width="166" height="9" rx="4.5" fill="#1e293b" stroke="#334155" stroke-width="0.8"/>
+      <rect x="15" y="45" width="95" height="7" rx="3.5" fill="url(#goldBar)" filter="url(#crystalGlow)"/>
+    </g>
+
+    <!-- STAT 3: STREAK WITH BURNING PIXEL FIRE -->
+    <g transform="translate(18, 198)">
+      <rect width="194" height="48" rx="6" fill="#0f172a" stroke="#ef4444" stroke-width="1" stroke-opacity="0.6"/>
+      
+      <g class="fire-icon" transform="translate(16, 12)">
+        <polygon points="10,0 16,8 20,18 10,24 0,18 4,8" fill="#ef4444" filter="url(#crystalGlow)"/>
+        <polygon points="10,4 14,10 16,18 10,22 4,18 6,10" fill="#f97316"/>
+        <polygon points="10,8 13,12 14,18 10,20 6,18 7,12" fill="#facc15"/>
+        <circle cx="10" cy="15" r="2" fill="#ffffff"/>
+      </g>
+      
+      <text x="44" y="24" class="mono" fill="#f87171" font-size="11" font-weight="900">3-DAY STREAK (ACTIVE)</text>
+      <text x="44" y="38" class="mono" fill="#fdba74" font-size="9.5">BUFF: +15% XP MULTIPLIER</text>
+    </g>
+
+    <!-- STAT 4: REALM / ACTIVE CAMPAIGN INFO -->
+    <g transform="translate(18, 260)">
+      <rect width="194" height="38" rx="6" fill="#090d16" stroke="#1e293b" stroke-width="1"/>
+      <text x="12" y="16" class="mono" fill="#64748b" font-size="8.5">ACTIVE CAMPAIGN:</text>
+      <text x="12" y="29" class="mono" fill="#a855f7" font-size="9.5" font-weight="700">⚔ "BREAK THE MATRIX"</text>
+      <circle cx="180" cy="20" r="3" fill="#a855f7" class="spark"/>
+    </g>
+  </g>
+
+</svg>

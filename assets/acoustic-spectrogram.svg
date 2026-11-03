@@ -1,0 +1,275 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 430" width="100%" height="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&amp;family=Inter:wght@400;700;900&amp;display=swap');
+      text { font-family: 'Inter', -apple-system, sans-serif; }
+      .mono { font-family: 'Fira Code', monospace; }
+
+      @keyframes waveScan {
+        0% { transform: translateX(-200px); }
+        100% { transform: translateX(1400px); }
+      }
+      @keyframes eqPulse {
+        0%, 100% { opacity: 0.75; }
+        50% { opacity: 1; }
+      }
+
+      .laser-scan { animation: waveScan 8s linear infinite; }
+      .wave-envelope { animation: eqPulse 3s ease-in-out infinite; }
+    </style>
+
+    <linearGradient id="specBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#050508"/>
+      <stop offset="50%" stop-color="#0a0c16"/>
+      <stop offset="100%" stop-color="#040407"/>
+    </linearGradient>
+
+    <linearGradient id="bandGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2e1065" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#0f172a" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#020617" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <linearGradient id="spectrumGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00f9ff" stop-opacity="0.25"/>
+      <stop offset="30%" stop-color="#a855f7" stop-opacity="0.3"/>
+      <stop offset="70%" stop-color="#ff2bd6" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#f43f5e" stop-opacity="0.25"/>
+    </linearGradient>
+
+    <linearGradient id="peakLineGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00f9ff"/>
+      <stop offset="35%" stop-color="#a855f7"/>
+      <stop offset="75%" stop-color="#ff2bd6"/>
+      <stop offset="100%" stop-color="#f43f5e"/>
+    </linearGradient>
+
+    <filter id="specGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="eqGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="430" fill="url(#specBg)" rx="12"/>
+
+  <g id="grid-lines" opacity="0.35">
+    <line x1="65" y1="130" x2="1135" y2="130" stroke="#1e293b" stroke-width="0.8" stroke-dasharray="4,6"/>
+    <line x1="65" y1="190" x2="1135" y2="190" stroke="#1e293b" stroke-width="0.8" stroke-dasharray="4,6"/>
+    <line x1="65" y1="250" x2="1135" y2="250" stroke="#334155" stroke-width="1"/>
+    <line x1="65" y1="310" x2="1135" y2="310" stroke="#1e293b" stroke-width="0.8" stroke-dasharray="4,6"/>
+    <line x1="65" y1="370" x2="1135" y2="370" stroke="#1e293b" stroke-width="0.8" stroke-dasharray="4,6"/>
+  </g>
+
+  <g id="header-hud" transform="translate(65, 38)">
+    <rect width="8" height="24" fill="#ff2bd6" rx="2" filter="url(#eqGlow)"/>
+    <circle cx="18" cy="6" r="2.5" fill="#00f9ff"/>
+    <line x1="18" y1="9" x2="18" y2="15" stroke="#00f9ff" stroke-width="2.5" stroke-linecap="round"/>
+
+    <text x="36" y="12" fill="#f8fafc" font-size="15" font-weight="900" letter-spacing="2">ACOUSTIC SPECTROGRAM: <tspan fill="#ff2bd6">HARMONIC RESONANCE</tspan></text>
+    <text x="36" y="25" class="mono" fill="#64748b" font-size="9.5" letter-spacing="1">USER: CIPHER-SHADOW-IR // SITAR RESONANCE &amp; VOCAL FORMANT SYNTHESIS // 365-DAY SPECTRUM</text>
+
+    <g transform="translate(680, -5)">
+      <rect width="195" height="30" rx="4" fill="#0c1222" stroke="#a855f7" stroke-width="1"/>
+      <circle cx="12" cy="15" r="3" fill="#a855f7" filter="url(#eqGlow)"/>
+      <text x="22" y="19" class="mono" fill="#94a3b8" font-size="9">TOTAL ENERGY: <tspan fill="#f8fafc" font-weight="900">587 COMMITS</tspan></text>
+
+      <g transform="translate(205, 0)">
+        <rect width="205" height="30" rx="4" fill="#0c1222" stroke="#ff2bd6" stroke-width="1"/>
+        <circle cx="12" cy="15" r="3" fill="#ff2bd6" filter="url(#eqGlow)"/>
+        <text x="22" y="19" class="mono" fill="#94a3b8" font-size="9">PEAK SPIKE: <tspan fill="#ff2bd6" font-weight="900">51 COMMITS (+12dB)</tspan></text>
+      </g>
+    </g>
+  </g>
+
+  <g id="months"><text x="65.0" y="410" class="mono" fill="#475569" font-size="9.5">Nov</text><text x="139.0" y="410" class="mono" fill="#475569" font-size="9.5">Dec</text><text x="213.0" y="410" class="mono" fill="#475569" font-size="9.5">Jan</text><text x="287.0" y="410" class="mono" fill="#475569" font-size="9.5">Feb</text><text x="361.0" y="410" class="mono" fill="#475569" font-size="9.5">Mar</text><text x="453.5" y="410" class="mono" fill="#475569" font-size="9.5">Apr</text><text x="527.5" y="410" class="mono" fill="#475569" font-size="9.5">May</text><text x="620.0" y="410" class="mono" fill="#475569" font-size="9.5">Jun</text><text x="694.0" y="410" class="mono" fill="#475569" font-size="9.5">Jul</text><text x="768.0" y="410" class="mono" fill="#475569" font-size="9.5">Aug</text><text x="860.5" y="410" class="mono" fill="#475569" font-size="9.5">Sep</text><text x="934.5" y="410" class="mono" fill="#475569" font-size="9.5">Oct</text></g>
+  <g id="eq-bars">
+    <!-- Band 1: 0 commits -->
+    <g class="eq-band">
+      <rect x="65.0" y="238" width="11" height="24" rx="3" fill="url(#bandGrad)" stroke="#1e293b" stroke-width="0.5" stroke-opacity="0.35"/>    </g>
+    <!-- Band 2: 0 commits -->
+    <g class="eq-band">
+      <rect x="83.5" y="238" width="11" height="24" rx="3" fill="url(#bandGrad)" stroke="#1e293b" stroke-width="0.5" stroke-opacity="0.35"/>    </g>
+    <!-- Band 3: 0 commits -->
+    <g class="eq-band">
+      <rect x="102.0" y="238" width="11" height="24" rx="3" fill="url(#bandGrad)" stroke="#1e293b" stroke-width="0.5" stroke-opacity="0.35"/>    </g>
+    <!-- Band 4: 0 commits -->
+    <g class="eq-band">
+      <rect x="120.5" y="238" width="11" height="24" rx="3" fill="url(#bandGrad)" stroke="#1e293b" stroke-width="0.5" stroke-opacity="0.35"/>    </g>
+    <!-- Band 5: 0 commits -->
+    <g class="eq-band">
+      <rect x="139.0" y="238" width="11" height="24" rx="3" fill="url(#bandGrad)" stroke="#1e293b" stroke-width="0.5" stroke-opacity="0.35"/>    </g>
+    <!-- Band 6: 0 commits -->
+    <g class="eq-band">
+      <rect x="157.5" y="238" width="11" height="24" rx="3" fill="url(#bandGrad)" stroke="#1e293b" stroke-width="0.5" stroke-opacity="0.35"/>    </g>
+    <!-- Band 7: 14 commits -->
+    <g class="eq-band">
+      <rect x="176.0" y="218" width="11" height="64" rx="3" fill="url(#bandGrad)" stroke="#ff2bd6" stroke-width="1" stroke-opacity="0.85"/>      <rect x="178.0" y="222" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="178.0" y="229" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="178.0" y="236" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="178.0" y="243" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="178.0" y="250" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="178.0" y="257" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="178.0" y="264" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>    </g>
+    <!-- Band 8: 0 commits -->
+    <g class="eq-band">
+      <rect x="194.5" y="238" width="11" height="24" rx="3" fill="url(#bandGrad)" stroke="#1e293b" stroke-width="0.5" stroke-opacity="0.35"/>    </g>
+    <!-- Band 9: 3 commits -->
+    <g class="eq-band">
+      <rect x="213.0" y="234" width="11" height="32" rx="3" fill="url(#bandGrad)" stroke="#00f9ff" stroke-width="1" stroke-opacity="0.85"/>    </g>
+    <!-- Band 10: 6 commits -->
+    <g class="eq-band">
+      <rect x="231.5" y="230" width="11" height="40" rx="3" fill="url(#bandGrad)" stroke="#a855f7" stroke-width="1" stroke-opacity="0.85"/>      <rect x="233.5" y="234" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="233.5" y="241" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="233.5" y="248" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="233.5" y="255" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="233.5" y="262" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>    </g>
+    <!-- Band 11: 3 commits -->
+    <g class="eq-band">
+      <rect x="250.0" y="234" width="11" height="32" rx="3" fill="url(#bandGrad)" stroke="#00f9ff" stroke-width="1" stroke-opacity="0.85"/>    </g>
+    <!-- Band 12: 0 commits -->
+    <g class="eq-band">
+      <rect x="268.5" y="238" width="11" height="24" rx="3" fill="url(#bandGrad)" stroke="#1e293b" stroke-width="0.5" stroke-opacity="0.35"/>    </g>
+    <!-- Band 13: 3 commits -->
+    <g class="eq-band">
+      <rect x="287.0" y="234" width="11" height="32" rx="3" fill="url(#bandGrad)" stroke="#00f9ff" stroke-width="1" stroke-opacity="0.85"/>    </g>
+    <!-- Band 14: 6 commits -->
+    <g class="eq-band">
+      <rect x="305.5" y="230" width="11" height="40" rx="3" fill="url(#bandGrad)" stroke="#a855f7" stroke-width="1" stroke-opacity="0.85"/>      <rect x="307.5" y="234" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="307.5" y="241" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="307.5" y="248" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="307.5" y="255" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="307.5" y="262" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>    </g>
+    <!-- Band 15: 17 commits -->
+    <g class="eq-band">
+      <rect x="324.0" y="213" width="11" height="74" rx="3" fill="url(#bandGrad)" stroke="#ff2bd6" stroke-width="1" stroke-opacity="0.85"/>      <rect x="326.0" y="217" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="326.0" y="224" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="326.0" y="231" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="326.0" y="238" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="326.0" y="245" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="326.0" y="252" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="326.0" y="259" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>    </g>
+    <!-- Band 16: 25 commits -->
+    <g class="eq-band">
+      <rect x="342.5" y="201" width="11" height="98" rx="3" fill="url(#bandGrad)" stroke="#ff2bd6" stroke-width="1" stroke-opacity="0.85"/>      <rect x="344.5" y="205" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="344.5" y="212" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="344.5" y="219" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="344.5" y="226" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="344.5" y="233" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="344.5" y="240" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="344.5" y="247" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>    </g>
+    <!-- Band 17: 21 commits -->
+    <g class="eq-band">
+      <rect x="361.0" y="207" width="11" height="86" rx="3" fill="url(#bandGrad)" stroke="#ff2bd6" stroke-width="1" stroke-opacity="0.85"/>      <rect x="363.0" y="211" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="363.0" y="218" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="363.0" y="225" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="363.0" y="232" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="363.0" y="239" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="363.0" y="246" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="363.0" y="253" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>    </g>
+    <!-- Band 18: 25 commits -->
+    <g class="eq-band">
+      <rect x="379.5" y="201" width="11" height="98" rx="3" fill="url(#bandGrad)" stroke="#ff2bd6" stroke-width="1" stroke-opacity="0.85"/>      <rect x="381.5" y="205" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="381.5" y="212" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="381.5" y="219" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="381.5" y="226" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="381.5" y="233" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="381.5" y="240" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="381.5" y="247" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>    </g>
+    <!-- Band 19: 19 commits -->
+    <g class="eq-band">
+      <rect x="398.0" y="210" width="11" height="80" rx="3" fill="url(#bandGrad)" stroke="#ff2bd6" stroke-width="1" stroke-opacity="0.85"/>      <rect x="400.0" y="214" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="400.0" y="221" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="400.0" y="228" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="400.0" y="235" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="400.0" y="242" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="400.0" y="249" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="400.0" y="256" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>    </g>
+    <!-- Band 20: 33 commits -->
+    <g class="eq-band">
+      <rect x="416.5" y="190" width="11" height="120" rx="3" fill="url(#bandGrad)" stroke="#ff2bd6" stroke-width="1" stroke-opacity="0.85"/>      <rect x="418.5" y="194" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="418.5" y="201" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="418.5" y="208" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="418.5" y="215" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="418.5" y="222" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="418.5" y="229" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="418.5" y="236" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>    </g>
+    <!-- Band 21: 10 commits -->
+    <g class="eq-band">
+      <rect x="435.0" y="224" width="11" height="52" rx="3" fill="url(#bandGrad)" stroke="#ff2bd6" stroke-width="1" stroke-opacity="0.85"/>      <rect x="437.0" y="228" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="437.0" y="235" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="437.0" y="242" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="437.0" y="249" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="437.0" y="256" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="437.0" y="263" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="437.0" y="270" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>    </g>
+    <!-- Band 22: 19 commits -->
+    <g class="eq-band">
+      <rect x="453.5" y="210" width="11" height="80" rx="3" fill="url(#bandGrad)" stroke="#ff2bd6" stroke-width="1" stroke-opacity="0.85"/>      <rect x="455.5" y="214" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="455.5" y="221" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="455.5" y="228" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="455.5" y="235" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="455.5" y="242" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="455.5" y="249" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="455.5" y="256" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>    </g>
+    <!-- Band 23: 2 commits -->
+    <g class="eq-band">
+      <rect x="472.0" y="236" width="11" height="28" rx="3" fill="url(#bandGrad)" stroke="#00f9ff" stroke-width="1" stroke-opacity="0.85"/>    </g>
+    <!-- Band 24: 1 commits -->
+    <g class="eq-band">
+      <rect x="490.5" y="237" width="11" height="26" rx="3" fill="url(#bandGrad)" stroke="#00f9ff" stroke-width="1" stroke-opacity="0.85"/>    </g>
+    <!-- Band 25: 7 commits -->
+    <g class="eq-band">
+      <rect x="509.0" y="228" width="11" height="44" rx="3" fill="url(#bandGrad)" stroke="#a855f7" stroke-width="1" stroke-opacity="0.85"/>      <rect x="511.0" y="232" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="511.0" y="239" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="511.0" y="246" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="511.0" y="253" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="511.0" y="260" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>    </g>
+    <!-- Band 26: 9 commits -->
+    <g class="eq-band">
+      <rect x="527.5" y="225" width="11" height="50" rx="3" fill="url(#bandGrad)" stroke="#a855f7" stroke-width="1" stroke-opacity="0.85"/>      <rect x="529.5" y="229" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="529.5" y="236" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="529.5" y="243" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="529.5" y="250" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="529.5" y="257" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="529.5" y="264" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>    </g>
+    <!-- Band 27: 0 commits -->
+    <g class="eq-band">
+      <rect x="546.0" y="238" width="11" height="24" rx="3" fill="url(#bandGrad)" stroke="#1e293b" stroke-width="0.5" stroke-opacity="0.35"/>    </g>
+    <!-- Band 28: 15 commits -->
+    <g class="eq-band">
+      <rect x="564.5" y="216" width="11" height="68" rx="3" fill="url(#bandGrad)" stroke="#ff2bd6" stroke-width="1" stroke-opacity="0.85"/>      <rect x="566.5" y="220" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="566.5" y="227" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="566.5" y="234" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="566.5" y="241" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="566.5" y="248" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="566.5" y="255" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="566.5" y="262" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>    </g>
+    <!-- Band 29: 7 commits -->
+    <g class="eq-band">
+      <rect x="583.0" y="228" width="11" height="44" rx="3" fill="url(#bandGrad)" stroke="#a855f7" stroke-width="1" stroke-opacity="0.85"/>      <rect x="585.0" y="232" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="585.0" y="239" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="585.0" y="246" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="585.0" y="253" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="585.0" y="260" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>    </g>
+    <!-- Band 30: 77 commits -->
+    <g class="eq-band">
+      <rect x="601.5" y="124" width="11" height="252" rx="3" fill="url(#bandGrad)" stroke="#ff2bd6" stroke-width="1" stroke-opacity="0.85"/>      <rect x="603.5" y="128" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="603.5" y="135" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="603.5" y="142" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="603.5" y="149" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="603.5" y="156" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="603.5" y="163" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="603.5" y="170" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>    </g>
+    <!-- Band 31: 5 commits -->
+    <g class="eq-band">
+      <rect x="620.0" y="231" width="11" height="38" rx="3" fill="url(#bandGrad)" stroke="#a855f7" stroke-width="1" stroke-opacity="0.85"/>      <rect x="622.0" y="235" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="622.0" y="242" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="622.0" y="249" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="622.0" y="256" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="622.0" y="263" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>    </g>
+    <!-- Band 32: 1 commits -->
+    <g class="eq-band">
+      <rect x="638.5" y="237" width="11" height="26" rx="3" fill="url(#bandGrad)" stroke="#00f9ff" stroke-width="1" stroke-opacity="0.85"/>    </g>
+    <!-- Band 33: 16 commits -->
+    <g class="eq-band">
+      <rect x="657.0" y="215" width="11" height="70" rx="3" fill="url(#bandGrad)" stroke="#ff2bd6" stroke-width="1" stroke-opacity="0.85"/>      <rect x="659.0" y="219" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="659.0" y="226" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="659.0" y="233" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="659.0" y="240" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="659.0" y="247" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="659.0" y="254" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="659.0" y="261" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>    </g>
+    <!-- Band 34: 31 commits -->
+    <g class="eq-band">
+      <rect x="675.5" y="193" width="11" height="114" rx="3" fill="url(#bandGrad)" stroke="#ff2bd6" stroke-width="1" stroke-opacity="0.85"/>      <rect x="677.5" y="197" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="677.5" y="204" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="677.5" y="211" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="677.5" y="218" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="677.5" y="225" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="677.5" y="232" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="677.5" y="239" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>    </g>
+    <!-- Band 35: 3 commits -->
+    <g class="eq-band">
+      <rect x="694.0" y="234" width="11" height="32" rx="3" fill="url(#bandGrad)" stroke="#00f9ff" stroke-width="1" stroke-opacity="0.85"/>    </g>
+    <!-- Band 36: 9 commits -->
+    <g class="eq-band">
+      <rect x="712.5" y="225" width="11" height="50" rx="3" fill="url(#bandGrad)" stroke="#a855f7" stroke-width="1" stroke-opacity="0.85"/>      <rect x="714.5" y="229" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="714.5" y="236" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="714.5" y="243" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="714.5" y="250" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="714.5" y="257" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="714.5" y="264" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>    </g>
+    <!-- Band 37: 16 commits -->
+    <g class="eq-band">
+      <rect x="731.0" y="215" width="11" height="70" rx="3" fill="url(#bandGrad)" stroke="#ff2bd6" stroke-width="1" stroke-opacity="0.85"/>      <rect x="733.0" y="219" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="733.0" y="226" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="733.0" y="233" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="733.0" y="240" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="733.0" y="247" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="733.0" y="254" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="733.0" y="261" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>    </g>
+    <!-- Band 38: 2 commits -->
+    <g class="eq-band">
+      <rect x="749.5" y="236" width="11" height="28" rx="3" fill="url(#bandGrad)" stroke="#00f9ff" stroke-width="1" stroke-opacity="0.85"/>    </g>
+    <!-- Band 39: 0 commits -->
+    <g class="eq-band">
+      <rect x="768.0" y="238" width="11" height="24" rx="3" fill="url(#bandGrad)" stroke="#1e293b" stroke-width="0.5" stroke-opacity="0.35"/>    </g>
+    <!-- Band 40: 1 commits -->
+    <g class="eq-band">
+      <rect x="786.5" y="237" width="11" height="26" rx="3" fill="url(#bandGrad)" stroke="#00f9ff" stroke-width="1" stroke-opacity="0.85"/>    </g>
+    <!-- Band 41: 0 commits -->
+    <g class="eq-band">
+      <rect x="805.0" y="238" width="11" height="24" rx="3" fill="url(#bandGrad)" stroke="#1e293b" stroke-width="0.5" stroke-opacity="0.35"/>    </g>
+    <!-- Band 42: 0 commits -->
+    <g class="eq-band">
+      <rect x="823.5" y="238" width="11" height="24" rx="3" fill="url(#bandGrad)" stroke="#1e293b" stroke-width="0.5" stroke-opacity="0.35"/>    </g>
+    <!-- Band 43: 6 commits -->
+    <g class="eq-band">
+      <rect x="842.0" y="230" width="11" height="40" rx="3" fill="url(#bandGrad)" stroke="#a855f7" stroke-width="1" stroke-opacity="0.85"/>      <rect x="844.0" y="234" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="844.0" y="241" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="844.0" y="248" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="844.0" y="255" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="844.0" y="262" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>    </g>
+    <!-- Band 44: 33 commits -->
+    <g class="eq-band">
+      <rect x="860.5" y="190" width="11" height="120" rx="3" fill="url(#bandGrad)" stroke="#ff2bd6" stroke-width="1" stroke-opacity="0.85"/>      <rect x="862.5" y="194" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="862.5" y="201" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="862.5" y="208" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="862.5" y="215" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="862.5" y="222" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="862.5" y="229" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="862.5" y="236" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>    </g>
+    <!-- Band 45: 0 commits -->
+    <g class="eq-band">
+      <rect x="879.0" y="238" width="11" height="24" rx="3" fill="url(#bandGrad)" stroke="#1e293b" stroke-width="0.5" stroke-opacity="0.35"/>    </g>
+    <!-- Band 46: 0 commits -->
+    <g class="eq-band">
+      <rect x="897.5" y="238" width="11" height="24" rx="3" fill="url(#bandGrad)" stroke="#1e293b" stroke-width="0.5" stroke-opacity="0.35"/>    </g>
+    <!-- Band 47: 0 commits -->
+    <g class="eq-band">
+      <rect x="916.0" y="238" width="11" height="24" rx="3" fill="url(#bandGrad)" stroke="#1e293b" stroke-width="0.5" stroke-opacity="0.35"/>    </g>
+    <!-- Band 48: 4 commits -->
+    <g class="eq-band">
+      <rect x="934.5" y="233" width="11" height="34" rx="3" fill="url(#bandGrad)" stroke="#a855f7" stroke-width="1" stroke-opacity="0.85"/>      <rect x="936.5" y="237" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="936.5" y="244" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="936.5" y="251" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="936.5" y="258" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>    </g>
+    <!-- Band 49: 6 commits -->
+    <g class="eq-band">
+      <rect x="953.0" y="230" width="11" height="40" rx="3" fill="url(#bandGrad)" stroke="#a855f7" stroke-width="1" stroke-opacity="0.85"/>      <rect x="955.0" y="234" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="955.0" y="241" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="955.0" y="248" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="955.0" y="255" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>      <rect x="955.0" y="262" width="7" height="2.5" rx="1" fill="#a855f7" opacity="0.9"/>    </g>
+    <!-- Band 50: 1 commits -->
+    <g class="eq-band">
+      <rect x="971.5" y="237" width="11" height="26" rx="3" fill="url(#bandGrad)" stroke="#00f9ff" stroke-width="1" stroke-opacity="0.85"/>    </g>
+    <!-- Band 51: 91 commits -->
+    <g class="eq-band">
+      <rect x="990.0" y="103" width="11" height="294" rx="3" fill="url(#bandGrad)" stroke="#ff2bd6" stroke-width="1" stroke-opacity="0.85"/>      <rect x="992.0" y="107" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="992.0" y="114" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="992.0" y="121" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="992.0" y="128" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="992.0" y="135" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="992.0" y="142" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="992.0" y="149" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>    </g>
+    <!-- Band 52: 35 commits -->
+    <g class="eq-band">
+      <rect x="1008.5" y="187" width="11" height="126" rx="3" fill="url(#bandGrad)" stroke="#ff2bd6" stroke-width="1" stroke-opacity="0.85"/>      <rect x="1010.5" y="191" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="1010.5" y="198" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="1010.5" y="205" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="1010.5" y="212" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="1010.5" y="219" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="1010.5" y="226" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>      <rect x="1010.5" y="233" width="7" height="2.5" rx="1" fill="#ff2bd6" opacity="0.9"/>    </g></g>
+
+  <g id="waveform" class="wave-envelope">
+    <path d="M 70.5,238 L 70.5,238 L 89.0,238 L 107.5,238 L 126.0,238 L 144.5,238 L 163.0,238 L 181.5,218 L 200.0,238 L 218.5,234 L 237.0,230 L 255.5,234 L 274.0,238 L 292.5,234 L 311.0,230 L 329.5,213 L 348.0,201 L 366.5,207 L 385.0,201 L 403.5,210 L 422.0,190 L 440.5,224 L 459.0,210 L 477.5,236 L 496.0,237 L 514.5,228 L 533.0,225 L 551.5,238 L 570.0,216 L 588.5,228 L 607.0,124 L 625.5,231 L 644.0,237 L 662.5,215 L 681.0,193 L 699.5,234 L 718.0,225 L 736.5,215 L 755.0,236 L 773.5,238 L 792.0,237 L 810.5,238 L 829.0,238 L 847.5,230 L 866.0,190 L 884.5,238 L 903.0,238 L 921.5,238 L 940.0,233 L 958.5,230 L 977.0,237 L 995.5,103 L 1014.0,187 L 1014.0,313 L 995.5,397 L 977.0,263 L 958.5,270 L 940.0,267 L 921.5,262 L 903.0,262 L 884.5,262 L 866.0,310 L 847.5,270 L 829.0,262 L 810.5,262 L 792.0,263 L 773.5,262 L 755.0,264 L 736.5,285 L 718.0,275 L 699.5,266 L 681.0,307 L 662.5,285 L 644.0,263 L 625.5,269 L 607.0,376 L 588.5,272 L 570.0,284 L 551.5,262 L 533.0,275 L 514.5,272 L 496.0,263 L 477.5,264 L 459.0,290 L 440.5,276 L 422.0,310 L 403.5,290 L 385.0,299 L 366.5,293 L 348.0,299 L 329.5,287 L 311.0,270 L 292.5,266 L 274.0,262 L 255.5,266 L 237.0,270 L 218.5,266 L 200.0,262 L 181.5,282 L 163.0,262 L 144.5,262 L 126.0,262 L 107.5,262 L 89.0,262 L 70.5,262 Z" fill="url(#spectrumGrad)" filter="url(#specGlow)"/>
+    <path d="M 70.5,238 L 70.5,238 L 89.0,238 L 107.5,238 L 126.0,238 L 144.5,238 L 163.0,238 L 181.5,218 L 200.0,238 L 218.5,234 L 237.0,230 L 255.5,234 L 274.0,238 L 292.5,234 L 311.0,230 L 329.5,213 L 348.0,201 L 366.5,207 L 385.0,201 L 403.5,210 L 422.0,190 L 440.5,224 L 459.0,210 L 477.5,236 L 496.0,237 L 514.5,228 L 533.0,225 L 551.5,238 L 570.0,216 L 588.5,228 L 607.0,124 L 625.5,231 L 644.0,237 L 662.5,215 L 681.0,193 L 699.5,234 L 718.0,225 L 736.5,215 L 755.0,236 L 773.5,238 L 792.0,237 L 810.5,238 L 829.0,238 L 847.5,230 L 866.0,190 L 884.5,238 L 903.0,238 L 921.5,238 L 940.0,233 L 958.5,230 L 977.0,237 L 995.5,103 L 1014.0,187" fill="none" stroke="url(#peakLineGrad)" stroke-width="2.2"/>
+  </g>
+
+  <g id="peak-callout" transform="translate(995.5, 120)">
+    <line x1="0" y1="0" x2="0" y2="80" stroke="#ff2bd6" stroke-width="1.2" stroke-dasharray="2,2"/>
+    <circle cx="0" cy="0" r="4" fill="#ffffff" filter="url(#eqGlow)"/>
+    <rect x="-65" y="-28" width="130" height="22" rx="3" fill="#0f172a" stroke="#ff2bd6" stroke-width="1"/>
+    <text x="0" y="-14" class="mono" fill="#ff2bd6" font-size="8.5" font-weight="700" text-anchor="middle">PEAK: 51 COMMITS</text>
+  </g>
+
+  <g id="frequency-axis">
+    <line x1="65" y1="375" x2="1135" y2="375" stroke="#1e293b" stroke-width="1"/>
+    <text x="65.0" y="390" class="mono" fill="#334155" font-size="8.5" text-anchor="middle">20Hz</text><text x="172.0" y="390" class="mono" fill="#334155" font-size="8.5" text-anchor="middle">100Hz</text><text x="279.0" y="390" class="mono" fill="#334155" font-size="8.5" text-anchor="middle">250Hz</text><text x="386.0" y="390" class="mono" fill="#334155" font-size="8.5" text-anchor="middle">500Hz</text><text x="493.0" y="390" class="mono" fill="#334155" font-size="8.5" text-anchor="middle">1kHz</text><text x="600.0" y="390" class="mono" fill="#334155" font-size="8.5" text-anchor="middle">2.5kHz</text><text x="707.0" y="390" class="mono" fill="#334155" font-size="8.5" text-anchor="middle">5kHz</text><text x="814.0" y="390" class="mono" fill="#334155" font-size="8.5" text-anchor="middle">8kHz</text><text x="921.0" y="390" class="mono" fill="#334155" font-size="8.5" text-anchor="middle">12kHz</text><text x="1028.0" y="390" class="mono" fill="#334155" font-size="8.5" text-anchor="middle">16kHz</text><text x="1135.0" y="390" class="mono" fill="#334155" font-size="8.5" text-anchor="middle">20kHz</text>
+  </g>
+
+  <g id="footer" transform="translate(65, 406)">
+    <text x="0" y="10" class="mono" fill="#475569" font-size="9">SPECTRUM TIMBRE: LOW ACTIVITY = CYAN HUM (20Hz-500Hz) &#8594; PEAK ACTIVITY = MAGENTA/VIOLET RESONANCE (1kHz-20kHz)</text>
+    <text x="1070" y="10" class="mono" fill="#a855f7" font-size="9" text-anchor="end">ACOUSTIC FOURIER ENGINE ✦</text>
+  </g>
+</svg>
