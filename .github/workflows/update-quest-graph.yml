@@ -10,7 +10,7 @@ on:
       - main
     paths:
       - generate_rpg_graph.py
-      - generate_visuals.py
+      - skyline-api/**
       - .github/workflows/update-quest-graph.yml
 
 permissions:
@@ -30,12 +30,17 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: 🟢 Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
       - name: ⚔️ Generate Activity Visuals & Telemetry
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python generate_rpg_graph.py --username Cipher-Shadow-IR --output assets/rpg-quest-activity-graph.svg
-          python generate_visuals.py
+          cd skyline-api && npm install && npx tsx scripts/generate-assets.ts
 
       - name: 🚀 Commit and Push Updated Visuals
         run: |

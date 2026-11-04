@@ -27,11 +27,10 @@
 <!-- LIVE PORTFOLIO SCREENSHOT -->
 <a href="https://galaxir.vercel.app/" target="_blank">
   <img
-    src="https://api.microlink.io/?url=https%3A%2F%2Fgalaxir.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=10000"
+    src="https://image.thum.io/get/width/1200/crop/800/noanimate/https://galaxir.vercel.app/"
     alt="galaxir.vercel.app — Ishaan Ray's Portfolio"
     width="88%"
     style="border-radius:14px; border: 2px solid #00F9FF; box-shadow: 0 0 60px #00F9FF44, 0 0 120px #C084FC22;"
-    onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=0,5,20&height=420&text=galaxir.vercel.app&fontSize=38&fontColor=00F9FF&desc=Click+to+Enter+the+Dimension&descColor=C084FC&descSize=18'"
   />
 </a>
 
@@ -61,6 +60,8 @@
 
 <h2 align="center">🖥️ Programming Languages</h2>
 
+<div align="center">
+
 <img src="https://skillicons.dev/icons?i=c" title="C" />&nbsp;
 <img src="https://skillicons.dev/icons?i=cpp" title="C++" />&nbsp;
 <img src="https://skillicons.dev/icons?i=python" title="Python" />&nbsp;
@@ -75,7 +76,7 @@
 <img src="https://skillicons.dev/icons?i=julia" title="Julia" />&nbsp;
 <img src="https://skillicons.dev/icons?i=r" title="R" />&nbsp;
 <img src="https://skillicons.dev/icons?i=elixir" title="Elixir" />&nbsp;
-<img src="https://skillicons.dev/icons?i=rust" title="Rust" />&nbsp;
+<img src="https://skillicons.dev/icons?i=rust" title="Rust" />
 
 </div>
 
@@ -236,7 +237,7 @@
 <sub><b>Concurrency-Safe Lead Engine</b></sub>
 
 <a href="https://leadspiray.vercel.app/" target="_blank">
-<img src="https://api.microlink.io/?url=https%3A%2F%2Fleadspiray.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="Leadspiray" width="100%" height="260" style="border-radius:10px;border:2px solid #00F5FF;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=0,5,18&height=260&text=LEADSPIRAY&fontSize=36&fontColor=00F5FF&desc=Concurrency-Safe+Lead+Engine&descColor=C084FC'" />
+<img src="https://image.thum.io/get/width/1024/crop/768/noanimate/https://leadspiray.vercel.app/" alt="Leadspiray" width="100%" height="260" style="border-radius:10px;border:2px solid #00F5FF;object-fit:cover;" />
 </a>
 
 <p align="center">
@@ -252,7 +253,7 @@
 <sub><b>University Microservices Core</b></sub>
 
 <a href="https://github.com/Cipher-Shadow-IR/HR-Management-System" target="_blank">
-<img src="https://api.microlink.io/?url=https%3A%2F%2Fgithub.com%2FCipher-Shadow-IR%2FHR-Management-System&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="HRMS-GU" width="100%" height="260" style="border-radius:10px;border:2px solid #8B5CF6;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=0,5,18&height=260&text=HRMS-GU&fontSize=36&fontColor=8B5CF6&desc=University+Microservices+Core&descColor=C084FC'" />
+<img src="https://opengraph.githubassets.com/1/Cipher-Shadow-IR/HR-Management-System" alt="HRMS-GU" width="100%" height="260" style="border-radius:10px;border:2px solid #8B5CF6;object-fit:cover;" />
 </a>
 
 <p align="center">
@@ -270,7 +271,7 @@
 <sub><b>Industrial Lifecycle Engine</b></sub>
 
 <a href="https://procmms360.vercel.app/" target="_blank">
-<img src="https://api.microlink.io/?url=https%3A%2F%2Fprocmms360.vercel.app&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="ProCMMS360" width="100%" height="260" style="border-radius:10px;border:2px solid #00F5FF;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=0,5,18&height=260&text=ProCMMS360&fontSize=36&fontColor=00F5FF&desc=Industrial+Lifecycle+Engine&descColor=C084FC'" />
+<img src="https://image.thum.io/get/width/1024/crop/768/noanimate/https://procmms360.vercel.app/" alt="ProCMMS360" width="100%" height="260" style="border-radius:10px;border:2px solid #00F5FF;object-fit:cover;" />
 </a>
 
 <p align="center">
@@ -286,7 +287,7 @@
 <sub><b>Predictive Admission Engine</b></sub>
 
 <a href="https://aspiron.vercel.app/" target="_blank">
-<img src="https://api.microlink.io/?url=https%3A%2F%2Faspiron.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="Aspiron" width="100%" height="260" style="border-radius:10px;border:2px solid #C084FC;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=0,5,18&height=260&text=ASPIRON&fontSize=36&fontColor=C084FC&desc=Predictive+Admission+Engine&descColor=C084FC'" />
+<img src="https://image.thum.io/get/width/1024/crop/768/noanimate/https://aspiron.vercel.app/" alt="Aspiron" width="100%" height="260" style="border-radius:10px;border:2px solid #C084FC;object-fit:cover;" />
 </a>
 
 <p align="center">
@@ -304,7 +305,7 @@
 <sub><b>Zero-Trust PEP for Multi-Agent AI</b></sub><br><sub><span style="color:#FFD700;"><b>🏆 1st Place Winner • MLH Hacktoberfest Hack Day Ahmedabad 2026</b></span></sub>
 
 <a href="https://aegentrix-cs.vercel.app" target="_blank">
-<img src="https://api.microlink.io/?url=https%3A%2F%2Faegentrix-cs.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="AEGENTRIX" width="100%" height="260" style="border-radius:10px;border:2px solid #10B981;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=0,5,18&height=260&text=AEGENTRIX&fontSize=36&fontColor=10B981&desc=Zero-Trust+PEP+for+Multi-Agent+AI&descColor=C084FC'" />
+<img src="https://image.thum.io/get/width/1024/crop/768/noanimate/https://aegentrix-cs.vercel.app" alt="AEGENTRIX" width="100%" height="260" style="border-radius:10px;border:2px solid #10B981;object-fit:cover;" />
 </a>
 
 <p align="center">
@@ -320,7 +321,7 @@
 <sub><b>AI Procurement & Semantic Matcher</b></sub><br><sub><span style="color:#FFD700;"><b>⚡ Built for EY Techathon 6.0</b></span></sub>
 
 <a href="https://rfp-optibots.netlify.app/" target="_blank">
-<img src="https://api.microlink.io/?url=https%3A%2F%2Frfp-optibots.netlify.app%2F&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="Automated RFP" width="100%" height="260" style="border-radius:10px;border:2px solid #C084FC;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=0,5,18&height=260&text=AUTOMATED+RFP&fontSize=36&fontColor=C084FC&desc=AI+Procurement+&+Semantic+Matcher&descColor=C084FC'" />
+<img src="https://image.thum.io/get/width/1024/crop/768/noanimate/https://rfp-optibots.netlify.app/" alt="Automated RFP" width="100%" height="260" style="border-radius:10px;border:2px solid #C084FC;object-fit:cover;" />
 </a>
 
 <p align="center">
@@ -338,7 +339,7 @@
 <sub><b>100% Offline AI Audio Mentor</b></sub>
 
 <a href="https://clariry.vercel.app/" target="_blank">
-<img src="https://api.microlink.io/?url=https%3A%2F%2Fclariry.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="CLARIRY" width="100%" height="260" style="border-radius:10px;border:2px solid #00F5FF;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=0,5,18&height=260&text=CLARIRY&fontSize=36&fontColor=00F5FF&desc=100%+Offline+AI+Audio+Mentor&descColor=C084FC'" />
+<img src="https://image.thum.io/get/width/1024/crop/768/noanimate/https://clariry.vercel.app/" alt="CLARIRY" width="100%" height="260" style="border-radius:10px;border:2px solid #00F5FF;object-fit:cover;" />
 </a>
 
 <p align="center">
@@ -354,7 +355,7 @@
 <sub><b>Enterprise Brand Governance & CI/CD</b></sub><br><sub><span style="color:#FFD700;"><b>🎖️ Round 2 Finalist • Inkloom AI Hackathon (CODESTAR 30)</b></span></sub>
 
 <a href="https://brandsphere-ai-cs.vercel.app" target="_blank">
-<img src="https://api.microlink.io/?url=https%3A%2F%2Fbrandsphere-ai-cs.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="BrandSphere AI" width="100%" height="260" style="border-radius:10px;border:2px solid #F59E0B;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=0,5,18&height=260&text=BRANDSPHERE&fontSize=36&fontColor=F59E0B&desc=Enterprise+Brand+Governance+&+CI/CD&descColor=C084FC'" />
+<img src="https://image.thum.io/get/width/1024/crop/768/noanimate/https://brandsphere-ai-cs.vercel.app" alt="BrandSphere AI" width="100%" height="260" style="border-radius:10px;border:2px solid #F59E0B;object-fit:cover;" />
 </a>
 
 <p align="center">
@@ -373,7 +374,7 @@
 <sub><b>Real-Time Collaborative Cloud IDE</b></sub>
 
 <a href="https://codivir.vercel.app/" target="_blank">
-<img src="https://api.microlink.io/?url=https%3A%2F%2Fcodivir.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="CODIVIR" width="100%" height="260" style="border-radius:10px;border:2px solid #00F5FF;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=0,5,18&height=260&text=CODIVIR&fontSize=36&fontColor=00F5FF&desc=Real-Time+Collaborative+Cloud+IDE&descColor=C084FC'" />
+<img src="https://image.thum.io/get/width/1024/crop/768/noanimate/https://codivir.vercel.app/" alt="CODIVIR" width="100%" height="260" style="border-radius:10px;border:2px solid #00F5FF;object-fit:cover;" />
 </a>
 
 <p align="center">
@@ -389,7 +390,7 @@
 <sub><b>Visual DAG AI Pipeline Orchestrator</b></sub>
 
 <a href="https://vectirix.vercel.app/" target="_blank">
-<img src="https://api.microlink.io/?url=https%3A%2F%2Fvectirix.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="Vectirix" width="100%" height="260" style="border-radius:10px;border:2px solid #FF0072;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=0,5,18&height=260&text=VECTIRIX&fontSize=36&fontColor=FF0072&desc=Visual+DAG+AI+Pipeline+Orchestrator&descColor=C084FC'" />
+<img src="https://image.thum.io/get/width/1024/crop/768/noanimate/https://vectirix.vercel.app/" alt="Vectirix" width="100%" height="260" style="border-radius:10px;border:2px solid #FF0072;object-fit:cover;" />
 </a>
 
 <p align="center">
@@ -407,7 +408,7 @@
 <sub><b>Distributed Locking & Telemetry Lab</b></sub>
 
 <a href="https://redis-engine-laboratory.vercel.app/" target="_blank">
-<img src="https://api.microlink.io/?url=https%3A%2F%2Fredis-engine-laboratory.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="Redis Engine Laboratory" width="100%" height="260" style="border-radius:10px;border:2px solid #DC382D;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=0,5,18&height=260&text=REDIS+LAB&fontSize=36&fontColor=DC382D&desc=Distributed+Locking+&+Telemetry+Lab&descColor=C084FC'" />
+<img src="https://image.thum.io/get/width/1024/crop/768/noanimate/https://redis-engine-laboratory.vercel.app/" alt="Redis Engine Laboratory" width="100%" height="260" style="border-radius:10px;border:2px solid #DC382D;object-fit:cover;" />
 </a>
 
 <p align="center">
@@ -423,7 +424,7 @@
 <sub><b>Event-Driven High-Throughput Streams</b></sub>
 
 <a href="https://kafka-mastery-lab.vercel.app/" target="_blank">
-<img src="https://api.microlink.io/?url=https%3A%2F%2Fkafka-mastery-lab.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitForTimeout=8000" alt="Kafka Mastery Laboratory" width="100%" height="260" style="border-radius:10px;border:2px solid #8B5CF6;object-fit:cover;" onerror="this.src='https://capsule-render.vercel.app/api?type=rect&color=0,5,18&height=260&text=KAFKA+LAB&fontSize=36&fontColor=8B5CF6&desc=Event-Driven+High-Throughput+Streams&descColor=C084FC'" />
+<img src="https://image.thum.io/get/width/1024/crop/768/noanimate/https://kafka-mastery-lab.vercel.app/" alt="Kafka Mastery Laboratory" width="100%" height="260" style="border-radius:10px;border:2px solid #8B5CF6;object-fit:cover;" />
 </a>
 
 <p align="center">
