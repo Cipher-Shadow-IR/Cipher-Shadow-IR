@@ -78,10 +78,10 @@
 
     <g transform="translate(750, -5)">
       <text x="0" y="20" class="mono" fill="#94a3b8" font-size="11">TOTAL COMMITS:</text>
-      <text x="100" y="21" class="mono" fill="#00f9ff" font-size="14" font-weight="900" filter="url(#neonGlow)">583</text>
+      <text x="100" y="21" class="mono" fill="#00f9ff" font-size="14" font-weight="900" filter="url(#neonGlow)">588</text>
       
       <text x="180" y="20" class="mono" fill="#94a3b8" font-size="11">ACTIVE STREAK:</text>
-      <text x="285" y="21" class="mono" fill="#00ff7f" font-size="14" font-weight="900" filter="url(#neonGlow)">3 DAYS</text>
+      <text x="285" y="21" class="mono" fill="#00ff7f" font-size="14" font-weight="900" filter="url(#neonGlow)">15 DAYS</text>
     </g>
   </g>
 
@@ -827,34 +827,38 @@
           </g>
       <g class="skyscraper" transform="translate(0, 0)">
         <!-- Core Structure -->
-        <path d="M 1136 229 L 1139 229 L 1139 223 L 1149 223 L 1149 229 L 1152 229 L 1152 350 L 1136 350 Z" fill="url(#activeBldgGrad)" stroke="#00ff7f" stroke-width="1.2" stroke-opacity="0.9"/>
+        <path d="M 1136 217 L 1139 217 L 1139 211 L 1149 211 L 1149 217 L 1152 217 L 1152 350 L 1136 350 Z" fill="url(#activeBldgGrad)" stroke="#00ff7f" stroke-width="1.2" stroke-opacity="0.9"/>
         
         <!-- Left Edge Highlight -->
-        <line x1="1136" y1="231" x2="1136" y2="350" stroke="#00ff7f" stroke-width="1" opacity="0.7"/>
+        <line x1="1136" y1="219" x2="1136" y2="350" stroke="#00ff7f" stroke-width="1" opacity="0.7"/>
     
-        <line x1="1144" y1="223" x2="1144" y2="204" stroke="#00ff7f" stroke-width="1" filter="url(#neonGlow)"/>
-        <circle cx="1144" cy="204" r="1.5" fill="#ffffff" class="spire-beacon"/>
+        <line x1="1144" y1="211" x2="1144" y2="192" stroke="#00ff7f" stroke-width="1" filter="url(#neonGlow)"/>
+        <circle cx="1144" cy="192" r="1.5" fill="#ffffff" class="spire-beacon"/>
       
-            <rect x="1139" y="235.7" width="10" height="12.514285714285716" fill="#00f9ff" opacity="0.85"/>
+            <rect x="1139" y="224.9" width="10" height="13.885714285714286" fill="#00f9ff" opacity="0.85"/>
           
-            <rect x="1139" y="250.2142857142857" width="4" height="12.514285714285716" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
-            <rect x="1145" y="250.2142857142857" width="4" height="12.514285714285716" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
-          <rect x="1139" y="264.7285714285714" width="10" height="12.514285714285716" fill="#101827" opacity="0.6"/><rect x="1139" y="279.24285714285713" width="10" height="12.514285714285716" fill="#101827" opacity="0.6"/>
-            <rect x="1139" y="293.75714285714287" width="10" height="12.514285714285716" fill="#00f9ff" opacity="0.85"/>
+            <rect x="1139" y="240.78571428571428" width="4" height="13.885714285714286" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="1145" y="240.78571428571428" width="4" height="13.885714285714286" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
           
-            <rect x="1139" y="308.2714285714286" width="4" height="12.514285714285716" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
-            <rect x="1145" y="308.2714285714286" width="4" height="12.514285714285716" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="1139" y="256.6714285714286" width="10" height="13.885714285714286" fill="#0077ff" opacity="0.85"/>
           
-            <rect x="1139" y="322.7857142857143" width="4" height="12.514285714285716" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
-            <rect x="1145" y="322.7857142857143" width="4" height="12.514285714285716" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="1139" y="272.5571428571429" width="10" height="13.885714285714286" fill="#0077ff" opacity="0.85"/>
+          
+            <rect x="1139" y="288.4428571428572" width="10" height="13.885714285714286" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="1139" y="304.3285714285714" width="4" height="13.885714285714286" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="1145" y="304.3285714285714" width="4" height="13.885714285714286" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          
+            <rect x="1139" y="320.2142857142857" width="4" height="13.885714285714286" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="1145" y="320.2142857142857" width="4" height="13.885714285714286" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
           </g></g>
 
   <!-- Transit System -->
   
       <g id="monorail-system">
         <!-- Energy Field / Outer Glow -->
-        <path d="M 1123 305 S 1133.5 305, 1144 305" fill="none" stroke="#00f9ff" stroke-width="6" opacity="0.2" filter="url(#monorailGlow)"/>
-        <path d="M 1123 305 S 1133.5 305, 1144 305" fill="none" stroke="#00ff7f" stroke-width="2" class="monorail-track"/>
+        <path d="M 997 305 S 1007.5 305, 1018 305 S 1028.5 305, 1039 305 S 1049.5 305, 1060 305 S 1070.5 305, 1081 305 S 1091.5 305, 1102 305 S 1112.5 305, 1123 305 S 1133.5 305, 1144 305" fill="none" stroke="#00f9ff" stroke-width="6" opacity="0.2" filter="url(#monorailGlow)"/>
+        <path d="M 997 305 S 1007.5 305, 1018 305 S 1028.5 305, 1039 305 S 1049.5 305, 1060 305 S 1070.5 305, 1081 305 S 1091.5 305, 1102 305 S 1112.5 305, 1123 305 S 1133.5 305, 1144 305" fill="none" stroke="#00ff7f" stroke-width="2" class="monorail-track"/>
         
         <!-- Maglev Train -->
         <g class="monorail-train" transform="translate(1124, 301)">
