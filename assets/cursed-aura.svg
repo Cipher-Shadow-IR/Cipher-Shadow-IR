@@ -272,7 +272,7 @@
       <text x="0" y="54" class="metric-sub" fill="#7dcfff" filter="url(#hud-glow)">TOTAL HARVEST</text>
 
       <!-- Heavy Glowing Metric Value -->
-      <text x="0" y="116" class="metric-val" fill="url(#cyan-metric)" filter="url(#hud-glow)">593</text>
+      <text x="0" y="116" class="metric-val" fill="url(#cyan-metric)" filter="url(#hud-glow)">596</text>
 
       <!-- Telemetry Sub-Text & Micro Meter -->
       <rect x="-70" y="136" width="140" height="4" rx="2" fill="#16161e" />
