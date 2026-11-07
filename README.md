@@ -27,7 +27,7 @@
 <!-- LIVE PORTFOLIO SCREENSHOT -->
 <a href="https://galaxir.vercel.app/" target="_blank">
   <img
-    src="https://image.thum.io/get/width/1200/crop/800/noanimate/https://galaxir.vercel.app/"
+    src="./assets/galaxir-preview.png"
     alt="galaxir.vercel.app — Ishaan Ray's Portfolio"
     width="88%"
     style="border-radius:14px; border: 2px solid #00F9FF; box-shadow: 0 0 60px #00F9FF44, 0 0 120px #C084FC22;"
