@@ -1,6 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400" style="background:#07090e; font-family:'Segoe UI', system-ui, -apple-system, sans-serif;">
   <defs>
     <!-- Background Gradients -->
+    <linearGradient id="bgGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1524"/>
+      <stop offset="40%" stop-color="#07090e"/>
+      <stop offset="100%" stop-color="#0a101b"/>
+    </linearGradient>
 
     <radialGradient id="bossAura" cx="50%" cy="50%" r="50%">
       <stop offset="0%" stop-color="#ffaa00" stop-opacity="0.8"/>
@@ -56,16 +61,18 @@
       50% { opacity: 0.4; filter: drop-shadow(0 0 1px #00f9ff); }
     }
     @keyframes fireFlicker {
-      0%, 100% { opacity: 0.85; filter: drop-shadow(0 0 4px #00f9ff); }
-      50% { opacity: 0.4; filter: drop-shadow(0 0 1px #00f9ff); }
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      25% { transform: scale(1.08) rotate(-2deg); }
+      75% { transform: scale(0.95) rotate(2deg); }
     }
     @keyframes heroFloat {
-      0%, 100% { opacity: 0.85; filter: drop-shadow(0 0 4px #00f9ff); }
-      50% { opacity: 0.4; filter: drop-shadow(0 0 1px #00f9ff); }
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-3px); }
     }
     @keyframes sparkDrift {
-      0%, 100% { opacity: 0.85; filter: drop-shadow(0 0 4px #00f9ff); }
-      50% { opacity: 0.4; filter: drop-shadow(0 0 1px #00f9ff); }
+      0% { opacity: 0; transform: translate(0, 0) scale(0.5); }
+      50% { opacity: 1; transform: translate(-4px, -6px) scale(1.2); }
+      100% { opacity: 0; transform: translate(-8px, -12px) scale(0.2); }
     }
     
     .quest-pulse { animation: pulseGlow 2.5s infinite ease-in-out; }
@@ -118,7 +125,7 @@
   <!-- Day Labels -->
   <g id="days" class="mono" font-size="9" fill="#64748b" text-anchor="end">    <text x="73" y="141">Mon</text>    <text x="73" y="175">Wed</text>    <text x="73" y="209">Fri</text>  </g>
   <!-- Quest Connecting Trail (Pulsing Energy Circuit) -->
-  <g class="quest-pulse" fill="none" stroke-linecap="round">    <path d="M 187 222 L 219 222 L 235 137 L 251 120 L 299 205 L 315 188 L 331 205 L 347 137 L 363 137 L 379 154 L 395 120 L 411 120 L 427 222 L 475 171 L 491 120 L 523 222 L 539 120 L 555 222 L 571 171 L 603 188 L 619 222 L 635 120 L 651 188 L 667 188 L 683 188 L 763 154 L 779 222 L 843 222 L 859 137 L 891 222 L 907 205" stroke="#00f9ff" stroke-width="1.2" stroke-opacity="0.35" stroke-dasharray="3,3"/>  </g>
+  <g class="quest-pulse" fill="none" stroke-linecap="round">    <path d="M 187 222 L 219 222 L 235 137 L 251 120 L 299 205 L 315 188 L 331 205 L 347 137 L 363 137 L 379 154 L 395 120 L 411 120 L 427 222 L 475 171 L 491 120 L 523 222 L 539 120 L 555 222 L 571 171 L 603 188 L 619 222 L 635 120 L 651 188 L 667 188 L 683 188 L 763 154 L 779 222 L 843 222 L 859 137 L 891 222 L 907 222" stroke="#00f9ff" stroke-width="1.2" stroke-opacity="0.35" stroke-dasharray="3,3"/>  </g>
   <!-- Terrain Grid Blocks (52 x 7) -->
   <g id="grid">    <g transform="translate(85,115)">
       <rect y="10" width="13" height="4" fill="#101522" rx="1"/>
@@ -1732,6 +1739,15 @@
       <circle cx="10" cy="2" r="2" fill="#ffffff" filter="url(#crystalGlow)"/>
     </g>
   </g>
+  <!-- ==================== PEAK RAID MILESTONE ==================== -->
+  <g id="tooltip-peak" transform="translate(750, 169)" filter="url(#boxShadow)">
+    <rect width="185" height="36" rx="6" fill="#0f172a" stroke="#f59e0b" stroke-width="1.5"/>
+    <polygon points="90,36 84,42 96,42" fill="#0f172a"/>
+    <path d="M 83 36 L 90 43 L 97 36" stroke="#f59e0b" stroke-width="1.5" fill="#0f172a"/>
+    <text x="10" y="22" font-size="14">🔥</text>
+    <text x="32" y="16" class="mono" fill="#fef08a" font-size="11" font-weight="900">2026-10-31: 51 commits</text>
+    <text x="32" y="28" class="mono" fill="#f97316" font-size="9.5" font-weight="700">⚔ EPIC RAID MILESTONE!</text>
+  </g>
   <!-- ==================== RPG BOTTOM LEGEND ==================== -->
   <g id="legend" transform="translate(85, 265)">
     <text x="0" y="16" class="mono" fill="#64748b" font-size="10" font-weight="600">QUEST PROGRESSION:</text>
@@ -1775,8 +1791,8 @@
     </g>
   </g>
   <!-- ==================== RPG QUEST STATUS SIDEBAR ==================== -->
-  <g id="sidebar" transform="translate(930, 65)">
-    <rect width="120" height="100" rx="8" fill="#0b1120" stroke="#1e293b" stroke-width="1.5"/>
+  <g id="sidebar" transform="translate(945, 65)">
+    <rect width="230" height="310" rx="8" fill="#0b1120" stroke="#1e293b" stroke-width="1.5"/>
     <path d="M 0 16 L 16 0 L 230 0 L 230 310 L 0 310 Z" fill="#0b1120" stroke="url(#cyanBorder)" stroke-width="1.2" opacity="0.8"/>
     <line x1="20" y1="36" x2="210" y2="36" stroke="#1e293b" stroke-width="1"/>
 
@@ -1801,8 +1817,8 @@
     <g transform="translate(18, 120)">
       <rect width="194" height="64" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
       
-      <text x="14" y="22" class="mono" fill="#facc15" font-size="14" font-weight="900">584 TOTAL COMMITS</text>
-      <text x="14" y="36" class="mono" fill="#94a3b8" font-size="9.5">EXP: 584 XP <tspan fill="#facc15">(58%)</tspan></text>
+      <text x="14" y="22" class="mono" fill="#facc15" font-size="14" font-weight="900">588 TOTAL COMMITS</text>
+      <text x="14" y="36" class="mono" fill="#94a3b8" font-size="9.5">EXP: 588 XP <tspan fill="#facc15">(58%)</tspan></text>
       
       <rect x="14" y="44" width="166" height="9" rx="4.5" fill="#1e293b" stroke="#334155" stroke-width="0.8"/>
       <rect x="15" y="45" width="95" height="7" rx="3.5" fill="url(#goldBar)" filter="url(#crystalGlow)"/>
@@ -1831,5 +1847,10 @@
       <circle cx="180" cy="20" r="3" fill="#a855f7" class="spark"/>
     </g>
   </g>
-
+  <!-- Bottom Tech Footer Line -->
+  <g transform="translate(85, 360)">
+    <line x1="0" y1="0" x2="800" y2="0" stroke="#1e293b" stroke-width="1"/>
+    <text x="0" y="18" class="mono" fill="#475569" font-size="9">GENERATED VIA QUEST_CODER ENGINE // ISO-VOXEL 2.5D // REAL-TIME GITHUB TELEMETRY</text>
+    <text x="800" y="18" class="mono" fill="#38bdf8" font-size="9" text-anchor="end">STATUS: READY FOR PRODUCTION ✦</text>
+  </g>
 </svg>

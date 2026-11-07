@@ -1,68 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 430" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 430" width="1200" height="430" style="background:#020617; font-family:'Segoe UI', system-ui, -apple-system, sans-serif;">
   <defs>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&amp;family=Inter:wght@400;700;900&amp;display=swap');
-      text { font-family: 'Inter', -apple-system, sans-serif; }
-      .mono { font-family: 'Fira Code', monospace; }
-
-      @keyframes trainMove {
-        0% { transform: translateX(-100px); }
-        100% { transform: translateX(1400px); }
-      }
-      @keyframes beaconBlink {
-        0%, 100% { opacity: 0.3; }
-        50% { opacity: 1; }
-      }
-      @keyframes floatFog {
-        0%, 100% { transform: translateX(0); }
-        50% { transform: translateX(30px); }
-      }
-      @keyframes pulseAura {
-        0%, 100% { opacity: 0.7; }
-        50% { opacity: 0.95; }
-      }
-
-      .train-pod { animation: trainMove 14s linear infinite; }
-      .spire-beacon { animation: beaconBlink 2.2s ease-in-out infinite; }
-      .fog-layer { animation: floatFog 20s ease-in-out infinite; }
-      .domain-aura { animation: pulseAura 4s ease-in-out infinite; }
-    </style>
-
-    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#05070f"/>
-      <stop offset="40%" stop-color="#0a0f1d"/>
-      <stop offset="85%" stop-color="#0e172a"/>
-      <stop offset="100%" stop-color="#141e33"/>
+    <!-- Rich Background Gradients -->
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#02040a"/>
+      <stop offset="60%" stop-color="#061024"/>
+      <stop offset="100%" stop-color="#081836"/>
     </linearGradient>
 
-    <linearGradient id="bldgGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#111827"/>
-      <stop offset="50%" stop-color="#090d16"/>
-      <stop offset="100%" stop-color="#04060a"/>
+    <linearGradient id="dormantBldgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0a101d"/>
+      <stop offset="100%" stop-color="#03060d"/>
     </linearGradient>
 
-    <linearGradient id="skylineAuraGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#00f9ff" stop-opacity="0.35"/>
-      <stop offset="50%" stop-color="#0077ff" stop-opacity="0.15"/>
-      <stop offset="100%" stop-color="#0077ff" stop-opacity="0"/>
+    <linearGradient id="activeBldgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0c2045"/>
+      <stop offset="100%" stop-color="#050a14"/>
     </linearGradient>
 
-    <linearGradient id="streakBeam" x1="0" y1="1" x2="0" y2="0">
-      <stop offset="0%" stop-color="#00ff7f" stop-opacity="0.45"/>
-      <stop offset="60%" stop-color="#00f9ff" stop-opacity="0.2"/>
-      <stop offset="100%" stop-color="#00f9ff" stop-opacity="0"/>
+    <linearGradient id="cyberCyberLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0077ff" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#00f9ff" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#00ff7f" stop-opacity="0.3"/>
     </linearGradient>
 
-    <filter id="neonGlow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
+    <!-- Professional Glow Filters -->
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur1"/>
+      <feGaussianBlur stdDeviation="8" result="blur2"/>
       <feMerge>
-        <feMergeNode in="blur"/>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
 
-    <filter id="hyperGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="7" result="blur"/>
+    <filter id="monorailGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
@@ -70,280 +43,847 @@
     </filter>
   </defs>
 
-  <rect width="1200" height="430" fill="url(#skyGrad)" rx="12"/>
+  <style>
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    .spire-beacon { animation: pulse 2s infinite ease-in-out; }
+    .monorail-track { animation: pulse 3s infinite ease-in-out; stroke-dasharray: 8, 4; stroke-dashoffset: 0; }
+    .mono { font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace; }
+  </style>
 
-  <g id="stars" opacity="0.6">
-    <circle cx="120" cy="45" r="1.2" fill="#ffffff"/>
-    <circle cx="280" cy="70" r="1.5" fill="#00f9ff" opacity="0.8"/>
-    <circle cx="450" cy="35" r="1" fill="#ffffff"/>
-    <circle cx="680" cy="80" r="1.4" fill="#ffffff"/>
-    <circle cx="890" cy="50" r="1.2" fill="#00ff7f"/>
-    <circle cx="1050" cy="65" r="1.6" fill="#00f9ff"/>
-    <circle cx="340" cy="110" r="0.8" fill="#ffffff"/>
-    <circle cx="780" cy="120" r="1.1" fill="#ffffff"/>
+  <!-- Deep Sky Backdrop -->
+  <rect width="1200" height="430" fill="url(#skyGrad)" rx="16"/>
+  <rect x="1" y="1" width="1198" height="428" fill="none" stroke="#1e293b" stroke-width="1.5" rx="15"/>
+
+  <!-- Starfield Matrix -->
+  <g opacity="0.4" fill="#ffffff">
+    <circle cx="150" cy="80" r="1"/> <circle cx="320" cy="50" r="1.5"/> <circle cx="580" cy="90" r="0.8"/>
+    <circle cx="850" cy="60" r="1.2"/> <circle cx="1080" cy="110" r="1"/> <circle cx="1150" cy="40" r="1.5"/>
   </g>
 
-  <g id="backdrop-city">
-    <rect x="50" y="290.7" width="22" height="54.3" fill="#0b1220" opacity="0.45" rx="1"/><rect x="78" y="250.0" width="22" height="95.0" fill="#0b1220" opacity="0.45" rx="1"/><line x1="89" y1="250.0" x2="89" y2="238.0" stroke="#0077ff" stroke-width="0.8" opacity="0.3"/><rect x="106" y="209.3" width="22" height="135.7" fill="#0b1220" opacity="0.45" rx="1"/><line x1="117" y1="209.3" x2="117" y2="197.3" stroke="#0077ff" stroke-width="0.8" opacity="0.3"/><rect x="134" y="278.6" width="22" height="66.4" fill="#0b1220" opacity="0.45" rx="1"/><rect x="162" y="237.9" width="22" height="107.1" fill="#0b1220" opacity="0.45" rx="1"/><line x1="173" y1="237.9" x2="173" y2="225.9" stroke="#0077ff" stroke-width="0.8" opacity="0.3"/><rect x="190" y="197.2" width="22" height="147.8" fill="#0b1220" opacity="0.45" rx="1"/><line x1="201" y1="197.2" x2="201" y2="185.2" stroke="#0077ff" stroke-width="0.8" opacity="0.3"/><rect x="218" y="266.5" width="22" height="78.5" fill="#0b1220" opacity="0.45" rx="1"/><rect x="246" y="225.8" width="22" height="119.2" fill="#0b1220" opacity="0.45" rx="1"/><line x1="257" y1="225.8" x2="257" y2="213.8" stroke="#0077ff" stroke-width="0.8" opacity="0.3"/><rect x="274" y="295.1" width="22" height="49.9" fill="#0b1220" opacity="0.45" rx="1"/><rect x="302" y="254.4" width="22" height="90.6" fill="#0b1220" opacity="0.45" rx="1"/><line x1="313" y1="254.4" x2="313" y2="242.4" stroke="#0077ff" stroke-width="0.8" opacity="0.3"/><rect x="330" y="213.7" width="22" height="131.3" fill="#0b1220" opacity="0.45" rx="1"/><line x1="341" y1="213.7" x2="341" y2="201.7" stroke="#0077ff" stroke-width="0.8" opacity="0.3"/><rect x="358" y="283.0" width="22" height="62.0" fill="#0b1220" opacity="0.45" rx="1"/><rect x="386" y="242.3" width="22" height="102.69999999999999" fill="#0b1220" opacity="0.45" rx="1"/><line x1="397" y1="242.3" x2="397" y2="230.3" stroke="#0077ff" stroke-width="0.8" opacity="0.3"/><rect x="414" y="201.60000000000002" width="22" height="143.39999999999998" fill="#0b1220" opacity="0.45" rx="1"/><line x1="425" y1="201.60000000000002" x2="425" y2="189.60000000000002" stroke="#0077ff" stroke-width="0.8" opacity="0.3"/><rect x="442" y="270.9" width="22" height="74.1" fill="#0b1220" opacity="0.45" rx="1"/><rect x="470" y="230.2" width="22" height="114.80000000000001" fill="#0b1220" opacity="0.45" rx="1"/><line x1="481" y1="230.2" x2="481" y2="218.2" stroke="#0077ff" stroke-width="0.8" opacity="0.3"/><rect x="498" y="299.5" width="22" height="45.5" fill="#0b1220" opacity="0.45" rx="1"/><rect x="526" y="258.8" width="22" height="86.19999999999999" fill="#0b1220" opacity="0.45" rx="1"/><line x1="537" y1="258.8" x2="537" y2="246.8" stroke="#0077ff" stroke-width="0.8" opacity="0.3"/><rect x="554" y="218.1" width="22" height="126.9" fill="#0b1220" opacity="0.45" rx="1"/><line x1="565" y1="218.1" x2="565" y2="206.1" stroke="#0077ff" stroke-width="0.8" opacity="0.3"/><rect x="582" y="287.4" width="22" height="57.6" fill="#0b1220" opacity="0.45" rx="1"/><rect x="610" y="246.7" width="22" height="98.30000000000001" fill="#0b1220" opacity="0.45" rx="1"/><line x1="621" y1="246.7" x2="621" y2="234.7" stroke="#0077ff" stroke-width="0.8" opacity="0.3"/><rect x="638" y="206.0" width="22" height="139.0" fill="#0b1220" opacity="0.45" rx="1"/><line x1="649" y1="206.0" x2="649" y2="194.0" stroke="#0077ff" stroke-width="0.8" opacity="0.3"/><rect x="666" y="275.3" width="22" height="69.7" fill="#0b1220" opacity="0.45" rx="1"/><rect x="694" y="234.6" width="22" height="110.4" fill="#0b1220" opacity="0.45" rx="1"/><line x1="705" y1="234.6" x2="705" y2="222.6" stroke="#0077ff" stroke-width="0.8" opacity="0.3"/><rect x="722" y="303.9" width="22" height="41.1" fill="#0b1220" opacity="0.45" rx="1"/><rect x="750" y="263.2" width="22" height="81.8" fill="#0b1220" opacity="0.45" rx="1"/><rect x="778" y="222.5" width="22" height="122.5" fill="#0b1220" opacity="0.45" rx="1"/><line x1="789" y1="222.5" x2="789" y2="210.5" stroke="#0077ff" stroke-width="0.8" opacity="0.3"/><rect x="806" y="291.8" width="22" height="53.2" fill="#0b1220" opacity="0.45" rx="1"/><rect x="834" y="251.1" width="22" height="93.9" fill="#0b1220" opacity="0.45" rx="1"/><line x1="845" y1="251.1" x2="845" y2="239.1" stroke="#0077ff" stroke-width="0.8" opacity="0.3"/><rect x="862" y="210.4" width="22" height="134.6" fill="#0b1220" opacity="0.45" rx="1"/><line x1="873" y1="210.4" x2="873" y2="198.4" stroke="#0077ff" stroke-width="0.8" opacity="0.3"/><rect x="890" y="279.7" width="22" height="65.3" fill="#0b1220" opacity="0.45" rx="1"/><rect x="918" y="239.0" width="22" height="106.0" fill="#0b1220" opacity="0.45" rx="1"/><line x1="929" y1="239.0" x2="929" y2="227.0" stroke="#0077ff" stroke-width="0.8" opacity="0.3"/><rect x="946" y="198.3" width="22" height="146.7" fill="#0b1220" opacity="0.45" rx="1"/><line x1="957" y1="198.3" x2="957" y2="186.3" stroke="#0077ff" stroke-width="0.8" opacity="0.3"/><rect x="974" y="267.6" width="22" height="77.4" fill="#0b1220" opacity="0.45" rx="1"/><rect x="1002" y="226.9" width="22" height="118.1" fill="#0b1220" opacity="0.45" rx="1"/><line x1="1013" y1="226.9" x2="1013" y2="214.9" stroke="#0077ff" stroke-width="0.8" opacity="0.3"/><rect x="1030" y="296.2" width="22" height="48.8" fill="#0b1220" opacity="0.45" rx="1"/><rect x="1058" y="255.5" width="22" height="89.5" fill="#0b1220" opacity="0.45" rx="1"/><line x1="1069" y1="255.5" x2="1069" y2="243.5" stroke="#0077ff" stroke-width="0.8" opacity="0.3"/><rect x="1086" y="214.8" width="22" height="130.2" fill="#0b1220" opacity="0.45" rx="1"/><line x1="1097" y1="214.8" x2="1097" y2="202.8" stroke="#0077ff" stroke-width="0.8" opacity="0.3"/><rect x="1114" y="284.1" width="22" height="60.9" fill="#0b1220" opacity="0.45" rx="1"/><rect x="1142" y="243.39999999999998" width="22" height="101.60000000000001" fill="#0b1220" opacity="0.45" rx="1"/><line x1="1153" y1="243.39999999999998" x2="1153" y2="231.39999999999998" stroke="#0077ff" stroke-width="0.8" opacity="0.3"/>
+  <!-- Geometric Horizon Wireframe -->
+  <g id="perspective-grid">
+    <line x1="600" y1="160" x2="-2100" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="600" y1="160" x2="-1920" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="600" y1="160" x2="-1740" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="600" y1="160" x2="-1560" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="600" y1="160" x2="-1380" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="600" y1="160" x2="-1200" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="600" y1="160" x2="-1020" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="600" y1="160" x2="-840" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="600" y1="160" x2="-660" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="600" y1="160" x2="-480" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="600" y1="160" x2="-300" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="600" y1="160" x2="-120" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="600" y1="160" x2="60" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="600" y1="160" x2="240" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="600" y1="160" x2="420" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="600" y1="160" x2="600" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="600" y1="160" x2="780" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="600" y1="160" x2="960" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="600" y1="160" x2="1140" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="600" y1="160" x2="1320" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="600" y1="160" x2="1500" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="600" y1="160" x2="1680" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="600" y1="160" x2="1860" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="600" y1="160" x2="2040" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="600" y1="160" x2="2220" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="600" y1="160" x2="2400" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="600" y1="160" x2="2580" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="600" y1="160" x2="2760" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="600" y1="160" x2="2940" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="600" y1="160" x2="3120" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="600" y1="160" x2="3300" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.1" /><line x1="0" y1="160" x2="1200" y2="160" stroke="#0077ff" stroke-width="1" opacity="0.05" /><line x1="0" y1="170" x2="1200" y2="170" stroke="#0077ff" stroke-width="1" opacity="0.08" /><line x1="0" y1="194.82202253184496" x2="1200" y2="194.82202253184496" stroke="#0077ff" stroke-width="1" opacity="0.11" /><line x1="0" y1="232.24674055842075" x2="1200" y2="232.24674055842075" stroke="#0077ff" stroke-width="1" opacity="0.14" /><line x1="0" y1="281.25732532083185" x2="1200" y2="281.25732532083185" stroke="#0077ff" stroke-width="1" opacity="0.16999999999999998" /><line x1="0" y1="341.1949159194239" x2="1200" y2="341.1949159194239" stroke="#0077ff" stroke-width="1" opacity="0.2" />
   </g>
 
-  <g id="domain-beacon-glow" class="domain-aura">
+  <!-- HUD Header Layer -->
+  <g id="header" transform="translate(45, 30)">
+    <polygon points="0,12 12,0 30,0 30,24 12,24" fill="#00f9ff" opacity="0.15" stroke="#00f9ff" stroke-width="1"/>
+    <rect x="10" y="8" width="8" height="8" fill="#00ff7f" filter="url(#neonGlow)"/>
     
-    <polygon points="990.0,345 1027.0,345 1047.0,125 970.0,125" fill="url(#streakBeam)" opacity="0.35"/>
-    
+    <text x="45" y="14" fill="#f8fafc" font-size="16" font-weight="800" letter-spacing="2">NEON CITYSCAPE: <tspan fill="#00f9ff">OVERCHARGED</tspan></text>
+    <text x="45" y="28" class="mono" fill="#64748b" font-size="10" letter-spacing="1">USER: CIPHER-SHADOW-IR // ACTIVE POWER GRID</text>
+
+    <g transform="translate(750, -5)">
+      <text x="0" y="20" class="mono" fill="#94a3b8" font-size="11">TOTAL COMMITS:</text>
+      <text x="100" y="21" class="mono" fill="#00f9ff" font-size="14" font-weight="900" filter="url(#neonGlow)">583</text>
+      
+      <text x="180" y="20" class="mono" fill="#94a3b8" font-size="11">ACTIVE STREAK:</text>
+      <text x="285" y="21" class="mono" fill="#00ff7f" font-size="14" font-weight="900" filter="url(#neonGlow)">3 DAYS</text>
+    </g>
   </g>
 
-  <polygon points="65,345 72.0,307 90.5,307 109.0,307 127.5,307 146.0,307 164.5,307 183.0,277 201.5,307 220.0,301 238.5,294 257.0,301 275.5,307 294.0,301 312.5,294 331.0,270 349.5,253 368.0,261 386.5,253 405.0,266 423.5,235 442.0,286 460.5,266 479.0,303 497.5,305 516.0,292 534.5,288 553.0,307 571.5,275 590.0,292 608.5,138 627.0,297 645.5,305 664.0,272 682.5,239 701.0,301 719.5,288 738.0,272 756.5,303 775.0,307 793.5,305 812.0,307 830.5,307 849.0,294 867.5,235 886.0,307 904.5,307 923.0,307 941.5,299 960.0,294 978.5,305 997.0,107 1015.5,231 1022.5,345" fill="url(#skylineAuraGrad)"/>
-
+  <!-- Architectural Layers -->
+  <g id="backdrop"><rect x="30" y="286.6" width="33" height="63.400000000000006" fill="#040914" opacity="0.8"/><rect x="70" y="153.4" width="32" height="196.6" fill="#040914" opacity="0.8"/><rect x="110" y="200.2" width="21" height="149.8" fill="#040914" opacity="0.8"/><rect x="150" y="247" width="25" height="103" fill="#040914" opacity="0.8"/><rect x="190" y="293.8" width="29" height="56.2" fill="#040914" opacity="0.8"/><rect x="230" y="160.6" width="28" height="189.4" fill="#040914" opacity="0.8"/><rect x="270" y="207.4" width="32" height="142.6" fill="#040914" opacity="0.8"/><rect x="310" y="254.2" width="21" height="95.8" fill="#040914" opacity="0.8"/><rect x="350" y="301" width="25" height="49" fill="#040914" opacity="0.8"/><rect x="390" y="167.79999999999998" width="24" height="182.20000000000002" fill="#040914" opacity="0.8"/><rect x="430" y="214.6" width="28" height="135.4" fill="#040914" opacity="0.8"/><rect x="470" y="261.4" width="32" height="88.6" fill="#040914" opacity="0.8"/><rect x="510" y="308.2" width="21" height="41.8" fill="#040914" opacity="0.8"/><rect x="550" y="175" width="20" height="175" fill="#040914" opacity="0.8"/><rect x="590" y="221.8" width="24" height="128.2" fill="#040914" opacity="0.8"/><rect x="630" y="268.6" width="28" height="81.4" fill="#040914" opacity="0.8"/><rect x="670" y="135.4" width="27" height="214.6" fill="#040914" opacity="0.8"/><rect x="710" y="182.2" width="31" height="167.8" fill="#040914" opacity="0.8"/><rect x="750" y="229" width="20" height="121" fill="#040914" opacity="0.8"/><rect x="790" y="275.8" width="24" height="74.2" fill="#040914" opacity="0.8"/><rect x="830" y="142.6" width="23" height="207.4" fill="#040914" opacity="0.8"/><rect x="870" y="189.39999999999998" width="27" height="160.60000000000002" fill="#040914" opacity="0.8"/><rect x="910" y="236.2" width="31" height="113.8" fill="#040914" opacity="0.8"/><rect x="950" y="283" width="20" height="67" fill="#040914" opacity="0.8"/><rect x="990" y="149.8" width="34" height="200.2" fill="#040914" opacity="0.8"/><rect x="1030" y="196.6" width="23" height="153.4" fill="#040914" opacity="0.8"/><rect x="1070" y="243.4" width="27" height="106.6" fill="#040914" opacity="0.8"/><rect x="1110" y="290.2" width="31" height="59.8" fill="#040914" opacity="0.8"/><rect x="1150" y="157" width="30" height="193" fill="#040914" opacity="0.8"/><rect x="1190" y="203.8" width="34" height="146.2" fill="#040914" opacity="0.8"/></g>
+  <g id="midground"><rect x="50" y="250" width="15" height="100" fill="#091224" opacity="0.9"/>
+         <line x1="52" y1="250" x2="52" y2="350" stroke="#0077ff" stroke-width="0.5" opacity="0.3"/><rect x="90" y="296.8" width="19" height="53.19999999999999" fill="#091224" opacity="0.9"/>
+         <line x1="92" y1="296.8" x2="92" y2="350" stroke="#0077ff" stroke-width="0.5" opacity="0.3"/><rect x="130" y="163.6" width="23" height="186.4" fill="#091224" opacity="0.9"/>
+         <line x1="132" y1="163.6" x2="132" y2="350" stroke="#0077ff" stroke-width="0.5" opacity="0.3"/><rect x="170" y="210.4" width="17" height="139.6" fill="#091224" opacity="0.9"/>
+         <line x1="172" y1="210.4" x2="172" y2="350" stroke="#0077ff" stroke-width="0.5" opacity="0.3"/><rect x="210" y="257.2" width="21" height="92.8" fill="#091224" opacity="0.9"/>
+         <line x1="212" y1="257.2" x2="212" y2="350" stroke="#0077ff" stroke-width="0.5" opacity="0.3"/><rect x="250" y="304" width="15" height="46" fill="#091224" opacity="0.9"/>
+         <line x1="252" y1="304" x2="252" y2="350" stroke="#0077ff" stroke-width="0.5" opacity="0.3"/><rect x="290" y="170.8" width="19" height="179.2" fill="#091224" opacity="0.9"/>
+         <line x1="292" y1="170.8" x2="292" y2="350" stroke="#0077ff" stroke-width="0.5" opacity="0.3"/><rect x="330" y="217.6" width="23" height="132.4" fill="#091224" opacity="0.9"/>
+         <line x1="332" y1="217.6" x2="332" y2="350" stroke="#0077ff" stroke-width="0.5" opacity="0.3"/><rect x="370" y="264.4" width="17" height="85.6" fill="#091224" opacity="0.9"/>
+         <line x1="372" y1="264.4" x2="372" y2="350" stroke="#0077ff" stroke-width="0.5" opacity="0.3"/><rect x="410" y="311.2" width="21" height="38.8" fill="#091224" opacity="0.9"/>
+         <line x1="412" y1="311.2" x2="412" y2="350" stroke="#0077ff" stroke-width="0.5" opacity="0.3"/><rect x="450" y="178" width="15" height="172" fill="#091224" opacity="0.9"/>
+         <line x1="452" y1="178" x2="452" y2="350" stroke="#0077ff" stroke-width="0.5" opacity="0.3"/><rect x="490" y="224.8" width="19" height="125.19999999999999" fill="#091224" opacity="0.9"/>
+         <line x1="492" y1="224.8" x2="492" y2="350" stroke="#0077ff" stroke-width="0.5" opacity="0.3"/><rect x="530" y="271.6" width="23" height="78.4" fill="#091224" opacity="0.9"/>
+         <line x1="532" y1="271.6" x2="532" y2="350" stroke="#0077ff" stroke-width="0.5" opacity="0.3"/><rect x="570" y="318.4" width="17" height="31.599999999999994" fill="#091224" opacity="0.9"/>
+         <line x1="572" y1="318.4" x2="572" y2="350" stroke="#0077ff" stroke-width="0.5" opacity="0.3"/><rect x="610" y="185.2" width="21" height="164.8" fill="#091224" opacity="0.9"/>
+         <line x1="612" y1="185.2" x2="612" y2="350" stroke="#0077ff" stroke-width="0.5" opacity="0.3"/><rect x="650" y="232" width="15" height="118" fill="#091224" opacity="0.9"/>
+         <line x1="652" y1="232" x2="652" y2="350" stroke="#0077ff" stroke-width="0.5" opacity="0.3"/><rect x="690" y="278.8" width="19" height="71.2" fill="#091224" opacity="0.9"/>
+         <line x1="692" y1="278.8" x2="692" y2="350" stroke="#0077ff" stroke-width="0.5" opacity="0.3"/><rect x="730" y="325.6" width="23" height="24.4" fill="#091224" opacity="0.9"/>
+         <line x1="732" y1="325.6" x2="732" y2="350" stroke="#0077ff" stroke-width="0.5" opacity="0.3"/><rect x="770" y="192.4" width="17" height="157.6" fill="#091224" opacity="0.9"/>
+         <line x1="772" y1="192.4" x2="772" y2="350" stroke="#0077ff" stroke-width="0.5" opacity="0.3"/><rect x="810" y="239.2" width="21" height="110.80000000000001" fill="#091224" opacity="0.9"/>
+         <line x1="812" y1="239.2" x2="812" y2="350" stroke="#0077ff" stroke-width="0.5" opacity="0.3"/><rect x="850" y="286" width="15" height="64" fill="#091224" opacity="0.9"/>
+         <line x1="852" y1="286" x2="852" y2="350" stroke="#0077ff" stroke-width="0.5" opacity="0.3"/><rect x="890" y="332.8" width="19" height="17.200000000000003" fill="#091224" opacity="0.9"/>
+         <line x1="892" y1="332.8" x2="892" y2="350" stroke="#0077ff" stroke-width="0.5" opacity="0.3"/><rect x="930" y="199.6" width="23" height="150.4" fill="#091224" opacity="0.9"/>
+         <line x1="932" y1="199.6" x2="932" y2="350" stroke="#0077ff" stroke-width="0.5" opacity="0.3"/><rect x="970" y="246.39999999999998" width="17" height="103.60000000000002" fill="#091224" opacity="0.9"/>
+         <line x1="972" y1="246.39999999999998" x2="972" y2="350" stroke="#0077ff" stroke-width="0.5" opacity="0.3"/><rect x="1010" y="293.2" width="21" height="56.80000000000001" fill="#091224" opacity="0.9"/>
+         <line x1="1012" y1="293.2" x2="1012" y2="350" stroke="#0077ff" stroke-width="0.5" opacity="0.3"/><rect x="1050" y="340" width="15" height="10" fill="#091224" opacity="0.9"/>
+         <line x1="1052" y1="340" x2="1052" y2="350" stroke="#0077ff" stroke-width="0.5" opacity="0.3"/><rect x="1090" y="206.8" width="19" height="143.2" fill="#091224" opacity="0.9"/>
+         <line x1="1092" y1="206.8" x2="1092" y2="350" stroke="#0077ff" stroke-width="0.5" opacity="0.3"/><rect x="1130" y="253.60000000000002" width="23" height="96.39999999999999" fill="#091224" opacity="0.9"/>
+         <line x1="1132" y1="253.60000000000002" x2="1132" y2="350" stroke="#0077ff" stroke-width="0.5" opacity="0.3"/><rect x="1170" y="300.4" width="17" height="49.599999999999994" fill="#091224" opacity="0.9"/>
+         <line x1="1172" y1="300.4" x2="1172" y2="350" stroke="#0077ff" stroke-width="0.5" opacity="0.3"/><rect x="1210" y="167.20000000000002" width="21" height="182.79999999999998" fill="#091224" opacity="0.9"/>
+         <line x1="1212" y1="167.20000000000002" x2="1212" y2="350" stroke="#0077ff" stroke-width="0.5" opacity="0.3"/></g>
   <g id="skyscrapers">
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 65 316 L 68 316 L 68 310 L 78 310 L 78 316 L 81 316 L 81 350 L 65 350 Z" fill="url(#dormantBldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.3"/>
+        
+        <!-- Left Edge Highlight -->
+        
+    </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 86 318 L 102 310 L 102 350 L 86 350 Z" fill="url(#dormantBldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.3"/>
+        
+        <!-- Left Edge Highlight -->
+        
+    </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 107 310 L 123 310 L 123 350 L 107 350 Z" fill="url(#dormantBldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.3"/>
+        
+        <!-- Left Edge Highlight -->
+        
+    </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 128 316 L 131 316 L 131 310 L 141 310 L 141 316 L 144 316 L 144 350 L 128 350 Z" fill="url(#dormantBldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.3"/>
+        
+        <!-- Left Edge Highlight -->
+        
+    </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 149 318 L 165 310 L 165 350 L 149 350 Z" fill="url(#dormantBldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.3"/>
+        
+        <!-- Left Edge Highlight -->
+        
+    </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 170 310 L 186 310 L 186 350 L 170 350 Z" fill="url(#dormantBldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.3"/>
+        
+        <!-- Left Edge Highlight -->
+        
+    </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 191 282 L 194 282 L 194 276 L 204 276 L 204 282 L 207 282 L 207 350 L 191 350 Z" fill="url(#activeBldgGrad)" stroke="#00ff7f" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="191" y1="284" x2="191" y2="350" stroke="#00ff7f" stroke-width="1" opacity="0.7"/>
     
-    <!-- Week 1: 0 commits -->
-    <g class="skyscraper">
-      <rect x="65.0" y="315" width="14" height="30" fill="url(#bldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.4" rx="1"/>      <rect x="67.5" y="321.0" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="67.5" y="323.57142857142856" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="67.5" y="326.14285714285717" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="67.5" y="328.7142857142857" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="67.5" y="331.2857142857143" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="67.5" y="333.85714285714283" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="67.5" y="336.42857142857144" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 2: 0 commits -->
-    <g class="skyscraper">
-      <rect x="83.5" y="315" width="14" height="30" fill="url(#bldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.4" rx="1"/>      <rect x="86.0" y="321.0" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="86.0" y="323.57142857142856" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="86.0" y="326.14285714285717" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="86.0" y="328.7142857142857" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="86.0" y="331.2857142857143" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="86.0" y="333.85714285714283" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="86.0" y="336.42857142857144" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 3: 0 commits -->
-    <g class="skyscraper">
-      <rect x="102.0" y="315" width="14" height="30" fill="url(#bldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.4" rx="1"/>      <rect x="104.5" y="321.0" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="104.5" y="323.57142857142856" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="104.5" y="326.14285714285717" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="104.5" y="328.7142857142857" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="104.5" y="331.2857142857143" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="104.5" y="333.85714285714283" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="104.5" y="336.42857142857144" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 4: 0 commits -->
-    <g class="skyscraper">
-      <rect x="120.5" y="315" width="14" height="30" fill="url(#bldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.4" rx="1"/>      <rect x="123.0" y="321.0" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="123.0" y="323.57142857142856" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="123.0" y="326.14285714285717" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="123.0" y="328.7142857142857" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="123.0" y="331.2857142857143" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="123.0" y="333.85714285714283" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="123.0" y="336.42857142857144" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 5: 0 commits -->
-    <g class="skyscraper">
-      <rect x="139.0" y="315" width="14" height="30" fill="url(#bldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.4" rx="1"/>      <rect x="141.5" y="321.0" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="141.5" y="323.57142857142856" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="141.5" y="326.14285714285717" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="141.5" y="328.7142857142857" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="141.5" y="331.2857142857143" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="141.5" y="333.85714285714283" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="141.5" y="336.42857142857144" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 6: 0 commits -->
-    <g class="skyscraper">
-      <rect x="157.5" y="315" width="14" height="30" fill="url(#bldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.4" rx="1"/>      <rect x="160.0" y="321.0" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="160.0" y="323.57142857142856" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="160.0" y="326.14285714285717" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="160.0" y="328.7142857142857" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="160.0" y="331.2857142857143" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="160.0" y="333.85714285714283" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="160.0" y="336.42857142857144" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 7: 14 commits -->
-    <g class="skyscraper">
-      <rect x="176.0" y="285" width="14" height="60" fill="url(#bldgGrad)" stroke="#00ff7f" stroke-width="1" stroke-opacity="0.85" rx="1"/>
-      <line x1="183.0" y1="285" x2="183.0" y2="256" stroke="#00ff7f" stroke-width="1.2" filter="url(#neonGlow)"/>
-      <circle cx="183.0" cy="256" r="1.5" fill="#ffffff" class="spire-beacon"/>      <rect x="178.5" y="291.0" width="9" height="4.571428571428571" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="178.5" y="297.85714285714283" width="9" height="4.571428571428571" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="178.5" y="304.7142857142857" width="9" height="4.571428571428571" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="178.5" y="311.57142857142856" width="9" height="4.571428571428571" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="178.5" y="318.42857142857144" width="9" height="4.571428571428571" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="178.5" y="325.2857142857143" width="9" height="4.571428571428571" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="178.5" y="332.1428571428571" width="9" height="4.571428571428571" fill="#00ff7f" filter="url(#neonGlow)" rx="0.5" opacity="0.95"/>    </g>
-    <!-- Week 8: 0 commits -->
-    <g class="skyscraper">
-      <rect x="194.5" y="315" width="14" height="30" fill="url(#bldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.4" rx="1"/>      <rect x="197.0" y="321.0" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="197.0" y="323.57142857142856" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="197.0" y="326.14285714285717" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="197.0" y="328.7142857142857" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="197.0" y="331.2857142857143" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="197.0" y="333.85714285714283" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="197.0" y="336.42857142857144" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 9: 3 commits -->
-    <g class="skyscraper">
-      <rect x="213.0" y="309" width="14" height="36" fill="url(#bldgGrad)" stroke="#0077ff" stroke-width="1" stroke-opacity="0.85" rx="1"/>      <rect x="215.5" y="315.0" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="215.5" y="318.42857142857144" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="215.5" y="321.85714285714283" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="215.5" y="325.2857142857143" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="215.5" y="328.7142857142857" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="215.5" y="332.14285714285717" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="215.5" y="335.57142857142856" width="9" height="2" fill="#00f9ff"  rx="0.5" opacity="0.95"/>    </g>
-    <!-- Week 10: 6 commits -->
-    <g class="skyscraper">
-      <rect x="231.5" y="302" width="14" height="43" fill="url(#bldgGrad)" stroke="#00f9ff" stroke-width="1" stroke-opacity="0.85" rx="1"/>
-      <line x1="238.5" y1="302" x2="238.5" y2="285" stroke="#00f9ff" stroke-width="1.2" filter="url(#neonGlow)"/>
-      <circle cx="238.5" cy="285" r="1.5" fill="#ffffff" class="spire-beacon"/>      <rect x="234.0" y="308.0" width="9" height="2.1428571428571432" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="234.0" y="312.42857142857144" width="9" height="2.1428571428571432" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="234.0" y="316.85714285714283" width="9" height="2.1428571428571432" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="234.0" y="321.2857142857143" width="9" height="2.1428571428571432" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="234.0" y="325.7142857142857" width="9" height="2.1428571428571432" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="234.0" y="330.14285714285717" width="9" height="2.1428571428571432" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="234.0" y="334.57142857142856" width="9" height="2.1428571428571432" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 11: 3 commits -->
-    <g class="skyscraper">
-      <rect x="250.0" y="309" width="14" height="36" fill="url(#bldgGrad)" stroke="#0077ff" stroke-width="1" stroke-opacity="0.85" rx="1"/>      <rect x="252.5" y="315.0" width="9" height="2" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="252.5" y="318.42857142857144" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="252.5" y="321.85714285714283" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="252.5" y="325.2857142857143" width="9" height="2" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="252.5" y="328.7142857142857" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="252.5" y="332.14285714285717" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="252.5" y="335.57142857142856" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 12: 0 commits -->
-    <g class="skyscraper">
-      <rect x="268.5" y="315" width="14" height="30" fill="url(#bldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.4" rx="1"/>      <rect x="271.0" y="321.0" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="271.0" y="323.57142857142856" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="271.0" y="326.14285714285717" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="271.0" y="328.7142857142857" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="271.0" y="331.2857142857143" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="271.0" y="333.85714285714283" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="271.0" y="336.42857142857144" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 13: 3 commits -->
-    <g class="skyscraper">
-      <rect x="287.0" y="309" width="14" height="36" fill="url(#bldgGrad)" stroke="#0077ff" stroke-width="1" stroke-opacity="0.85" rx="1"/>      <rect x="289.5" y="315.0" width="9" height="2" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="289.5" y="318.42857142857144" width="9" height="2" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="289.5" y="321.85714285714283" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="289.5" y="325.2857142857143" width="9" height="2" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="289.5" y="328.7142857142857" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="289.5" y="332.14285714285717" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="289.5" y="335.57142857142856" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 14: 6 commits -->
-    <g class="skyscraper">
-      <rect x="305.5" y="302" width="14" height="43" fill="url(#bldgGrad)" stroke="#00f9ff" stroke-width="1" stroke-opacity="0.85" rx="1"/>
-      <line x1="312.5" y1="302" x2="312.5" y2="285" stroke="#00f9ff" stroke-width="1.2" filter="url(#neonGlow)"/>
-      <circle cx="312.5" cy="285" r="1.5" fill="#ffffff" class="spire-beacon"/>      <rect x="308.0" y="308.0" width="9" height="2.1428571428571432" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="308.0" y="312.42857142857144" width="9" height="2.1428571428571432" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="308.0" y="316.85714285714283" width="9" height="2.1428571428571432" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="308.0" y="321.2857142857143" width="9" height="2.1428571428571432" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="308.0" y="325.7142857142857" width="9" height="2.1428571428571432" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="308.0" y="330.14285714285717" width="9" height="2.1428571428571432" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="308.0" y="334.57142857142856" width="9" height="2.1428571428571432" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 15: 17 commits -->
-    <g class="skyscraper">
-      <rect x="324.0" y="278" width="14" height="67" fill="url(#bldgGrad)" stroke="#00ff7f" stroke-width="1" stroke-opacity="0.85" rx="1"/>
-      <line x1="331.0" y1="278" x2="331.0" y2="248" stroke="#00ff7f" stroke-width="1.2" filter="url(#neonGlow)"/>
-      <circle cx="331.0" cy="248" r="1.5" fill="#ffffff" class="spire-beacon"/>      <rect x="326.5" y="284.0" width="9" height="5.571428571428571" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="326.5" y="291.85714285714283" width="9" height="5.571428571428571" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="326.5" y="299.7142857142857" width="9" height="5.571428571428571" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="326.5" y="307.57142857142856" width="9" height="5.571428571428571" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="326.5" y="315.42857142857144" width="9" height="5.571428571428571" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="326.5" y="323.2857142857143" width="9" height="5.571428571428571" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="326.5" y="331.1428571428571" width="9" height="5.571428571428571" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 16: 25 commits -->
-    <g class="skyscraper">
-      <rect x="342.5" y="261" width="14" height="84" fill="url(#bldgGrad)" stroke="#00ff7f" stroke-width="1" stroke-opacity="0.85" rx="1"/>
-      <line x1="349.5" y1="261" x2="349.5" y2="231" stroke="#00ff7f" stroke-width="1.2" filter="url(#neonGlow)"/>
-      <circle cx="349.5" cy="231" r="1.5" fill="#ffffff" class="spire-beacon"/>      <rect x="345.0" y="267.0" width="9" height="8.0" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="345.0" y="277.2857142857143" width="9" height="8.0" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="345.0" y="287.57142857142856" width="9" height="8.0" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="345.0" y="297.8571428571429" width="9" height="8.0" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="345.0" y="308.14285714285717" width="9" height="8.0" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="345.0" y="318.42857142857144" width="9" height="8.0" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="345.0" y="328.7142857142857" width="9" height="8.0" fill="#00f9ff"  rx="0.5" opacity="0.95"/>    </g>
-    <!-- Week 17: 21 commits -->
-    <g class="skyscraper">
-      <rect x="361.0" y="269" width="14" height="76" fill="url(#bldgGrad)" stroke="#00ff7f" stroke-width="1" stroke-opacity="0.85" rx="1"/>
-      <line x1="368.0" y1="269" x2="368.0" y2="239" stroke="#00ff7f" stroke-width="1.2" filter="url(#neonGlow)"/>
-      <circle cx="368.0" cy="239" r="1.5" fill="#ffffff" class="spire-beacon"/>      <rect x="363.5" y="275.0" width="9" height="6.857142857142858" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="363.5" y="284.14285714285717" width="9" height="6.857142857142858" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="363.5" y="293.2857142857143" width="9" height="6.857142857142858" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="363.5" y="302.42857142857144" width="9" height="6.857142857142858" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="363.5" y="311.57142857142856" width="9" height="6.857142857142858" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="363.5" y="320.7142857142857" width="9" height="6.857142857142858" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="363.5" y="329.85714285714283" width="9" height="6.857142857142858" fill="#00f9ff"  rx="0.5" opacity="0.95"/>    </g>
-    <!-- Week 18: 25 commits -->
-    <g class="skyscraper">
-      <rect x="379.5" y="261" width="14" height="84" fill="url(#bldgGrad)" stroke="#00ff7f" stroke-width="1" stroke-opacity="0.85" rx="1"/>
-      <line x1="386.5" y1="261" x2="386.5" y2="231" stroke="#00ff7f" stroke-width="1.2" filter="url(#neonGlow)"/>
-      <circle cx="386.5" cy="231" r="1.5" fill="#ffffff" class="spire-beacon"/>      <rect x="382.0" y="267.0" width="9" height="8.0" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="382.0" y="277.2857142857143" width="9" height="8.0" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="382.0" y="287.57142857142856" width="9" height="8.0" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="382.0" y="297.8571428571429" width="9" height="8.0" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="382.0" y="308.14285714285717" width="9" height="8.0" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="382.0" y="318.42857142857144" width="9" height="8.0" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="382.0" y="328.7142857142857" width="9" height="8.0" fill="#00f9ff"  rx="0.5" opacity="0.95"/>    </g>
-    <!-- Week 19: 19 commits -->
-    <g class="skyscraper">
-      <rect x="398.0" y="274" width="14" height="71" fill="url(#bldgGrad)" stroke="#00ff7f" stroke-width="1" stroke-opacity="0.85" rx="1"/>
-      <line x1="405.0" y1="274" x2="405.0" y2="244" stroke="#00ff7f" stroke-width="1.2" filter="url(#neonGlow)"/>
-      <circle cx="405.0" cy="244" r="1.5" fill="#ffffff" class="spire-beacon"/>      <rect x="400.5" y="280.0" width="9" height="6.142857142857142" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="400.5" y="288.42857142857144" width="9" height="6.142857142857142" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="400.5" y="296.85714285714283" width="9" height="6.142857142857142" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="400.5" y="305.2857142857143" width="9" height="6.142857142857142" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="400.5" y="313.7142857142857" width="9" height="6.142857142857142" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="400.5" y="322.14285714285717" width="9" height="6.142857142857142" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="400.5" y="330.57142857142856" width="9" height="6.142857142857142" fill="#00f9ff"  rx="0.5" opacity="0.95"/>    </g>
-    <!-- Week 20: 33 commits -->
-    <g class="skyscraper">
-      <rect x="416.5" y="243" width="14" height="102" fill="url(#bldgGrad)" stroke="#00ff7f" stroke-width="1" stroke-opacity="0.85" rx="1"/>
-      <line x1="423.5" y1="243" x2="423.5" y2="213" stroke="#00ff7f" stroke-width="1.2" filter="url(#neonGlow)"/>
-      <circle cx="423.5" cy="213" r="1.5" fill="#ffffff" class="spire-beacon"/>      <rect x="419.0" y="249.0" width="9" height="10.571428571428571" fill="#00ff7f" filter="url(#neonGlow)" rx="0.5" opacity="0.95"/>      <rect x="419.0" y="261.85714285714283" width="9" height="10.571428571428571" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="419.0" y="274.7142857142857" width="9" height="10.571428571428571" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="419.0" y="287.57142857142856" width="9" height="10.571428571428571" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="419.0" y="300.42857142857144" width="9" height="10.571428571428571" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="419.0" y="313.2857142857143" width="9" height="10.571428571428571" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="419.0" y="326.1428571428571" width="9" height="10.571428571428571" fill="#00f9ff"  rx="0.5" opacity="0.95"/>    </g>
-    <!-- Week 21: 10 commits -->
-    <g class="skyscraper">
-      <rect x="435.0" y="294" width="14" height="51" fill="url(#bldgGrad)" stroke="#00ff7f" stroke-width="1" stroke-opacity="0.85" rx="1"/>
-      <line x1="442.0" y1="294" x2="442.0" y2="271" stroke="#00ff7f" stroke-width="1.2" filter="url(#neonGlow)"/>
-      <circle cx="442.0" cy="271" r="1.5" fill="#ffffff" class="spire-beacon"/>      <rect x="437.5" y="300.0" width="9" height="3.2857142857142856" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="437.5" y="305.57142857142856" width="9" height="3.2857142857142856" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="437.5" y="311.14285714285717" width="9" height="3.2857142857142856" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="437.5" y="316.7142857142857" width="9" height="3.2857142857142856" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="437.5" y="322.2857142857143" width="9" height="3.2857142857142856" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="437.5" y="327.85714285714283" width="9" height="3.2857142857142856" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="437.5" y="333.42857142857144" width="9" height="3.2857142857142856" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 22: 19 commits -->
-    <g class="skyscraper">
-      <rect x="453.5" y="274" width="14" height="71" fill="url(#bldgGrad)" stroke="#00ff7f" stroke-width="1" stroke-opacity="0.85" rx="1"/>
-      <line x1="460.5" y1="274" x2="460.5" y2="244" stroke="#00ff7f" stroke-width="1.2" filter="url(#neonGlow)"/>
-      <circle cx="460.5" cy="244" r="1.5" fill="#ffffff" class="spire-beacon"/>      <rect x="456.0" y="280.0" width="9" height="6.142857142857142" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="456.0" y="288.42857142857144" width="9" height="6.142857142857142" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="456.0" y="296.85714285714283" width="9" height="6.142857142857142" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="456.0" y="305.2857142857143" width="9" height="6.142857142857142" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="456.0" y="313.7142857142857" width="9" height="6.142857142857142" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="456.0" y="322.14285714285717" width="9" height="6.142857142857142" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="456.0" y="330.57142857142856" width="9" height="6.142857142857142" fill="#00ff7f" filter="url(#neonGlow)" rx="0.5" opacity="0.95"/>    </g>
-    <!-- Week 23: 2 commits -->
-    <g class="skyscraper">
-      <rect x="472.0" y="311" width="14" height="34" fill="url(#bldgGrad)" stroke="#0077ff" stroke-width="1" stroke-opacity="0.85" rx="1"/>      <rect x="474.5" y="317.0" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="474.5" y="320.14285714285717" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="474.5" y="323.2857142857143" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="474.5" y="326.42857142857144" width="9" height="2" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="474.5" y="329.57142857142856" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="474.5" y="332.7142857142857" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="474.5" y="335.85714285714283" width="9" height="2" fill="#0077ff"  rx="0.5" opacity="0.95"/>    </g>
-    <!-- Week 24: 1 commits -->
-    <g class="skyscraper">
-      <rect x="490.5" y="313" width="14" height="32" fill="url(#bldgGrad)" stroke="#0077ff" stroke-width="1" stroke-opacity="0.85" rx="1"/>      <rect x="493.0" y="319.0" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="493.0" y="321.85714285714283" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="493.0" y="324.7142857142857" width="9" height="2" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="493.0" y="327.57142857142856" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="493.0" y="330.42857142857144" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="493.0" y="333.2857142857143" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="493.0" y="336.14285714285717" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 25: 7 commits -->
-    <g class="skyscraper">
-      <rect x="509.0" y="300" width="14" height="45" fill="url(#bldgGrad)" stroke="#00f9ff" stroke-width="1" stroke-opacity="0.85" rx="1"/>
-      <line x1="516.0" y1="300" x2="516.0" y2="282" stroke="#00f9ff" stroke-width="1.2" filter="url(#neonGlow)"/>
-      <circle cx="516.0" cy="282" r="1.5" fill="#ffffff" class="spire-beacon"/>      <rect x="511.5" y="306.0" width="9" height="2.428571428571429" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="511.5" y="310.7142857142857" width="9" height="2.428571428571429" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="511.5" y="315.42857142857144" width="9" height="2.428571428571429" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="511.5" y="320.14285714285717" width="9" height="2.428571428571429" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="511.5" y="324.85714285714283" width="9" height="2.428571428571429" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="511.5" y="329.57142857142856" width="9" height="2.428571428571429" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="511.5" y="334.2857142857143" width="9" height="2.428571428571429" fill="#0077ff"  rx="0.5" opacity="0.95"/>    </g>
-    <!-- Week 26: 9 commits -->
-    <g class="skyscraper">
-      <rect x="527.5" y="296" width="14" height="49" fill="url(#bldgGrad)" stroke="#00f9ff" stroke-width="1" stroke-opacity="0.85" rx="1"/>
-      <line x1="534.5" y1="296" x2="534.5" y2="275" stroke="#00f9ff" stroke-width="1.2" filter="url(#neonGlow)"/>
-      <circle cx="534.5" cy="275" r="1.5" fill="#ffffff" class="spire-beacon"/>      <rect x="530.0" y="302.0" width="9" height="3.0" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="530.0" y="307.2857142857143" width="9" height="3.0" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="530.0" y="312.57142857142856" width="9" height="3.0" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="530.0" y="317.85714285714283" width="9" height="3.0" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="530.0" y="323.14285714285717" width="9" height="3.0" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="530.0" y="328.42857142857144" width="9" height="3.0" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="530.0" y="333.7142857142857" width="9" height="3.0" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 27: 0 commits -->
-    <g class="skyscraper">
-      <rect x="546.0" y="315" width="14" height="30" fill="url(#bldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.4" rx="1"/>      <rect x="548.5" y="321.0" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="548.5" y="323.57142857142856" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="548.5" y="326.14285714285717" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="548.5" y="328.7142857142857" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="548.5" y="331.2857142857143" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="548.5" y="333.85714285714283" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="548.5" y="336.42857142857144" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 28: 15 commits -->
-    <g class="skyscraper">
-      <rect x="564.5" y="283" width="14" height="62" fill="url(#bldgGrad)" stroke="#00ff7f" stroke-width="1" stroke-opacity="0.85" rx="1"/>
-      <line x1="571.5" y1="283" x2="571.5" y2="253" stroke="#00ff7f" stroke-width="1.2" filter="url(#neonGlow)"/>
-      <circle cx="571.5" cy="253" r="1.5" fill="#ffffff" class="spire-beacon"/>      <rect x="567.0" y="289.0" width="9" height="4.857142857142857" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="567.0" y="296.14285714285717" width="9" height="4.857142857142857" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="567.0" y="303.2857142857143" width="9" height="4.857142857142857" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="567.0" y="310.42857142857144" width="9" height="4.857142857142857" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="567.0" y="317.57142857142856" width="9" height="4.857142857142857" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="567.0" y="324.7142857142857" width="9" height="4.857142857142857" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="567.0" y="331.8571428571429" width="9" height="4.857142857142857" fill="#00f9ff"  rx="0.5" opacity="0.95"/>    </g>
-    <!-- Week 29: 7 commits -->
-    <g class="skyscraper">
-      <rect x="583.0" y="300" width="14" height="45" fill="url(#bldgGrad)" stroke="#00f9ff" stroke-width="1" stroke-opacity="0.85" rx="1"/>
-      <line x1="590.0" y1="300" x2="590.0" y2="282" stroke="#00f9ff" stroke-width="1.2" filter="url(#neonGlow)"/>
-      <circle cx="590.0" cy="282" r="1.5" fill="#ffffff" class="spire-beacon"/>      <rect x="585.5" y="306.0" width="9" height="2.428571428571429" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="585.5" y="310.7142857142857" width="9" height="2.428571428571429" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="585.5" y="315.42857142857144" width="9" height="2.428571428571429" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="585.5" y="320.14285714285717" width="9" height="2.428571428571429" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="585.5" y="324.85714285714283" width="9" height="2.428571428571429" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="585.5" y="329.57142857142856" width="9" height="2.428571428571429" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="585.5" y="334.2857142857143" width="9" height="2.428571428571429" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 30: 77 commits -->
-    <g class="skyscraper">
-      <rect x="601.5" y="146" width="14" height="199" fill="url(#bldgGrad)" stroke="#00ff7f" stroke-width="1" stroke-opacity="0.85" rx="1"/>
-      <line x1="608.5" y1="146" x2="608.5" y2="116" stroke="#00ff7f" stroke-width="1.2" filter="url(#neonGlow)"/>
-      <circle cx="608.5" cy="116" r="1.5" fill="#ffffff" class="spire-beacon"/>      <rect x="604.0" y="152.0" width="9" height="24.428571428571427" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="604.0" y="178.71428571428572" width="9" height="24.428571428571427" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="604.0" y="205.42857142857144" width="9" height="24.428571428571427" fill="#00ff7f" filter="url(#neonGlow)" rx="0.5" opacity="0.95"/>      <rect x="604.0" y="232.14285714285714" width="9" height="24.428571428571427" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="604.0" y="258.8571428571429" width="9" height="24.428571428571427" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="604.0" y="285.57142857142856" width="9" height="24.428571428571427" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="604.0" y="312.2857142857143" width="9" height="24.428571428571427" fill="#00ff7f" filter="url(#neonGlow)" rx="0.5" opacity="0.95"/>    </g>
-    <!-- Week 31: 5 commits -->
-    <g class="skyscraper">
-      <rect x="620.0" y="305" width="14" height="40" fill="url(#bldgGrad)" stroke="#00f9ff" stroke-width="1" stroke-opacity="0.85" rx="1"/>
-      <line x1="627.0" y1="305" x2="627.0" y2="290" stroke="#00f9ff" stroke-width="1.2" filter="url(#neonGlow)"/>
-      <circle cx="627.0" cy="290" r="1.5" fill="#ffffff" class="spire-beacon"/>      <rect x="622.5" y="311.0" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="622.5" y="315.0" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="622.5" y="319.0" width="9" height="2" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="622.5" y="323.0" width="9" height="2" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="622.5" y="327.0" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="622.5" y="331.0" width="9" height="2" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="622.5" y="335.0" width="9" height="2" fill="#0077ff"  rx="0.5" opacity="0.95"/>    </g>
-    <!-- Week 32: 1 commits -->
-    <g class="skyscraper">
-      <rect x="638.5" y="313" width="14" height="32" fill="url(#bldgGrad)" stroke="#0077ff" stroke-width="1" stroke-opacity="0.85" rx="1"/>      <rect x="641.0" y="319.0" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="641.0" y="321.85714285714283" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="641.0" y="324.7142857142857" width="9" height="2" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="641.0" y="327.57142857142856" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="641.0" y="330.42857142857144" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="641.0" y="333.2857142857143" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="641.0" y="336.14285714285717" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 33: 16 commits -->
-    <g class="skyscraper">
-      <rect x="657.0" y="280" width="14" height="65" fill="url(#bldgGrad)" stroke="#00ff7f" stroke-width="1" stroke-opacity="0.85" rx="1"/>
-      <line x1="664.0" y1="280" x2="664.0" y2="250" stroke="#00ff7f" stroke-width="1.2" filter="url(#neonGlow)"/>
-      <circle cx="664.0" cy="250" r="1.5" fill="#ffffff" class="spire-beacon"/>      <rect x="659.5" y="286.0" width="9" height="5.285714285714286" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="659.5" y="293.57142857142856" width="9" height="5.285714285714286" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="659.5" y="301.14285714285717" width="9" height="5.285714285714286" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="659.5" y="308.7142857142857" width="9" height="5.285714285714286" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="659.5" y="316.2857142857143" width="9" height="5.285714285714286" fill="#00ff7f" filter="url(#neonGlow)" rx="0.5" opacity="0.95"/>      <rect x="659.5" y="323.85714285714283" width="9" height="5.285714285714286" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="659.5" y="331.42857142857144" width="9" height="5.285714285714286" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 34: 31 commits -->
-    <g class="skyscraper">
-      <rect x="675.5" y="247" width="14" height="98" fill="url(#bldgGrad)" stroke="#00ff7f" stroke-width="1" stroke-opacity="0.85" rx="1"/>
-      <line x1="682.5" y1="247" x2="682.5" y2="217" stroke="#00ff7f" stroke-width="1.2" filter="url(#neonGlow)"/>
-      <circle cx="682.5" cy="217" r="1.5" fill="#ffffff" class="spire-beacon"/>      <rect x="678.0" y="253.0" width="9" height="10.0" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="678.0" y="265.2857142857143" width="9" height="10.0" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="678.0" y="277.57142857142856" width="9" height="10.0" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="678.0" y="289.8571428571429" width="9" height="10.0" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="678.0" y="302.14285714285717" width="9" height="10.0" fill="#00ff7f" filter="url(#neonGlow)" rx="0.5" opacity="0.95"/>      <rect x="678.0" y="314.42857142857144" width="9" height="10.0" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="678.0" y="326.7142857142857" width="9" height="10.0" fill="#00ff7f" filter="url(#neonGlow)" rx="0.5" opacity="0.95"/>    </g>
-    <!-- Week 35: 3 commits -->
-    <g class="skyscraper">
-      <rect x="694.0" y="309" width="14" height="36" fill="url(#bldgGrad)" stroke="#0077ff" stroke-width="1" stroke-opacity="0.85" rx="1"/>      <rect x="696.5" y="315.0" width="9" height="2" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="696.5" y="318.42857142857144" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="696.5" y="321.85714285714283" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="696.5" y="325.2857142857143" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="696.5" y="328.7142857142857" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="696.5" y="332.14285714285717" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="696.5" y="335.57142857142856" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 36: 9 commits -->
-    <g class="skyscraper">
-      <rect x="712.5" y="296" width="14" height="49" fill="url(#bldgGrad)" stroke="#00f9ff" stroke-width="1" stroke-opacity="0.85" rx="1"/>
-      <line x1="719.5" y1="296" x2="719.5" y2="275" stroke="#00f9ff" stroke-width="1.2" filter="url(#neonGlow)"/>
-      <circle cx="719.5" cy="275" r="1.5" fill="#ffffff" class="spire-beacon"/>      <rect x="715.0" y="302.0" width="9" height="3.0" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="715.0" y="307.2857142857143" width="9" height="3.0" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="715.0" y="312.57142857142856" width="9" height="3.0" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="715.0" y="317.85714285714283" width="9" height="3.0" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="715.0" y="323.14285714285717" width="9" height="3.0" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="715.0" y="328.42857142857144" width="9" height="3.0" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="715.0" y="333.7142857142857" width="9" height="3.0" fill="#00f9ff"  rx="0.5" opacity="0.95"/>    </g>
-    <!-- Week 37: 16 commits -->
-    <g class="skyscraper">
-      <rect x="731.0" y="280" width="14" height="65" fill="url(#bldgGrad)" stroke="#00ff7f" stroke-width="1" stroke-opacity="0.85" rx="1"/>
-      <line x1="738.0" y1="280" x2="738.0" y2="250" stroke="#00ff7f" stroke-width="1.2" filter="url(#neonGlow)"/>
-      <circle cx="738.0" cy="250" r="1.5" fill="#ffffff" class="spire-beacon"/>      <rect x="733.5" y="286.0" width="9" height="5.285714285714286" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="733.5" y="293.57142857142856" width="9" height="5.285714285714286" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="733.5" y="301.14285714285717" width="9" height="5.285714285714286" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="733.5" y="308.7142857142857" width="9" height="5.285714285714286" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="733.5" y="316.2857142857143" width="9" height="5.285714285714286" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="733.5" y="323.85714285714283" width="9" height="5.285714285714286" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="733.5" y="331.42857142857144" width="9" height="5.285714285714286" fill="#0077ff"  rx="0.5" opacity="0.95"/>    </g>
-    <!-- Week 38: 2 commits -->
-    <g class="skyscraper">
-      <rect x="749.5" y="311" width="14" height="34" fill="url(#bldgGrad)" stroke="#0077ff" stroke-width="1" stroke-opacity="0.85" rx="1"/>      <rect x="752.0" y="317.0" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="752.0" y="320.14285714285717" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="752.0" y="323.2857142857143" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="752.0" y="326.42857142857144" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="752.0" y="329.57142857142856" width="9" height="2" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="752.0" y="332.7142857142857" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="752.0" y="335.85714285714283" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 39: 0 commits -->
-    <g class="skyscraper">
-      <rect x="768.0" y="315" width="14" height="30" fill="url(#bldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.4" rx="1"/>      <rect x="770.5" y="321.0" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="770.5" y="323.57142857142856" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="770.5" y="326.14285714285717" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="770.5" y="328.7142857142857" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="770.5" y="331.2857142857143" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="770.5" y="333.85714285714283" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="770.5" y="336.42857142857144" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 40: 1 commits -->
-    <g class="skyscraper">
-      <rect x="786.5" y="313" width="14" height="32" fill="url(#bldgGrad)" stroke="#0077ff" stroke-width="1" stroke-opacity="0.85" rx="1"/>      <rect x="789.0" y="319.0" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="789.0" y="321.85714285714283" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="789.0" y="324.7142857142857" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="789.0" y="327.57142857142856" width="9" height="2" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="789.0" y="330.42857142857144" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="789.0" y="333.2857142857143" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="789.0" y="336.14285714285717" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 41: 0 commits -->
-    <g class="skyscraper">
-      <rect x="805.0" y="315" width="14" height="30" fill="url(#bldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.4" rx="1"/>      <rect x="807.5" y="321.0" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="807.5" y="323.57142857142856" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="807.5" y="326.14285714285717" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="807.5" y="328.7142857142857" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="807.5" y="331.2857142857143" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="807.5" y="333.85714285714283" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="807.5" y="336.42857142857144" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 42: 0 commits -->
-    <g class="skyscraper">
-      <rect x="823.5" y="315" width="14" height="30" fill="url(#bldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.4" rx="1"/>      <rect x="826.0" y="321.0" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="826.0" y="323.57142857142856" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="826.0" y="326.14285714285717" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="826.0" y="328.7142857142857" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="826.0" y="331.2857142857143" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="826.0" y="333.85714285714283" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="826.0" y="336.42857142857144" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 43: 6 commits -->
-    <g class="skyscraper">
-      <rect x="842.0" y="302" width="14" height="43" fill="url(#bldgGrad)" stroke="#00f9ff" stroke-width="1" stroke-opacity="0.85" rx="1"/>
-      <line x1="849.0" y1="302" x2="849.0" y2="285" stroke="#00f9ff" stroke-width="1.2" filter="url(#neonGlow)"/>
-      <circle cx="849.0" cy="285" r="1.5" fill="#ffffff" class="spire-beacon"/>      <rect x="844.5" y="308.0" width="9" height="2.1428571428571432" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="844.5" y="312.42857142857144" width="9" height="2.1428571428571432" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="844.5" y="316.85714285714283" width="9" height="2.1428571428571432" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="844.5" y="321.2857142857143" width="9" height="2.1428571428571432" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="844.5" y="325.7142857142857" width="9" height="2.1428571428571432" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="844.5" y="330.14285714285717" width="9" height="2.1428571428571432" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="844.5" y="334.57142857142856" width="9" height="2.1428571428571432" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 44: 33 commits -->
-    <g class="skyscraper">
-      <rect x="860.5" y="243" width="14" height="102" fill="url(#bldgGrad)" stroke="#00ff7f" stroke-width="1" stroke-opacity="0.85" rx="1"/>
-      <line x1="867.5" y1="243" x2="867.5" y2="213" stroke="#00ff7f" stroke-width="1.2" filter="url(#neonGlow)"/>
-      <circle cx="867.5" cy="213" r="1.5" fill="#ffffff" class="spire-beacon"/>      <rect x="863.0" y="249.0" width="9" height="10.571428571428571" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="863.0" y="261.85714285714283" width="9" height="10.571428571428571" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="863.0" y="274.7142857142857" width="9" height="10.571428571428571" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="863.0" y="287.57142857142856" width="9" height="10.571428571428571" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="863.0" y="300.42857142857144" width="9" height="10.571428571428571" fill="#00ff7f" filter="url(#neonGlow)" rx="0.5" opacity="0.95"/>      <rect x="863.0" y="313.2857142857143" width="9" height="10.571428571428571" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="863.0" y="326.1428571428571" width="9" height="10.571428571428571" fill="#00ff7f" filter="url(#neonGlow)" rx="0.5" opacity="0.95"/>    </g>
-    <!-- Week 45: 0 commits -->
-    <g class="skyscraper">
-      <rect x="879.0" y="315" width="14" height="30" fill="url(#bldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.4" rx="1"/>      <rect x="881.5" y="321.0" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="881.5" y="323.57142857142856" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="881.5" y="326.14285714285717" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="881.5" y="328.7142857142857" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="881.5" y="331.2857142857143" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="881.5" y="333.85714285714283" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="881.5" y="336.42857142857144" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 46: 0 commits -->
-    <g class="skyscraper">
-      <rect x="897.5" y="315" width="14" height="30" fill="url(#bldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.4" rx="1"/>      <rect x="900.0" y="321.0" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="900.0" y="323.57142857142856" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="900.0" y="326.14285714285717" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="900.0" y="328.7142857142857" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="900.0" y="331.2857142857143" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="900.0" y="333.85714285714283" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="900.0" y="336.42857142857144" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 47: 0 commits -->
-    <g class="skyscraper">
-      <rect x="916.0" y="315" width="14" height="30" fill="url(#bldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.4" rx="1"/>      <rect x="918.5" y="321.0" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="918.5" y="323.57142857142856" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="918.5" y="326.14285714285717" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="918.5" y="328.7142857142857" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="918.5" y="331.2857142857143" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="918.5" y="333.85714285714283" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="918.5" y="336.42857142857144" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 48: 4 commits -->
-    <g class="skyscraper">
-      <rect x="934.5" y="307" width="14" height="38" fill="url(#bldgGrad)" stroke="#00f9ff" stroke-width="1" stroke-opacity="0.85" rx="1"/>      <rect x="937.0" y="313.0" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="937.0" y="316.7142857142857" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="937.0" y="320.42857142857144" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="937.0" y="324.14285714285717" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="937.0" y="327.85714285714283" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="937.0" y="331.57142857142856" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="937.0" y="335.2857142857143" width="9" height="2" fill="#00f9ff"  rx="0.5" opacity="0.95"/>    </g>
-    <!-- Week 49: 6 commits -->
-    <g class="skyscraper">
-      <rect x="953.0" y="302" width="14" height="43" fill="url(#bldgGrad)" stroke="#00f9ff" stroke-width="1" stroke-opacity="0.85" rx="1"/>
-      <line x1="960.0" y1="302" x2="960.0" y2="285" stroke="#00f9ff" stroke-width="1.2" filter="url(#neonGlow)"/>
-      <circle cx="960.0" cy="285" r="1.5" fill="#ffffff" class="spire-beacon"/>      <rect x="955.5" y="308.0" width="9" height="2.1428571428571432" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="955.5" y="312.42857142857144" width="9" height="2.1428571428571432" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="955.5" y="316.85714285714283" width="9" height="2.1428571428571432" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="955.5" y="321.2857142857143" width="9" height="2.1428571428571432" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="955.5" y="325.7142857142857" width="9" height="2.1428571428571432" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="955.5" y="330.14285714285717" width="9" height="2.1428571428571432" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="955.5" y="334.57142857142856" width="9" height="2.1428571428571432" fill="#0a101d"  rx="0.5" opacity="0.25"/>    </g>
-    <!-- Week 50: 1 commits -->
-    <g class="skyscraper">
-      <rect x="971.5" y="313" width="14" height="32" fill="url(#bldgGrad)" stroke="#0077ff" stroke-width="1" stroke-opacity="0.85" rx="1"/>      <rect x="974.0" y="319.0" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="974.0" y="321.85714285714283" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="974.0" y="324.7142857142857" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="974.0" y="327.57142857142856" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="974.0" y="330.42857142857144" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="974.0" y="333.2857142857143" width="9" height="2" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="974.0" y="336.14285714285717" width="9" height="2" fill="#0077ff"  rx="0.5" opacity="0.95"/>    </g>
-    <!-- Week 51: 91 commits -->
-    <g class="skyscraper">
-      <rect x="990.0" y="115" width="14" height="230" fill="url(#bldgGrad)" stroke="#00ff7f" stroke-width="1" stroke-opacity="0.85" rx="1"/>
-      <line x1="997.0" y1="115" x2="997.0" y2="85" stroke="#00ff7f" stroke-width="1.2" filter="url(#neonGlow)"/>
-      <circle cx="997.0" cy="85" r="1.5" fill="#ffffff" class="spire-beacon"/>      <rect x="992.5" y="121.0" width="9" height="28.857142857142858" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="992.5" y="152.14285714285714" width="9" height="28.857142857142858" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="992.5" y="183.28571428571428" width="9" height="28.857142857142858" fill="#00ff7f" filter="url(#neonGlow)" rx="0.5" opacity="0.95"/>      <rect x="992.5" y="214.42857142857144" width="9" height="28.857142857142858" fill="#00ff7f" filter="url(#neonGlow)" rx="0.5" opacity="0.95"/>      <rect x="992.5" y="245.57142857142856" width="9" height="28.857142857142858" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="992.5" y="276.7142857142857" width="9" height="28.857142857142858" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="992.5" y="307.8571428571429" width="9" height="28.857142857142858" fill="#00ff7f" filter="url(#neonGlow)" rx="0.5" opacity="0.95"/>    </g>
-    <!-- Week 52: 35 commits -->
-    <g class="skyscraper">
-      <rect x="1008.5" y="239" width="14" height="106" fill="url(#bldgGrad)" stroke="#00ff7f" stroke-width="1" stroke-opacity="0.85" rx="1"/>
-      <line x1="1015.5" y1="239" x2="1015.5" y2="209" stroke="#00ff7f" stroke-width="1.2" filter="url(#neonGlow)"/>
-      <circle cx="1015.5" cy="209" r="1.5" fill="#ffffff" class="spire-beacon"/>      <rect x="1011.0" y="245.0" width="9" height="11.142857142857142" fill="#0077ff"  rx="0.5" opacity="0.95"/>      <rect x="1011.0" y="258.42857142857144" width="9" height="11.142857142857142" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="1011.0" y="271.85714285714283" width="9" height="11.142857142857142" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="1011.0" y="285.2857142857143" width="9" height="11.142857142857142" fill="#0a101d"  rx="0.5" opacity="0.25"/>      <rect x="1011.0" y="298.7142857142857" width="9" height="11.142857142857142" fill="#00f9ff"  rx="0.5" opacity="0.95"/>      <rect x="1011.0" y="312.1428571428571" width="9" height="11.142857142857142" fill="#00ff7f" filter="url(#neonGlow)" rx="0.5" opacity="0.95"/>      <rect x="1011.0" y="325.57142857142856" width="9" height="11.142857142857142" fill="#00ff7f" filter="url(#neonGlow)" rx="0.5" opacity="0.95"/>    </g>
-  </g>
-
-  <line x1="50" y1="345" x2="1150" y2="345" stroke="#00f9ff" stroke-width="1.8" filter="url(#neonGlow)"/>
-
-  <g id="monorail-track">
-    <line x1="40" y1="385" x2="1160" y2="385" stroke="#1e293b" stroke-width="2.5"/>
-    <line x1="40" y1="385" x2="1160" y2="385" stroke="#0077ff" stroke-width="0.8" stroke-dasharray="8,6" opacity="0.8"/>
-
-    <g class="train-pod">
-      <rect x="0" y="381" width="55" height="7" rx="3.5" fill="#00f9ff" filter="url(#neonGlow)"/>
-      <rect x="5" y="382.5" width="14" height="4" rx="1" fill="#ffffff"/>
-      <line x1="-30" y1="384.5" x2="0" y2="384.5" stroke="#00f9ff" stroke-width="2" opacity="0.5"/>
+        <line x1="199" y1="276" x2="199" y2="245" stroke="#00ff7f" stroke-width="1" filter="url(#neonGlow)"/>
+        <circle cx="199" cy="245" r="1.5" fill="#ffffff" class="spire-beacon"/>
+      <rect x="194" y="283.4" width="10" height="6.457142857142857" fill="#101827" opacity="0.6"/><rect x="194" y="291.85714285714283" width="10" height="6.457142857142857" fill="#101827" opacity="0.6"/><rect x="194" y="300.3142857142857" width="10" height="6.457142857142857" fill="#101827" opacity="0.6"/><rect x="194" y="308.77142857142854" width="10" height="6.457142857142857" fill="#101827" opacity="0.6"/><rect x="194" y="317.2285714285714" width="10" height="6.457142857142857" fill="#101827" opacity="0.6"/><rect x="194" y="325.68571428571425" width="10" height="6.457142857142857" fill="#101827" opacity="0.6"/>
+            <rect x="194" y="334.1428571428571" width="4" height="6.457142857142857" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="200" y="334.1428571428571" width="4" height="6.457142857142857" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 212 318 L 228 310 L 228 350 L 212 350 Z" fill="url(#dormantBldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.3"/>
+        
+        <!-- Left Edge Highlight -->
+        
     </g>
-  </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 233 303 L 249 303 L 249 350 L 233 350 Z" fill="url(#activeBldgGrad)" stroke="#0077ff" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="233" y1="311" x2="233" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.7"/>
+    <rect x="236" y="307.7" width="10" height="3.371428571428572" fill="#101827" opacity="0.6"/><rect x="236" y="313.07142857142856" width="10" height="3.371428571428572" fill="#101827" opacity="0.6"/><rect x="236" y="318.4428571428571" width="10" height="3.371428571428572" fill="#101827" opacity="0.6"/><rect x="236" y="323.8142857142857" width="10" height="3.371428571428572" fill="#101827" opacity="0.6"/><rect x="236" y="329.18571428571425" width="10" height="3.371428571428572" fill="#101827" opacity="0.6"/><rect x="236" y="334.5571428571428" width="10" height="3.371428571428572" fill="#101827" opacity="0.6"/>
+            <rect x="236" y="339.92857142857144" width="10" height="3.371428571428572" fill="#00f9ff" opacity="0.85"/>
+          </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 254 301 L 257 301 L 257 295 L 267 295 L 267 301 L 270 301 L 270 350 L 254 350 Z" fill="url(#activeBldgGrad)" stroke="#00f9ff" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="254" y1="303" x2="254" y2="350" stroke="#00f9ff" stroke-width="1" opacity="0.7"/>
+    
+        <line x1="262" y1="295" x2="262" y2="276" stroke="#00f9ff" stroke-width="1" filter="url(#neonGlow)"/>
+        <circle cx="262" cy="276" r="1.5" fill="#ffffff" class="spire-beacon"/>
+      <rect x="257" y="300.5" width="10" height="4.285714285714286" fill="#101827" opacity="0.6"/>
+            <rect x="257" y="306.7857142857143" width="10" height="4.285714285714286" fill="#00f9ff" opacity="0.85"/>
+          <rect x="257" y="313.07142857142856" width="10" height="4.285714285714286" fill="#101827" opacity="0.6"/><rect x="257" y="319.35714285714283" width="10" height="4.285714285714286" fill="#101827" opacity="0.6"/><rect x="257" y="325.64285714285717" width="10" height="4.285714285714286" fill="#101827" opacity="0.6"/>
+            <rect x="257" y="331.92857142857144" width="10" height="4.285714285714286" fill="#00f9ff" opacity="0.85"/>
+          <rect x="257" y="338.2142857142857" width="10" height="4.285714285714286" fill="#101827" opacity="0.6"/></g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 275 311 L 291 303 L 291 350 L 275 350 Z" fill="url(#activeBldgGrad)" stroke="#0077ff" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="275" y1="311" x2="275" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.7"/>
+    
+            <rect x="278" y="307.7" width="10" height="3.371428571428572" fill="#00f9ff" opacity="0.85"/>
+          <rect x="278" y="313.07142857142856" width="10" height="3.371428571428572" fill="#101827" opacity="0.6"/><rect x="278" y="318.4428571428571" width="10" height="3.371428571428572" fill="#101827" opacity="0.6"/>
+            <rect x="278" y="323.8142857142857" width="10" height="3.371428571428572" fill="#0077ff" opacity="0.85"/>
+          <rect x="278" y="329.18571428571425" width="10" height="3.371428571428572" fill="#101827" opacity="0.6"/><rect x="278" y="334.5571428571428" width="10" height="3.371428571428572" fill="#101827" opacity="0.6"/><rect x="278" y="339.92857142857144" width="10" height="3.371428571428572" fill="#101827" opacity="0.6"/></g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 296 310 L 312 310 L 312 350 L 296 350 Z" fill="url(#dormantBldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.3"/>
+        
+        <!-- Left Edge Highlight -->
+        
+    </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 317 309 L 320 309 L 320 303 L 330 303 L 330 309 L 333 309 L 333 350 L 317 350 Z" fill="url(#activeBldgGrad)" stroke="#0077ff" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="317" y1="311" x2="317" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.7"/>
+    
+            <rect x="320" y="307.7" width="10" height="3.371428571428572" fill="#0077ff" opacity="0.85"/>
+          
+            <rect x="320" y="313.07142857142856" width="10" height="3.371428571428572" fill="#0077ff" opacity="0.85"/>
+          <rect x="320" y="318.4428571428571" width="10" height="3.371428571428572" fill="#101827" opacity="0.6"/>
+            <rect x="320" y="323.8142857142857" width="10" height="3.371428571428572" fill="#0077ff" opacity="0.85"/>
+          <rect x="320" y="329.18571428571425" width="10" height="3.371428571428572" fill="#101827" opacity="0.6"/><rect x="320" y="334.5571428571428" width="10" height="3.371428571428572" fill="#101827" opacity="0.6"/><rect x="320" y="339.92857142857144" width="10" height="3.371428571428572" fill="#101827" opacity="0.6"/></g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 338 303 L 354 295 L 354 350 L 338 350 Z" fill="url(#activeBldgGrad)" stroke="#00f9ff" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="338" y1="303" x2="338" y2="350" stroke="#00f9ff" stroke-width="1" opacity="0.7"/>
+    
+        <line x1="346" y1="295" x2="346" y2="276" stroke="#00f9ff" stroke-width="1" filter="url(#neonGlow)"/>
+        <circle cx="346" cy="276" r="1.5" fill="#ffffff" class="spire-beacon"/>
+      <rect x="341" y="300.5" width="10" height="4.285714285714286" fill="#101827" opacity="0.6"/><rect x="341" y="306.7857142857143" width="10" height="4.285714285714286" fill="#101827" opacity="0.6"/><rect x="341" y="313.07142857142856" width="10" height="4.285714285714286" fill="#101827" opacity="0.6"/><rect x="341" y="319.35714285714283" width="10" height="4.285714285714286" fill="#101827" opacity="0.6"/><rect x="341" y="325.64285714285717" width="10" height="4.285714285714286" fill="#101827" opacity="0.6"/>
+            <rect x="341" y="331.92857142857144" width="4" height="4.285714285714286" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="347" y="331.92857142857144" width="4" height="4.285714285714286" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          <rect x="341" y="338.2142857142857" width="10" height="4.285714285714286" fill="#101827" opacity="0.6"/></g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 359 269 L 375 269 L 375 350 L 359 350 Z" fill="url(#activeBldgGrad)" stroke="#00ff7f" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="359" y1="277" x2="359" y2="350" stroke="#00ff7f" stroke-width="1" opacity="0.7"/>
+    
+        <line x1="367" y1="269" x2="367" y2="246" stroke="#00ff7f" stroke-width="1" filter="url(#neonGlow)"/>
+        <circle cx="367" cy="246" r="1.5" fill="#ffffff" class="spire-beacon"/>
+      <rect x="362" y="277.1" width="10" height="7.257142857142856" fill="#101827" opacity="0.6"/><rect x="362" y="286.3571428571429" width="10" height="7.257142857142856" fill="#101827" opacity="0.6"/><rect x="362" y="295.61428571428576" width="10" height="7.257142857142856" fill="#101827" opacity="0.6"/>
+            <rect x="362" y="304.87142857142857" width="4" height="7.257142857142856" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="368" y="304.87142857142857" width="4" height="7.257142857142856" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          
+            <rect x="362" y="314.12857142857143" width="4" height="7.257142857142856" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="368" y="314.12857142857143" width="4" height="7.257142857142856" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          
+            <rect x="362" y="323.3857142857143" width="4" height="7.257142857142856" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="368" y="323.3857142857143" width="4" height="7.257142857142856" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          <rect x="362" y="332.64285714285717" width="10" height="7.257142857142856" fill="#101827" opacity="0.6"/></g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 380 256 L 383 256 L 383 250 L 393 250 L 393 256 L 396 256 L 396 350 L 380 350 Z" fill="url(#activeBldgGrad)" stroke="#00ff7f" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="380" y1="258" x2="380" y2="350" stroke="#00ff7f" stroke-width="1" opacity="0.7"/>
+    
+        <line x1="388" y1="250" x2="388" y2="235" stroke="#00ff7f" stroke-width="1" filter="url(#neonGlow)"/>
+        <circle cx="388" cy="235" r="1.5" fill="#ffffff" class="spire-beacon"/>
+      <rect x="383" y="260" width="10" height="9.428571428571429" fill="#101827" opacity="0.6"/>
+            <rect x="383" y="271.42857142857144" width="4" height="9.428571428571429" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="389" y="271.42857142857144" width="4" height="9.428571428571429" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          
+            <rect x="383" y="282.85714285714283" width="10" height="9.428571428571429" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="383" y="294.2857142857143" width="10" height="9.428571428571429" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="383" y="305.7142857142857" width="10" height="9.428571428571429" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="383" y="317.14285714285717" width="4" height="9.428571428571429" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="389" y="317.14285714285717" width="4" height="9.428571428571429" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          
+            <rect x="383" y="328.57142857142856" width="4" height="9.428571428571429" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="389" y="328.57142857142856" width="4" height="9.428571428571429" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 401 267 L 417 259 L 417 350 L 401 350 Z" fill="url(#activeBldgGrad)" stroke="#00ff7f" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="401" y1="267" x2="401" y2="350" stroke="#00ff7f" stroke-width="1" opacity="0.7"/>
+    
+        <line x1="409" y1="259" x2="409" y2="240" stroke="#00ff7f" stroke-width="1" filter="url(#neonGlow)"/>
+        <circle cx="409" cy="240" r="1.5" fill="#ffffff" class="spire-beacon"/>
+      
+            <rect x="404" y="268.1" width="10" height="8.4" fill="#0077ff" opacity="0.85"/>
+          
+            <rect x="404" y="278.5" width="4" height="8.4" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="410" y="278.5" width="4" height="8.4" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          <rect x="404" y="288.90000000000003" width="10" height="8.4" fill="#101827" opacity="0.6"/>
+            <rect x="404" y="299.3" width="10" height="8.4" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="404" y="309.70000000000005" width="10" height="8.4" fill="#0077ff" opacity="0.85"/>
+          
+            <rect x="404" y="320.1" width="4" height="8.4" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="410" y="320.1" width="4" height="8.4" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          
+            <rect x="404" y="330.5" width="4" height="8.4" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="410" y="330.5" width="4" height="8.4" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 422 250 L 438 250 L 438 350 L 422 350 Z" fill="url(#activeBldgGrad)" stroke="#00ff7f" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="422" y1="258" x2="422" y2="350" stroke="#00ff7f" stroke-width="1" opacity="0.7"/>
+    
+        <line x1="430" y1="250" x2="430" y2="235" stroke="#00ff7f" stroke-width="1" filter="url(#neonGlow)"/>
+        <circle cx="430" cy="235" r="1.5" fill="#ffffff" class="spire-beacon"/>
+      
+            <rect x="425" y="260" width="10" height="9.428571428571429" fill="#0077ff" opacity="0.85"/>
+          
+            <rect x="425" y="271.42857142857144" width="4" height="9.428571428571429" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="431" y="271.42857142857144" width="4" height="9.428571428571429" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          
+            <rect x="425" y="282.85714285714283" width="4" height="9.428571428571429" fill="#00f9ff"  opacity="0.95"/>
+            <rect x="431" y="282.85714285714283" width="4" height="9.428571428571429" fill="#00f9ff"  opacity="0.95"/>
+          
+            <rect x="425" y="294.2857142857143" width="4" height="9.428571428571429" fill="#00f9ff"  opacity="0.95"/>
+            <rect x="431" y="294.2857142857143" width="4" height="9.428571428571429" fill="#00f9ff"  opacity="0.95"/>
+          
+            <rect x="425" y="305.7142857142857" width="4" height="9.428571428571429" fill="#00f9ff"  opacity="0.95"/>
+            <rect x="431" y="305.7142857142857" width="4" height="9.428571428571429" fill="#00f9ff"  opacity="0.95"/>
+          
+            <rect x="425" y="317.14285714285717" width="10" height="9.428571428571429" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="425" y="328.57142857142856" width="10" height="9.428571428571429" fill="#00f9ff" opacity="0.85"/>
+          </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 443 270 L 446 270 L 446 264 L 456 264 L 456 270 L 459 270 L 459 350 L 443 350 Z" fill="url(#activeBldgGrad)" stroke="#00ff7f" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="443" y1="272" x2="443" y2="350" stroke="#00ff7f" stroke-width="1" opacity="0.7"/>
+    
+        <line x1="451" y1="264" x2="451" y2="233" stroke="#00ff7f" stroke-width="1" filter="url(#neonGlow)"/>
+        <circle cx="451" cy="233" r="1.5" fill="#ffffff" class="spire-beacon"/>
+      
+            <rect x="446" y="272.6" width="10" height="7.828571428571427" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="446" y="282.42857142857144" width="10" height="7.828571428571427" fill="#0077ff" opacity="0.85"/>
+          
+            <rect x="446" y="292.25714285714287" width="4" height="7.828571428571427" fill="#00f9ff"  opacity="0.95"/>
+            <rect x="452" y="292.25714285714287" width="4" height="7.828571428571427" fill="#00f9ff"  opacity="0.95"/>
+          
+            <rect x="446" y="302.0857142857143" width="10" height="7.828571428571427" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="446" y="311.9142857142857" width="10" height="7.828571428571427" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="446" y="321.74285714285713" width="10" height="7.828571428571427" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="446" y="331.57142857142856" width="10" height="7.828571428571427" fill="#00f9ff" opacity="0.85"/>
+          </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 464 238 L 480 230 L 480 350 L 464 350 Z" fill="url(#activeBldgGrad)" stroke="#00ff7f" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="464" y1="238" x2="464" y2="350" stroke="#00ff7f" stroke-width="1" opacity="0.7"/>
+    
+        <line x1="472" y1="230" x2="472" y2="203" stroke="#00ff7f" stroke-width="1" filter="url(#neonGlow)"/>
+        <circle cx="472" cy="203" r="1.5" fill="#ffffff" class="spire-beacon"/>
+      
+            <rect x="467" y="242" width="4" height="11.714285714285714" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="473" y="242" width="4" height="11.714285714285714" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          
+            <rect x="467" y="255.71428571428572" width="10" height="11.714285714285714" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="467" y="269.42857142857144" width="10" height="11.714285714285714" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="467" y="283.1428571428571" width="10" height="11.714285714285714" fill="#0077ff" opacity="0.85"/>
+          
+            <rect x="467" y="296.85714285714283" width="4" height="11.714285714285714" fill="#00f9ff"  opacity="0.95"/>
+            <rect x="473" y="296.85714285714283" width="4" height="11.714285714285714" fill="#00f9ff"  opacity="0.95"/>
+          
+            <rect x="467" y="310.57142857142856" width="10" height="11.714285714285714" fill="#0077ff" opacity="0.85"/>
+          
+            <rect x="467" y="324.2857142857143" width="10" height="11.714285714285714" fill="#00f9ff" opacity="0.85"/>
+          </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 485 286 L 501 286 L 501 350 L 485 350 Z" fill="url(#activeBldgGrad)" stroke="#00ff7f" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="485" y1="294" x2="485" y2="350" stroke="#00ff7f" stroke-width="1" opacity="0.7"/>
+    
+        <line x1="493" y1="286" x2="493" y2="271" stroke="#00ff7f" stroke-width="1" filter="url(#neonGlow)"/>
+        <circle cx="493" cy="271" r="1.5" fill="#ffffff" class="spire-beacon"/>
+      
+            <rect x="488" y="292.4" width="10" height="5.314285714285715" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="488" y="299.71428571428567" width="10" height="5.314285714285715" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="488" y="307.0285714285714" width="10" height="5.314285714285715" fill="#0077ff" opacity="0.85"/>
+          
+            <rect x="488" y="314.3428571428571" width="10" height="5.314285714285715" fill="#0077ff" opacity="0.85"/>
+          <rect x="488" y="321.65714285714284" width="10" height="5.314285714285715" fill="#101827" opacity="0.6"/>
+            <rect x="488" y="328.97142857142853" width="10" height="5.314285714285715" fill="#00f9ff" opacity="0.85"/>
+          <rect x="488" y="336.2857142857143" width="10" height="5.314285714285715" fill="#101827" opacity="0.6"/></g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 506 270 L 509 270 L 509 264 L 519 264 L 519 270 L 522 270 L 522 350 L 506 350 Z" fill="url(#activeBldgGrad)" stroke="#00ff7f" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="506" y1="272" x2="506" y2="350" stroke="#00ff7f" stroke-width="1" opacity="0.7"/>
+    
+        <line x1="514" y1="264" x2="514" y2="233" stroke="#00ff7f" stroke-width="1" filter="url(#neonGlow)"/>
+        <circle cx="514" cy="233" r="1.5" fill="#ffffff" class="spire-beacon"/>
+      <rect x="509" y="272.6" width="10" height="7.828571428571427" fill="#101827" opacity="0.6"/>
+            <rect x="509" y="282.42857142857144" width="10" height="7.828571428571427" fill="#0077ff" opacity="0.85"/>
+          
+            <rect x="509" y="292.25714285714287" width="10" height="7.828571428571427" fill="#0077ff" opacity="0.85"/>
+          
+            <rect x="509" y="302.0857142857143" width="10" height="7.828571428571427" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="509" y="311.9142857142857" width="10" height="7.828571428571427" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="509" y="321.74285714285713" width="10" height="7.828571428571427" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="509" y="331.57142857142856" width="4" height="7.828571428571427" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="515" y="331.57142857142856" width="4" height="7.828571428571427" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 527 313 L 543 305 L 543 350 L 527 350 Z" fill="url(#activeBldgGrad)" stroke="#0077ff" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="527" y1="313" x2="527" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.7"/>
+    <rect x="530" y="309.5" width="10" height="3.1428571428571432" fill="#101827" opacity="0.6"/><rect x="530" y="314.64285714285717" width="10" height="3.1428571428571432" fill="#101827" opacity="0.6"/><rect x="530" y="319.7857142857143" width="10" height="3.1428571428571432" fill="#101827" opacity="0.6"/>
+            <rect x="530" y="324.92857142857144" width="10" height="3.1428571428571432" fill="#0077ff" opacity="0.85"/>
+          <rect x="530" y="330.07142857142856" width="10" height="3.1428571428571432" fill="#101827" opacity="0.6"/><rect x="530" y="335.2142857142857" width="10" height="3.1428571428571432" fill="#101827" opacity="0.6"/>
+            <rect x="530" y="340.3571428571429" width="10" height="3.1428571428571432" fill="#0077ff" opacity="0.85"/>
+          </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 548 308 L 564 308 L 564 350 L 548 350 Z" fill="url(#activeBldgGrad)" stroke="#0077ff" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="548" y1="316" x2="548" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.7"/>
+    <rect x="551" y="312.2" width="10" height="2.8" fill="#101827" opacity="0.6"/><rect x="551" y="317" width="10" height="2.8" fill="#101827" opacity="0.6"/>
+            <rect x="551" y="321.8" width="10" height="2.8" fill="#0077ff" opacity="0.85"/>
+          <rect x="551" y="326.59999999999997" width="10" height="2.8" fill="#101827" opacity="0.6"/><rect x="551" y="331.4" width="10" height="2.8" fill="#101827" opacity="0.6"/><rect x="551" y="336.2" width="10" height="2.8" fill="#101827" opacity="0.6"/><rect x="551" y="341" width="10" height="2.8" fill="#101827" opacity="0.6"/></g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 569 299 L 572 299 L 572 293 L 582 293 L 582 299 L 585 299 L 585 350 L 569 350 Z" fill="url(#activeBldgGrad)" stroke="#00f9ff" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="569" y1="301" x2="569" y2="350" stroke="#00f9ff" stroke-width="1" opacity="0.7"/>
+    
+        <line x1="577" y1="293" x2="577" y2="270" stroke="#00f9ff" stroke-width="1" filter="url(#neonGlow)"/>
+        <circle cx="577" cy="270" r="1.5" fill="#ffffff" class="spire-beacon"/>
+      <rect x="572" y="298.7" width="10" height="4.514285714285714" fill="#101827" opacity="0.6"/><rect x="572" y="305.2142857142857" width="10" height="4.514285714285714" fill="#101827" opacity="0.6"/><rect x="572" y="311.7285714285714" width="10" height="4.514285714285714" fill="#101827" opacity="0.6"/>
+            <rect x="572" y="318.24285714285713" width="10" height="4.514285714285714" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="572" y="324.75714285714287" width="10" height="4.514285714285714" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="572" y="331.27142857142854" width="10" height="4.514285714285714" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="572" y="337.7857142857143" width="10" height="4.514285714285714" fill="#0077ff" opacity="0.85"/>
+          </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 590 296 L 606 288 L 606 350 L 590 350 Z" fill="url(#activeBldgGrad)" stroke="#00f9ff" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="590" y1="296" x2="590" y2="350" stroke="#00f9ff" stroke-width="1" opacity="0.7"/>
+    
+        <line x1="598" y1="288" x2="598" y2="257" stroke="#00f9ff" stroke-width="1" filter="url(#neonGlow)"/>
+        <circle cx="598" cy="257" r="1.5" fill="#ffffff" class="spire-beacon"/>
+      
+            <rect x="593" y="294.2" width="4" height="5.085714285714286" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="599" y="294.2" width="4" height="5.085714285714286" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          
+            <rect x="593" y="301.2857142857143" width="10" height="5.085714285714286" fill="#00f9ff" opacity="0.85"/>
+          <rect x="593" y="308.37142857142857" width="10" height="5.085714285714286" fill="#101827" opacity="0.6"/>
+            <rect x="593" y="315.45714285714286" width="10" height="5.085714285714286" fill="#0077ff" opacity="0.85"/>
+          <rect x="593" y="322.54285714285714" width="10" height="5.085714285714286" fill="#101827" opacity="0.6"/><rect x="593" y="329.62857142857143" width="10" height="5.085714285714286" fill="#101827" opacity="0.6"/><rect x="593" y="336.7142857142857" width="10" height="5.085714285714286" fill="#101827" opacity="0.6"/></g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 611 310 L 627 310 L 627 350 L 611 350 Z" fill="url(#dormantBldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.3"/>
+        
+        <!-- Left Edge Highlight -->
+        
+    </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 632 280 L 635 280 L 635 274 L 645 274 L 645 280 L 648 280 L 648 350 L 632 350 Z" fill="url(#activeBldgGrad)" stroke="#00ff7f" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="632" y1="282" x2="632" y2="350" stroke="#00ff7f" stroke-width="1" opacity="0.7"/>
+    
+        <line x1="640" y1="274" x2="640" y2="259" stroke="#00ff7f" stroke-width="1" filter="url(#neonGlow)"/>
+        <circle cx="640" cy="259" r="1.5" fill="#ffffff" class="spire-beacon"/>
+      
+            <rect x="635" y="281.6" width="10" height="6.685714285714287" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="635" y="290.28571428571433" width="10" height="6.685714285714287" fill="#0077ff" opacity="0.85"/>
+          <rect x="635" y="298.9714285714286" width="10" height="6.685714285714287" fill="#101827" opacity="0.6"/><rect x="635" y="307.6571428571429" width="10" height="6.685714285714287" fill="#101827" opacity="0.6"/><rect x="635" y="316.34285714285716" width="10" height="6.685714285714287" fill="#101827" opacity="0.6"/>
+            <rect x="635" y="325.02857142857147" width="4" height="6.685714285714287" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="641" y="325.02857142857147" width="4" height="6.685714285714287" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          
+            <rect x="635" y="333.7142857142857" width="4" height="6.685714285714287" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="641" y="333.7142857142857" width="4" height="6.685714285714287" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 653 301 L 669 293 L 669 350 L 653 350 Z" fill="url(#activeBldgGrad)" stroke="#00f9ff" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="653" y1="301" x2="653" y2="350" stroke="#00f9ff" stroke-width="1" opacity="0.7"/>
+    
+        <line x1="661" y1="293" x2="661" y2="270" stroke="#00f9ff" stroke-width="1" filter="url(#neonGlow)"/>
+        <circle cx="661" cy="270" r="1.5" fill="#ffffff" class="spire-beacon"/>
+      
+            <rect x="656" y="298.7" width="4" height="4.514285714285714" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="662" y="298.7" width="4" height="4.514285714285714" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          <rect x="656" y="305.2142857142857" width="10" height="4.514285714285714" fill="#101827" opacity="0.6"/><rect x="656" y="311.7285714285714" width="10" height="4.514285714285714" fill="#101827" opacity="0.6"/><rect x="656" y="318.24285714285713" width="10" height="4.514285714285714" fill="#101827" opacity="0.6"/>
+            <rect x="656" y="324.75714285714287" width="10" height="4.514285714285714" fill="#00f9ff" opacity="0.85"/>
+          <rect x="656" y="331.27142857142854" width="10" height="4.514285714285714" fill="#101827" opacity="0.6"/><rect x="656" y="337.7857142857143" width="10" height="4.514285714285714" fill="#101827" opacity="0.6"/></g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 674 124 L 690 124 L 690 350 L 674 350 Z" fill="url(#activeBldgGrad)" stroke="#00ff7f" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="674" y1="132" x2="674" y2="350" stroke="#00ff7f" stroke-width="1" opacity="0.7"/>
+    
+        <line x1="682" y1="124" x2="682" y2="101" stroke="#00ff7f" stroke-width="1" filter="url(#neonGlow)"/>
+        <circle cx="682" cy="101" r="1.5" fill="#ffffff" class="spire-beacon"/>
+      <rect x="677" y="146.6" width="10" height="23.82857142857143" fill="#101827" opacity="0.6"/><rect x="677" y="172.42857142857142" width="10" height="23.82857142857143" fill="#101827" opacity="0.6"/>
+            <rect x="677" y="198.25714285714287" width="4" height="23.82857142857143" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="683" y="198.25714285714287" width="4" height="23.82857142857143" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          
+            <rect x="677" y="224.0857142857143" width="10" height="23.82857142857143" fill="#0077ff" opacity="0.85"/>
+          <rect x="677" y="249.9142857142857" width="10" height="23.82857142857143" fill="#101827" opacity="0.6"/><rect x="677" y="275.74285714285713" width="10" height="23.82857142857143" fill="#101827" opacity="0.6"/>
+            <rect x="677" y="301.57142857142856" width="4" height="23.82857142857143" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="683" y="301.57142857142856" width="4" height="23.82857142857143" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 695 304 L 698 304 L 698 298 L 708 298 L 708 304 L 711 304 L 711 350 L 695 350 Z" fill="url(#activeBldgGrad)" stroke="#00f9ff" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="695" y1="306" x2="695" y2="350" stroke="#00f9ff" stroke-width="1" opacity="0.7"/>
+    
+        <line x1="703" y1="298" x2="703" y2="283" stroke="#00f9ff" stroke-width="1" filter="url(#neonGlow)"/>
+        <circle cx="703" cy="283" r="1.5" fill="#ffffff" class="spire-beacon"/>
+      <rect x="698" y="303.2" width="10" height="3.942857142857143" fill="#101827" opacity="0.6"/><rect x="698" y="309.1428571428571" width="10" height="3.942857142857143" fill="#101827" opacity="0.6"/>
+            <rect x="698" y="315.0857142857143" width="10" height="3.942857142857143" fill="#0077ff" opacity="0.85"/>
+          
+            <rect x="698" y="321.0285714285714" width="10" height="3.942857142857143" fill="#00f9ff" opacity="0.85"/>
+          <rect x="698" y="326.97142857142853" width="10" height="3.942857142857143" fill="#101827" opacity="0.6"/>
+            <rect x="698" y="332.9142857142857" width="10" height="3.942857142857143" fill="#0077ff" opacity="0.85"/>
+          
+            <rect x="698" y="338.85714285714283" width="10" height="3.942857142857143" fill="#0077ff" opacity="0.85"/>
+          </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 716 316 L 732 308 L 732 350 L 716 350 Z" fill="url(#activeBldgGrad)" stroke="#0077ff" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="716" y1="316" x2="716" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.7"/>
+    <rect x="719" y="312.2" width="10" height="2.8" fill="#101827" opacity="0.6"/><rect x="719" y="317" width="10" height="2.8" fill="#101827" opacity="0.6"/>
+            <rect x="719" y="321.8" width="10" height="2.8" fill="#0077ff" opacity="0.85"/>
+          <rect x="719" y="326.59999999999997" width="10" height="2.8" fill="#101827" opacity="0.6"/><rect x="719" y="331.4" width="10" height="2.8" fill="#101827" opacity="0.6"/><rect x="719" y="336.2" width="10" height="2.8" fill="#101827" opacity="0.6"/><rect x="719" y="341" width="10" height="2.8" fill="#101827" opacity="0.6"/></g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 737 271 L 753 271 L 753 350 L 737 350 Z" fill="url(#activeBldgGrad)" stroke="#00ff7f" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="737" y1="279" x2="737" y2="350" stroke="#00ff7f" stroke-width="1" opacity="0.7"/>
+    
+        <line x1="745" y1="271" x2="745" y2="252" stroke="#00ff7f" stroke-width="1" filter="url(#neonGlow)"/>
+        <circle cx="745" cy="252" r="1.5" fill="#ffffff" class="spire-beacon"/>
+      <rect x="740" y="278.9" width="10" height="7.0285714285714285" fill="#101827" opacity="0.6"/><rect x="740" y="287.9285714285714" width="10" height="7.0285714285714285" fill="#101827" opacity="0.6"/><rect x="740" y="296.95714285714286" width="10" height="7.0285714285714285" fill="#101827" opacity="0.6"/><rect x="740" y="305.98571428571427" width="10" height="7.0285714285714285" fill="#101827" opacity="0.6"/>
+            <rect x="740" y="315.0142857142857" width="4" height="7.0285714285714285" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="746" y="315.0142857142857" width="4" height="7.0285714285714285" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          
+            <rect x="740" y="324.0428571428571" width="4" height="7.0285714285714285" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="746" y="324.0428571428571" width="4" height="7.0285714285714285" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          <rect x="740" y="333.07142857142856" width="10" height="7.0285714285714285" fill="#101827" opacity="0.6"/></g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 758 241 L 761 241 L 761 235 L 771 235 L 771 241 L 774 241 L 774 350 L 758 350 Z" fill="url(#activeBldgGrad)" stroke="#00ff7f" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="758" y1="243" x2="758" y2="350" stroke="#00ff7f" stroke-width="1" opacity="0.7"/>
+    
+        <line x1="766" y1="235" x2="766" y2="216" stroke="#00ff7f" stroke-width="1" filter="url(#neonGlow)"/>
+        <circle cx="766" cy="216" r="1.5" fill="#ffffff" class="spire-beacon"/>
+      <rect x="761" y="246.5" width="10" height="11.142857142857142" fill="#101827" opacity="0.6"/>
+            <rect x="761" y="259.64285714285717" width="10" height="11.142857142857142" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="761" y="272.7857142857143" width="10" height="11.142857142857142" fill="#00f9ff" opacity="0.85"/>
+          <rect x="761" y="285.92857142857144" width="10" height="11.142857142857142" fill="#101827" opacity="0.6"/>
+            <rect x="761" y="299.07142857142856" width="4" height="11.142857142857142" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="767" y="299.07142857142856" width="4" height="11.142857142857142" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          
+            <rect x="761" y="312.2142857142857" width="10" height="11.142857142857142" fill="#0077ff" opacity="0.85"/>
+          
+            <rect x="761" y="325.3571428571429" width="4" height="11.142857142857142" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="767" y="325.3571428571429" width="4" height="11.142857142857142" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 779 311 L 795 303 L 795 350 L 779 350 Z" fill="url(#activeBldgGrad)" stroke="#0077ff" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="779" y1="311" x2="779" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.7"/>
+    
+            <rect x="782" y="307.7" width="10" height="3.371428571428572" fill="#00f9ff" opacity="0.85"/>
+          <rect x="782" y="313.07142857142856" width="10" height="3.371428571428572" fill="#101827" opacity="0.6"/><rect x="782" y="318.4428571428571" width="10" height="3.371428571428572" fill="#101827" opacity="0.6"/><rect x="782" y="323.8142857142857" width="10" height="3.371428571428572" fill="#101827" opacity="0.6"/><rect x="782" y="329.18571428571425" width="10" height="3.371428571428572" fill="#101827" opacity="0.6"/><rect x="782" y="334.5571428571428" width="10" height="3.371428571428572" fill="#101827" opacity="0.6"/><rect x="782" y="339.92857142857144" width="10" height="3.371428571428572" fill="#101827" opacity="0.6"/></g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 800 288 L 816 288 L 816 350 L 800 350 Z" fill="url(#activeBldgGrad)" stroke="#00f9ff" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="800" y1="296" x2="800" y2="350" stroke="#00f9ff" stroke-width="1" opacity="0.7"/>
+    
+        <line x1="808" y1="288" x2="808" y2="257" stroke="#00f9ff" stroke-width="1" filter="url(#neonGlow)"/>
+        <circle cx="808" cy="257" r="1.5" fill="#ffffff" class="spire-beacon"/>
+      <rect x="803" y="294.2" width="10" height="5.085714285714286" fill="#101827" opacity="0.6"/><rect x="803" y="301.2857142857143" width="10" height="5.085714285714286" fill="#101827" opacity="0.6"/><rect x="803" y="308.37142857142857" width="10" height="5.085714285714286" fill="#101827" opacity="0.6"/><rect x="803" y="315.45714285714286" width="10" height="5.085714285714286" fill="#101827" opacity="0.6"/>
+            <rect x="803" y="322.54285714285714" width="10" height="5.085714285714286" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="803" y="329.62857142857143" width="10" height="5.085714285714286" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="803" y="336.7142857142857" width="10" height="5.085714285714286" fill="#00f9ff" opacity="0.85"/>
+          </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 821 277 L 824 277 L 824 271 L 834 271 L 834 277 L 837 277 L 837 350 L 821 350 Z" fill="url(#activeBldgGrad)" stroke="#00ff7f" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="821" y1="279" x2="821" y2="350" stroke="#00ff7f" stroke-width="1" opacity="0.7"/>
+    
+        <line x1="829" y1="271" x2="829" y2="252" stroke="#00ff7f" stroke-width="1" filter="url(#neonGlow)"/>
+        <circle cx="829" cy="252" r="1.5" fill="#ffffff" class="spire-beacon"/>
+      
+            <rect x="824" y="278.9" width="10" height="7.0285714285714285" fill="#0077ff" opacity="0.85"/>
+          
+            <rect x="824" y="287.9285714285714" width="10" height="7.0285714285714285" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="824" y="296.95714285714286" width="10" height="7.0285714285714285" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="824" y="305.98571428571427" width="10" height="7.0285714285714285" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="824" y="315.0142857142857" width="4" height="7.0285714285714285" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="830" y="315.0142857142857" width="4" height="7.0285714285714285" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          
+            <rect x="824" y="324.0428571428571" width="10" height="7.0285714285714285" fill="#0077ff" opacity="0.85"/>
+          
+            <rect x="824" y="333.07142857142856" width="10" height="7.0285714285714285" fill="#0077ff" opacity="0.85"/>
+          </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 842 313 L 858 305 L 858 350 L 842 350 Z" fill="url(#activeBldgGrad)" stroke="#0077ff" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="842" y1="313" x2="842" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.7"/>
+    <rect x="845" y="309.5" width="10" height="3.1428571428571432" fill="#101827" opacity="0.6"/><rect x="845" y="314.64285714285717" width="10" height="3.1428571428571432" fill="#101827" opacity="0.6"/><rect x="845" y="319.7857142857143" width="10" height="3.1428571428571432" fill="#101827" opacity="0.6"/><rect x="845" y="324.92857142857144" width="10" height="3.1428571428571432" fill="#101827" opacity="0.6"/>
+            <rect x="845" y="330.07142857142856" width="10" height="3.1428571428571432" fill="#00f9ff" opacity="0.85"/>
+          <rect x="845" y="335.2142857142857" width="10" height="3.1428571428571432" fill="#101827" opacity="0.6"/><rect x="845" y="340.3571428571429" width="10" height="3.1428571428571432" fill="#101827" opacity="0.6"/></g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 863 310 L 879 310 L 879 350 L 863 350 Z" fill="url(#dormantBldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.3"/>
+        
+        <!-- Left Edge Highlight -->
+        
+    </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 884 314 L 887 314 L 887 308 L 897 308 L 897 314 L 900 314 L 900 350 L 884 350 Z" fill="url(#activeBldgGrad)" stroke="#0077ff" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="884" y1="316" x2="884" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.7"/>
+    <rect x="887" y="312.2" width="10" height="2.8" fill="#101827" opacity="0.6"/><rect x="887" y="317" width="10" height="2.8" fill="#101827" opacity="0.6"/><rect x="887" y="321.8" width="10" height="2.8" fill="#101827" opacity="0.6"/>
+            <rect x="887" y="326.59999999999997" width="10" height="2.8" fill="#0077ff" opacity="0.85"/>
+          <rect x="887" y="331.4" width="10" height="2.8" fill="#101827" opacity="0.6"/><rect x="887" y="336.2" width="10" height="2.8" fill="#101827" opacity="0.6"/><rect x="887" y="341" width="10" height="2.8" fill="#101827" opacity="0.6"/></g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 905 318 L 921 310 L 921 350 L 905 350 Z" fill="url(#dormantBldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.3"/>
+        
+        <!-- Left Edge Highlight -->
+        
+    </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 926 310 L 942 310 L 942 350 L 926 350 Z" fill="url(#dormantBldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.3"/>
+        
+        <!-- Left Edge Highlight -->
+        
+    </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 947 301 L 950 301 L 950 295 L 960 295 L 960 301 L 963 301 L 963 350 L 947 350 Z" fill="url(#activeBldgGrad)" stroke="#00f9ff" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="947" y1="303" x2="947" y2="350" stroke="#00f9ff" stroke-width="1" opacity="0.7"/>
+    
+        <line x1="955" y1="295" x2="955" y2="276" stroke="#00f9ff" stroke-width="1" filter="url(#neonGlow)"/>
+        <circle cx="955" cy="276" r="1.5" fill="#ffffff" class="spire-beacon"/>
+      <rect x="950" y="300.5" width="10" height="4.285714285714286" fill="#101827" opacity="0.6"/><rect x="950" y="306.7857142857143" width="10" height="4.285714285714286" fill="#101827" opacity="0.6"/>
+            <rect x="950" y="313.07142857142856" width="4" height="4.285714285714286" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="956" y="313.07142857142856" width="4" height="4.285714285714286" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          <rect x="950" y="319.35714285714283" width="10" height="4.285714285714286" fill="#101827" opacity="0.6"/><rect x="950" y="325.64285714285717" width="10" height="4.285714285714286" fill="#101827" opacity="0.6"/><rect x="950" y="331.92857142857144" width="10" height="4.285714285714286" fill="#101827" opacity="0.6"/><rect x="950" y="338.2142857142857" width="10" height="4.285714285714286" fill="#101827" opacity="0.6"/></g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 968 238 L 984 230 L 984 350 L 968 350 Z" fill="url(#activeBldgGrad)" stroke="#00ff7f" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="968" y1="238" x2="968" y2="350" stroke="#00ff7f" stroke-width="1" opacity="0.7"/>
+    
+        <line x1="976" y1="230" x2="976" y2="203" stroke="#00ff7f" stroke-width="1" filter="url(#neonGlow)"/>
+        <circle cx="976" cy="203" r="1.5" fill="#ffffff" class="spire-beacon"/>
+      <rect x="971" y="242" width="10" height="11.714285714285714" fill="#101827" opacity="0.6"/><rect x="971" y="255.71428571428572" width="10" height="11.714285714285714" fill="#101827" opacity="0.6"/><rect x="971" y="269.42857142857144" width="10" height="11.714285714285714" fill="#101827" opacity="0.6"/><rect x="971" y="283.1428571428571" width="10" height="11.714285714285714" fill="#101827" opacity="0.6"/>
+            <rect x="971" y="296.85714285714283" width="4" height="11.714285714285714" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="977" y="296.85714285714283" width="4" height="11.714285714285714" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          
+            <rect x="971" y="310.57142857142856" width="4" height="11.714285714285714" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="977" y="310.57142857142856" width="4" height="11.714285714285714" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          
+            <rect x="971" y="324.2857142857143" width="4" height="11.714285714285714" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="977" y="324.2857142857143" width="4" height="11.714285714285714" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 989 310 L 1005 310 L 1005 350 L 989 350 Z" fill="url(#dormantBldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.3"/>
+        
+        <!-- Left Edge Highlight -->
+        
+    </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 1010 316 L 1013 316 L 1013 310 L 1023 310 L 1023 316 L 1026 316 L 1026 350 L 1010 350 Z" fill="url(#dormantBldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.3"/>
+        
+        <!-- Left Edge Highlight -->
+        
+    </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 1031 318 L 1047 310 L 1047 350 L 1031 350 Z" fill="url(#dormantBldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.3"/>
+        
+        <!-- Left Edge Highlight -->
+        
+    </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 1052 300 L 1068 300 L 1068 350 L 1052 350 Z" fill="url(#activeBldgGrad)" stroke="#00f9ff" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="1052" y1="308" x2="1052" y2="350" stroke="#00f9ff" stroke-width="1" opacity="0.7"/>
+    <rect x="1055" y="305" width="10" height="3.7142857142857144" fill="#101827" opacity="0.6"/><rect x="1055" y="310.7142857142857" width="10" height="3.7142857142857144" fill="#101827" opacity="0.6"/><rect x="1055" y="316.42857142857144" width="10" height="3.7142857142857144" fill="#101827" opacity="0.6"/><rect x="1055" y="322.14285714285717" width="10" height="3.7142857142857144" fill="#101827" opacity="0.6"/><rect x="1055" y="327.85714285714283" width="10" height="3.7142857142857144" fill="#101827" opacity="0.6"/><rect x="1055" y="333.57142857142856" width="10" height="3.7142857142857144" fill="#101827" opacity="0.6"/>
+            <rect x="1055" y="339.2857142857143" width="4" height="3.7142857142857144" fill="#00f9ff"  opacity="0.95"/>
+            <rect x="1061" y="339.2857142857143" width="4" height="3.7142857142857144" fill="#00f9ff"  opacity="0.95"/>
+          </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 1073 301 L 1076 301 L 1076 295 L 1086 295 L 1086 301 L 1089 301 L 1089 350 L 1073 350 Z" fill="url(#activeBldgGrad)" stroke="#00f9ff" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="1073" y1="303" x2="1073" y2="350" stroke="#00f9ff" stroke-width="1" opacity="0.7"/>
+    
+        <line x1="1081" y1="295" x2="1081" y2="276" stroke="#00f9ff" stroke-width="1" filter="url(#neonGlow)"/>
+        <circle cx="1081" cy="276" r="1.5" fill="#ffffff" class="spire-beacon"/>
+      
+            <rect x="1076" y="300.5" width="10" height="4.285714285714286" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="1076" y="306.7857142857143" width="10" height="4.285714285714286" fill="#00f9ff" opacity="0.85"/>
+          <rect x="1076" y="313.07142857142856" width="10" height="4.285714285714286" fill="#101827" opacity="0.6"/>
+            <rect x="1076" y="319.35714285714283" width="10" height="4.285714285714286" fill="#0077ff" opacity="0.85"/>
+          <rect x="1076" y="325.64285714285717" width="10" height="4.285714285714286" fill="#101827" opacity="0.6"/><rect x="1076" y="331.92857142857144" width="10" height="4.285714285714286" fill="#101827" opacity="0.6"/><rect x="1076" y="338.2142857142857" width="10" height="4.285714285714286" fill="#101827" opacity="0.6"/></g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 1094 316 L 1110 308 L 1110 350 L 1094 350 Z" fill="url(#activeBldgGrad)" stroke="#0077ff" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="1094" y1="316" x2="1094" y2="350" stroke="#0077ff" stroke-width="1" opacity="0.7"/>
+    <rect x="1097" y="312.2" width="10" height="2.8" fill="#101827" opacity="0.6"/><rect x="1097" y="317" width="10" height="2.8" fill="#101827" opacity="0.6"/><rect x="1097" y="321.8" width="10" height="2.8" fill="#101827" opacity="0.6"/><rect x="1097" y="326.59999999999997" width="10" height="2.8" fill="#101827" opacity="0.6"/><rect x="1097" y="331.4" width="10" height="2.8" fill="#101827" opacity="0.6"/><rect x="1097" y="336.2" width="10" height="2.8" fill="#101827" opacity="0.6"/>
+            <rect x="1097" y="341" width="10" height="2.8" fill="#0077ff" opacity="0.85"/>
+          </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 1115 90 L 1131 90 L 1131 350 L 1115 350 Z" fill="url(#activeBldgGrad)" stroke="#00ff7f" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="1115" y1="98" x2="1115" y2="350" stroke="#00ff7f" stroke-width="1" opacity="0.7"/>
+    
+        <line x1="1123" y1="90" x2="1123" y2="71" stroke="#00ff7f" stroke-width="1" filter="url(#neonGlow)"/>
+        <circle cx="1123" cy="71" r="1.5" fill="#ffffff" class="spire-beacon"/>
+      
+            <rect x="1118" y="116" width="10" height="27.714285714285715" fill="#0077ff" opacity="0.85"/>
+          
+            <rect x="1118" y="145.71428571428572" width="4" height="27.714285714285715" fill="#00f9ff"  opacity="0.95"/>
+            <rect x="1124" y="145.71428571428572" width="4" height="27.714285714285715" fill="#00f9ff"  opacity="0.95"/>
+          
+            <rect x="1118" y="175.42857142857144" width="4" height="27.714285714285715" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="1124" y="175.42857142857144" width="4" height="27.714285714285715" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          
+            <rect x="1118" y="205.14285714285714" width="4" height="27.714285714285715" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="1124" y="205.14285714285714" width="4" height="27.714285714285715" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          
+            <rect x="1118" y="234.85714285714286" width="4" height="27.714285714285715" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="1124" y="234.85714285714286" width="4" height="27.714285714285715" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          
+            <rect x="1118" y="264.57142857142856" width="10" height="27.714285714285715" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="1118" y="294.2857142857143" width="4" height="27.714285714285715" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="1124" y="294.2857142857143" width="4" height="27.714285714285715" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          </g>
+      <g class="skyscraper" transform="translate(0, 0)">
+        <!-- Core Structure -->
+        <path d="M 1136 229 L 1139 229 L 1139 223 L 1149 223 L 1149 229 L 1152 229 L 1152 350 L 1136 350 Z" fill="url(#activeBldgGrad)" stroke="#00ff7f" stroke-width="1.2" stroke-opacity="0.9"/>
+        
+        <!-- Left Edge Highlight -->
+        <line x1="1136" y1="231" x2="1136" y2="350" stroke="#00ff7f" stroke-width="1" opacity="0.7"/>
+    
+        <line x1="1144" y1="223" x2="1144" y2="204" stroke="#00ff7f" stroke-width="1" filter="url(#neonGlow)"/>
+        <circle cx="1144" cy="204" r="1.5" fill="#ffffff" class="spire-beacon"/>
+      
+            <rect x="1139" y="235.7" width="10" height="12.514285714285716" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="1139" y="250.2142857142857" width="4" height="12.514285714285716" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="1145" y="250.2142857142857" width="4" height="12.514285714285716" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          <rect x="1139" y="264.7285714285714" width="10" height="12.514285714285716" fill="#101827" opacity="0.6"/><rect x="1139" y="279.24285714285713" width="10" height="12.514285714285716" fill="#101827" opacity="0.6"/>
+            <rect x="1139" y="293.75714285714287" width="10" height="12.514285714285716" fill="#00f9ff" opacity="0.85"/>
+          
+            <rect x="1139" y="308.2714285714286" width="4" height="12.514285714285716" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="1145" y="308.2714285714286" width="4" height="12.514285714285716" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          
+            <rect x="1139" y="322.7857142857143" width="4" height="12.514285714285716" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="1145" y="322.7857142857143" width="4" height="12.514285714285716" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          </g></g>
 
-  <g id="timeline-labels">
-    <text x="65.0" y="367" class="mono" fill="#475569" font-size="10">Nov</text><text x="139.0" y="367" class="mono" fill="#475569" font-size="10">Dec</text><text x="213.0" y="367" class="mono" fill="#475569" font-size="10">Jan</text><text x="287.0" y="367" class="mono" fill="#475569" font-size="10">Feb</text><text x="361.0" y="367" class="mono" fill="#475569" font-size="10">Mar</text><text x="453.5" y="367" class="mono" fill="#475569" font-size="10">Apr</text><text x="527.5" y="367" class="mono" fill="#475569" font-size="10">May</text><text x="620.0" y="367" class="mono" fill="#475569" font-size="10">Jun</text><text x="694.0" y="367" class="mono" fill="#475569" font-size="10">Jul</text><text x="768.0" y="367" class="mono" fill="#475569" font-size="10">Aug</text><text x="860.5" y="367" class="mono" fill="#475569" font-size="10">Sep</text><text x="934.5" y="367" class="mono" fill="#475569" font-size="10">Oct</text>
-  </g>
-
-  <g id="header-hud" transform="translate(65, 42)">
-    <rect width="8" height="24" fill="#00ff7f" rx="2" filter="url(#neonGlow)"/>
-    <text x="18" y="14" fill="#f8fafc" font-size="16" font-weight="900" letter-spacing="2">CYBERNETIC HORIZON: <tspan fill="#00ff7f">GITHUB SKYLINE</tspan></text>
-    <text x="18" y="27" class="mono" fill="#64748b" font-size="10" letter-spacing="1">USER: CIPHER-SHADOW-IR // 52-WEEK SKYSCRAPER MATRIX // 365 DAYS RECORDED</text>
-
-    <g transform="translate(640, -6)">
-      <rect width="180" height="32" rx="4" fill="#0c1222" stroke="#00f9ff" stroke-width="1" stroke-opacity="0.6"/>
-      <circle cx="14" cy="16" r="3.5" fill="#00ff7f" filter="url(#neonGlow)"/>
-      <text x="26" y="20" class="mono" fill="#94a3b8" font-size="9.5">TOTAL SOULS: <tspan fill="#f8fafc" font-weight="900">587</tspan></text>
-
-      <g transform="translate(195, 0)">
-        <rect width="195" height="32" rx="4" fill="#0c1222" stroke="#00ff7f" stroke-width="1" stroke-opacity="0.8"/>
-        <circle cx="14" cy="16" r="3.5" fill="#00ff7f" class="spire-beacon" filter="url(#hyperGlow)"/>
-        <text x="26" y="20" class="mono" fill="#94a3b8" font-size="9.5">DOMAIN STREAK: <tspan fill="#00ff7f" font-weight="900">3 DAYS</tspan></text>
+  <!-- Transit System -->
+  
+      <g id="monorail-system">
+        <!-- Energy Field / Outer Glow -->
+        <path d="M 1123 305 S 1133.5 305, 1144 305" fill="none" stroke="#00f9ff" stroke-width="6" opacity="0.2" filter="url(#monorailGlow)"/>
+        <path d="M 1123 305 S 1133.5 305, 1144 305" fill="none" stroke="#00ff7f" stroke-width="2" class="monorail-track"/>
+        
+        <!-- Maglev Train -->
+        <g class="monorail-train" transform="translate(1124, 301)">
+          <!-- Thruster Trail -->
+          <line x1="-15" y1="4" x2="0" y2="4" stroke="#0077ff" stroke-width="3" opacity="0.8" filter="url(#neonGlow)"/>
+          <rect width="28" height="8" rx="4" fill="#00ff7f" filter="url(#neonGlow)"/>
+          <rect width="22" height="4" rx="2" fill="#ffffff" x="3" y="2"/>
+        </g>
       </g>
-    </g>
+    
+
+  <!-- Ground Plane & Reflection Pool -->
+  <g id="ground">
+    <line x1="0" y1="350" x2="1200" y2="350" stroke="#00f9ff" stroke-width="2" opacity="0.6"/>
+    <line x1="0" y1="351" x2="1200" y2="351" stroke="url(#cyberCyberLine)" stroke-width="3" filter="url(#neonGlow)"/>
+    <!-- Wet Asphalt Gradient -->
+    <rect x="0" y="353" width="1200" height="77" fill="#020617" opacity="0.9"/>
+    <!-- Reflection lines -->
+    <path d="M 100 355 L 1100 355 M 150 362 L 1050 362" stroke="#0077ff" stroke-width="1" opacity="0.2"/>
   </g>
 
-  <g id="footer-hud" transform="translate(65, 410)">
-    <text x="0" y="8" class="mono" fill="#475569" font-size="9.5">TOWER HEIGHT = COMMITS/WEEK // GLOW SPIRE = OVERCHARGED DEPLOYMENTS (&gt;=5 COMMITS) // MONORAIL = CONTINUOUS DEPLOYMENT</text>
-    <text x="1070" y="8" class="mono" fill="#00f9ff" font-size="9.5" text-anchor="end">CYBER-METRICS ENGINE ✦</text>
+  <!-- Timeline UI -->
+  <g id="months"><text x="65" y="372" class="mono" font-size="10" fill="#64748b" font-weight="bold">Nov</text><text x="149" y="372" class="mono" font-size="10" fill="#64748b" font-weight="bold">Dec</text><text x="233" y="372" class="mono" font-size="10" fill="#64748b" font-weight="bold">Jan</text><text x="317" y="372" class="mono" font-size="10" fill="#64748b" font-weight="bold">Feb</text><text x="401" y="372" class="mono" font-size="10" fill="#64748b" font-weight="bold">Mar</text><text x="506" y="372" class="mono" font-size="10" fill="#64748b" font-weight="bold">Apr</text><text x="590" y="372" class="mono" font-size="10" fill="#64748b" font-weight="bold">May</text><text x="695" y="372" class="mono" font-size="10" fill="#64748b" font-weight="bold">Jun</text><text x="779" y="372" class="mono" font-size="10" fill="#64748b" font-weight="bold">Jul</text><text x="863" y="372" class="mono" font-size="10" fill="#64748b" font-weight="bold">Aug</text><text x="968" y="372" class="mono" font-size="10" fill="#64748b" font-weight="bold">Sep</text><text x="1052" y="372" class="mono" font-size="10" fill="#64748b" font-weight="bold">Oct</text></g>
+
+  <!-- Footer UI Elements -->
+  <g id="footer" transform="translate(45, 405)">
+    <rect width="250" height="4" rx="2" fill="#1e293b"/>
+    <rect width="100" height="4" rx="2" fill="url(#cyberCyberLine)"/>
+    <text x="265" y="6" class="mono" fill="#475569" font-size="10">LEVEL COLOR: LOW (#0077FF) &#8594; PEAK (#00FF7F)</text>
+    <text x="1110" y="6" class="mono" fill="#00ff7f" font-size="10" text-anchor="end">STATUS: REAL-TIME TELEMETRY STREAM ✦</text>
   </g>
 </svg>
