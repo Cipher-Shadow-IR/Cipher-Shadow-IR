@@ -78,10 +78,10 @@
 
     <g transform="translate(750, -5)">
       <text x="0" y="20" class="mono" fill="#94a3b8" font-size="11">TOTAL COMMITS:</text>
-      <text x="100" y="21" class="mono" fill="#00f9ff" font-size="14" font-weight="900" filter="url(#neonGlow)">596</text>
+      <text x="100" y="21" class="mono" fill="#00f9ff" font-size="14" font-weight="900" filter="url(#neonGlow)">608</text>
       
       <text x="180" y="20" class="mono" fill="#94a3b8" font-size="11">ACTIVE STREAK:</text>
-      <text x="285" y="21" class="mono" fill="#00ff7f" font-size="14" font-weight="900" filter="url(#neonGlow)">15 DAYS</text>
+      <text x="285" y="21" class="mono" fill="#00ff7f" font-size="14" font-weight="900" filter="url(#neonGlow)">16 DAYS</text>
     </g>
   </g>
 
@@ -847,11 +847,17 @@
           </g>
       <g class="skyscraper" transform="translate(0, 0)">
         <!-- Core Structure -->
-        <path d="M 1136 316 L 1139 316 L 1139 310 L 1149 310 L 1149 316 L 1152 316 L 1152 350 L 1136 350 Z" fill="url(#dormantBldgGrad)" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.3"/>
+        <path d="M 1136 287 L 1139 287 L 1139 281 L 1149 281 L 1149 287 L 1152 287 L 1152 350 L 1136 350 Z" fill="url(#activeBldgGrad)" stroke="#00ff7f" stroke-width="1.2" stroke-opacity="0.9"/>
         
         <!-- Left Edge Highlight -->
-        
-    </g></g>
+        <line x1="1136" y1="289" x2="1136" y2="350" stroke="#00ff7f" stroke-width="1" opacity="0.7"/>
+    
+        <line x1="1144" y1="281" x2="1144" y2="258" stroke="#00ff7f" stroke-width="1" filter="url(#neonGlow)"/>
+        <circle cx="1144" cy="258" r="1.5" fill="#ffffff" class="spire-beacon"/>
+      
+            <rect x="1139" y="287.9" width="4" height="5.885714285714286" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="1145" y="287.9" width="4" height="5.885714285714286" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+          </g></g>
 
   <!-- Transit System -->
   
