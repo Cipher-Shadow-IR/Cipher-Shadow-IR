@@ -78,7 +78,7 @@
 
     <g transform="translate(750, -5)">
       <text x="0" y="20" class="mono" fill="#94a3b8" font-size="11">TOTAL COMMITS:</text>
-      <text x="100" y="21" class="mono" fill="#00f9ff" font-size="14" font-weight="900" filter="url(#neonGlow)">608</text>
+      <text x="100" y="21" class="mono" fill="#00f9ff" font-size="14" font-weight="900" filter="url(#neonGlow)">609</text>
       
       <text x="180" y="20" class="mono" fill="#94a3b8" font-size="11">ACTIVE STREAK:</text>
       <text x="285" y="21" class="mono" fill="#00ff7f" font-size="14" font-weight="900" filter="url(#neonGlow)">17 DAYS</text>
@@ -847,18 +847,19 @@
           </g>
       <g class="skyscraper" transform="translate(0, 0)">
         <!-- Core Structure -->
-        <path d="M 1136 275 L 1139 275 L 1139 269 L 1149 269 L 1149 275 L 1152 275 L 1152 350 L 1136 350 Z" fill="url(#activeBldgGrad)" stroke="#00ff7f" stroke-width="1.2" stroke-opacity="0.9"/>
+        <path d="M 1136 272 L 1139 272 L 1139 266 L 1149 266 L 1149 272 L 1152 272 L 1152 350 L 1136 350 Z" fill="url(#activeBldgGrad)" stroke="#00ff7f" stroke-width="1.2" stroke-opacity="0.9"/>
         
         <!-- Left Edge Highlight -->
-        <line x1="1136" y1="277" x2="1136" y2="350" stroke="#00ff7f" stroke-width="1" opacity="0.7"/>
+        <line x1="1136" y1="274" x2="1136" y2="350" stroke="#00ff7f" stroke-width="1" opacity="0.7"/>
     
-        <line x1="1144" y1="269" x2="1144" y2="246" stroke="#00ff7f" stroke-width="1" filter="url(#neonGlow)"/>
-        <circle cx="1144" cy="246" r="1.5" fill="#ffffff" class="spire-beacon"/>
+        <line x1="1144" y1="266" x2="1144" y2="239" stroke="#00ff7f" stroke-width="1" filter="url(#neonGlow)"/>
+        <circle cx="1144" cy="239" r="1.5" fill="#ffffff" class="spire-beacon"/>
       
-            <rect x="1139" y="277.1" width="4" height="7.257142857142856" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
-            <rect x="1145" y="277.1" width="4" height="7.257142857142856" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="1139" y="274.4" width="4" height="7.6" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="1145" y="274.4" width="4" height="7.6" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
           
-            <rect x="1139" y="286.3571428571429" width="10" height="7.257142857142856" fill="#00f9ff" opacity="0.85"/>
+            <rect x="1139" y="284" width="4" height="7.6" fill="#00f9ff"  opacity="0.95"/>
+            <rect x="1145" y="284" width="4" height="7.6" fill="#00f9ff"  opacity="0.95"/>
           </g></g>
 
   <!-- Transit System -->
