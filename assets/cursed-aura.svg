@@ -272,7 +272,7 @@
       <text x="0" y="54" class="metric-sub" fill="#7dcfff" filter="url(#hud-glow)">TOTAL HARVEST</text>
 
       <!-- Heavy Glowing Metric Value -->
-      <text x="0" y="116" class="metric-val" fill="url(#cyan-metric)" filter="url(#hud-glow)">618</text>
+      <text x="0" y="116" class="metric-val" fill="url(#cyan-metric)" filter="url(#hud-glow)">622</text>
 
       <!-- Telemetry Sub-Text & Micro Meter -->
       <rect x="-70" y="136" width="140" height="4" rx="2" fill="#16161e" />
@@ -303,7 +303,7 @@
         <path d="M 0 -27 C 3 -22, 5 -17, 2 -11 C 0 -8, -4 -9, -4 -14 C -4 -18, -1 -22, 0 -27 Z" fill="#ffffff" />
 
         <!-- Current Day Streak Value -->
-        <text x="0" y="17" class="streak-val" filter="url(#hud-glow)">18</text>
+        <text x="0" y="17" class="streak-val" filter="url(#hud-glow)">20</text>
         <text x="0" y="31" class="hud-tag" fill="#f7768e">DAYS</text>
       </g>
 
@@ -316,7 +316,7 @@
       <text x="0" y="54" class="metric-sub" fill="#bb9af7" filter="url(#hud-glow)">MAX COMBO CHAIN</text>
       
       <!-- Heavy Glowing Metric Value -->
-      <text x="0" y="116" class="metric-val" fill="url(#purple-metric)" filter="url(#hud-glow)">18</text>
+      <text x="0" y="116" class="metric-val" fill="url(#purple-metric)" filter="url(#hud-glow)">20</text>
       
       <!-- Telemetry Bar & Status -->
       <rect x="-70" y="136" width="140" height="4" rx="2" fill="#16161e" />
