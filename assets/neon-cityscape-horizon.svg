@@ -863,7 +863,7 @@
           
             <rect x="1139" y="279.5" width="4" height="10" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
             <rect x="1145" y="279.5" width="4" height="10" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
-          <rect x="1139" y="291.5" width="10" height="10" fill="#101827" opacity="0.6"/></g></g>
+          <rect x="1139" y="291.5" width="10" height="10" fill="#101827" opacity="0.6"/><rect x="1139" y="303.5" width="10" height="10" fill="#101827" opacity="0.6"/></g></g>
 
   <!-- Transit System -->
   
