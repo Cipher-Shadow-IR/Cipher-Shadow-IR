@@ -1722,9 +1722,12 @@
       <rect x="5" y="4" width="2" height="3" fill="#4ade80"/>
       <rect x="4" y="3" width="1" height="2" fill="#86efac"/>
     </g>    <g transform="translate(901,217)">
-      <rect y="10" width="13" height="4" fill="#134e4a" rx="1"/>
-      <rect width="13" height="10" fill="#0f766e" stroke="#2dd4bf" stroke-width="0.8" rx="2"/>
-      <polygon points="6,1 9,5 6,8 3,5" fill="#00f9ff" filter="url(#crystalGlow)"/>
+      <circle cx="6" cy="5" r="9" fill="url(#bossAura)"/>
+      <rect y="10" width="13" height="4" fill="#78350f" rx="1"/>
+      <rect width="13" height="10" fill="#b45309" stroke="#facc15" stroke-width="1.2" rx="2" filter="url(#crystalGlow)"/>
+      <rect x="2" y="2" width="9" height="6" fill="#fef08a" rx="1"/>
+      <circle cx="6.5" cy="5" r="1" fill="#ffffff"/>
+      <circle cx="1" cy="0" r="1" fill="#facc15" class="spark"/>
     </g>  </g>
   <!-- ==================== CODER HERO SPRITE & TRAIL ==================== -->
   <g class="hero-sprite" transform="translate(887, 189)">
@@ -1829,8 +1832,8 @@
     <g transform="translate(18, 120)">
       <rect width="194" height="64" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
       
-      <text x="14" y="22" class="mono" fill="#facc15" font-size="14" font-weight="900">637 TOTAL COMMITS</text>
-      <text x="14" y="36" class="mono" fill="#94a3b8" font-size="9.5">EXP: 637 XP <tspan fill="#facc15">(63%)</tspan></text>
+      <text x="14" y="22" class="mono" fill="#facc15" font-size="14" font-weight="900">639 TOTAL COMMITS</text>
+      <text x="14" y="36" class="mono" fill="#94a3b8" font-size="9.5">EXP: 639 XP <tspan fill="#facc15">(63%)</tspan></text>
       
       <rect x="14" y="44" width="166" height="9" rx="4.5" fill="#1e293b" stroke="#334155" stroke-width="0.8"/>
       <rect x="15" y="45" width="103" height="7" rx="3.5" fill="url(#goldBar)" filter="url(#crystalGlow)"/>
