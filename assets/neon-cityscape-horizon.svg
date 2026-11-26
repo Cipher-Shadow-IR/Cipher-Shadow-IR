@@ -78,10 +78,10 @@
 
     <g transform="translate(750, -5)">
       <text x="0" y="20" class="mono" fill="#94a3b8" font-size="11">TOTAL COMMITS:</text>
-      <text x="100" y="21" class="mono" fill="#00f9ff" font-size="14" font-weight="900" filter="url(#neonGlow)">657</text>
+      <text x="100" y="21" class="mono" fill="#00f9ff" font-size="14" font-weight="900" filter="url(#neonGlow)">658</text>
       
       <text x="180" y="20" class="mono" fill="#94a3b8" font-size="11">ACTIVE STREAK:</text>
-      <text x="285" y="21" class="mono" fill="#00ff7f" font-size="14" font-weight="900" filter="url(#neonGlow)">33 DAYS</text>
+      <text x="285" y="21" class="mono" fill="#00ff7f" font-size="14" font-weight="900" filter="url(#neonGlow)">34 DAYS</text>
     </g>
   </g>
 
@@ -884,23 +884,25 @@
           </g>
       <g class="skyscraper" transform="translate(0, 0)">
         <!-- Core Structure -->
-        <path d="M 1136 294 L 1139 294 L 1139 288 L 1149 288 L 1149 294 L 1152 294 L 1152 350 L 1136 350 Z" fill="url(#activeBldgGrad)" stroke="#00f9ff" stroke-width="1.2" stroke-opacity="0.9"/>
+        <path d="M 1136 292 L 1139 292 L 1139 286 L 1149 286 L 1149 292 L 1152 292 L 1152 350 L 1136 350 Z" fill="url(#activeBldgGrad)" stroke="#00ff7f" stroke-width="1.2" stroke-opacity="0.9"/>
         
         <!-- Left Edge Highlight -->
-        <line x1="1136" y1="296" x2="1136" y2="350" stroke="#00f9ff" stroke-width="1" opacity="0.7"/>
+        <line x1="1136" y1="294" x2="1136" y2="350" stroke="#00ff7f" stroke-width="1" opacity="0.7"/>
     
-        <line x1="1144" y1="288" x2="1144" y2="257" stroke="#00f9ff" stroke-width="1" filter="url(#neonGlow)"/>
-        <circle cx="1144" cy="257" r="1.5" fill="#ffffff" class="spire-beacon"/>
+        <line x1="1144" y1="286" x2="1144" y2="271" stroke="#00ff7f" stroke-width="1" filter="url(#neonGlow)"/>
+        <circle cx="1144" cy="271" r="1.5" fill="#ffffff" class="spire-beacon"/>
       
-            <rect x="1139" y="294.2" width="10" height="5.085714285714286" fill="#0077ff" opacity="0.85"/>
+            <rect x="1139" y="292.4" width="10" height="5.314285714285715" fill="#0077ff" opacity="0.85"/>
           
-            <rect x="1139" y="301.2857142857143" width="10" height="5.085714285714286" fill="#0077ff" opacity="0.85"/>
+            <rect x="1139" y="299.71428571428567" width="10" height="5.314285714285715" fill="#0077ff" opacity="0.85"/>
           
-            <rect x="1139" y="308.37142857142857" width="4" height="5.085714285714286" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
-            <rect x="1145" y="308.37142857142857" width="4" height="5.085714285714286" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="1139" y="307.0285714285714" width="4" height="5.314285714285715" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
+            <rect x="1145" y="307.0285714285714" width="4" height="5.314285714285715" fill="#00ff7f" filter="url(#neonGlow)" opacity="0.95"/>
           
-            <rect x="1139" y="315.45714285714286" width="10" height="5.085714285714286" fill="#0077ff" opacity="0.85"/>
-          <rect x="1139" y="322.54285714285714" width="10" height="5.085714285714286" fill="#101827" opacity="0.6"/></g></g>
+            <rect x="1139" y="314.3428571428571" width="10" height="5.314285714285715" fill="#0077ff" opacity="0.85"/>
+          
+            <rect x="1139" y="321.65714285714284" width="10" height="5.314285714285715" fill="#0077ff" opacity="0.85"/>
+          </g></g>
 
   <!-- Transit System -->
   
